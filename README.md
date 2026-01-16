@@ -1,5 +1,5 @@
 # APC40-mkII-Chataigne-Module
-A Chataigne module for the Akai APC40-mkII MIDI Controller
+A Chataigne module for the Akai APC40 MkII MIDI Controller
 
 ## Current Features:
 - All inputs mapped
@@ -14,3 +14,7 @@ A Chataigne module for the Akai APC40-mkII MIDI Controller
 
 ## Known Bugs
 - Resyncing the midi status of encoders and buttons happens after first user input (instant resync was unreliable)
+
+## TO DO - Cunabula
+- Add in remaining missing colours from the APC40 MIDI spec document
+- Learn enough JS to work out how much I might break things by renaming and reordering them.
