@@ -11,7 +11,7 @@
 	"hasInput":true,
 	"hasOutput":true, 
 
-	"hideDefaultCommands":true,
+	"hideDefaultCommands":false,
 
 	"vidFilter": "0x04D8",
 	"pidFilter": "0x00DF",
@@ -23,7 +23,7 @@
 			"type":"Container",
 			"collapsed":true,
 
-			"Encoder Top 1 Mode": { "type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3},},
+			"Encoder Top 1 Mode": { "type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
 			"Encoder Top 2 Mode": { "type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
 			"Encoder Top 3 Mode": { "type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
 			"Encoder Top 4 Mode": { "type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
@@ -119,7 +119,7 @@
 				"Pad 7.6": {"type":"Enum", "options":{"Off":0, "On":1, "Pulsing":2, "Blinking":3}},
 				"Pad 7.7": {"type":"Enum", "options":{"Off":0, "On":1, "Pulsing":2, "Blinking":3}},
 				"Pad 7.8": {"type":"Enum", "options":{"Off":0, "On":1, "Pulsing":2, "Blinking":3}},
-				"Pad 7.9": {"type":"Enum", "options":{"Off":0, "On":1, "Pulsing":2, "Blinking":3}},
+				"Pad 7.9": {"type":"Enum", "options":{"Off":0, "On":1, "Pulsing":2, "Blinking":3}}
 			},
 
 			"Color":
@@ -242,7 +242,7 @@
 				"Record": {"type":"Boolean"},
 				"Session": {"type":"Boolean"},
 
-				"Metronome": {"type":"Boolean"},
+				"Metronome": {"type":"Boolean"}
 			},
 
 			"Encoders":
@@ -259,7 +259,8 @@
 				"7 Clip/Dev. View": {"type":"Boolean", "shortName":"7ClipDevView"},
 				"8 Detail View": {"type":"Boolean"},
 				"Bank": {"type":"Boolean"}
-			}		}
+			}		
+		}
 	},
 
 	"defaults":
@@ -410,7 +411,7 @@
 				"Pad 7.6": {"type":"Boolean", "readOnly":true},
 				"Pad 7.7": {"type":"Boolean", "readOnly":true},
 				"Pad 7.8": {"type":"Boolean", "readOnly":true},
-				"Pad 7.9": {"type":"Boolean", "readOnly":true},
+				"Pad 7.9": {"type":"Boolean", "readOnly":true}
 
 			},
 
@@ -714,6 +715,6 @@
 		{
 			"menu":"",
 			"callback":"refresh"
-		},
+		}
 	}
 }
