@@ -1,10 +1,10 @@
 {
-	"name":"APC40 mkII",
+	"name":"APC40 MkII",
 	"type":"MIDI",
 	"path":"Hardware",
 	
 	"version":"1.0.0",
-	"description":"Special MIDI Module for the APC40 mkII MIDI Controller",
+	"description":"MIDI Module for the APC40 MkII MIDI Controller",
 	"url":"https://github.com/lenschcode/APC40-mkii-Chataigne-Module",
 	"downloadURL":"https://github.com/lenschcode/APC40-mkii-Chataigne-Module/archive/master.zip",
 	
