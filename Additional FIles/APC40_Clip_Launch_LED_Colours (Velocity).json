@@ -1,0 +1,2966 @@
+{
+  "niceName": "APC40 MkII RGB Pad Colours [Velocity]",
+  "type": "CVGroup",
+  "params": {
+  },
+  "variables": {
+    "items": [
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/0",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "0",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "0",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1176470592617989,
+              0.1176470592617989,
+              0.1176470592617989,
+              1.0
+            ],
+            "controlAddress": "/1",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "1",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "1",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4980392158031464,
+              0.4980392158031464,
+              0.4980392158031464,
+              1.0
+            ],
+            "controlAddress": "/2",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "2",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "2",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/3",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "3",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "3",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.2980392277240753,
+              0.2980392277240753,
+              1.0
+            ],
+            "controlAddress": "/4",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "4",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "4",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/5",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "5",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "5",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/6",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "6",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "6",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.09803921729326248,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/7",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "7",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "7",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.7411764860153198,
+              0.4235294163227081,
+              1.0
+            ],
+            "controlAddress": "/8",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "8",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "8",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.3294117748737335,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/9",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "9",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "9",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              0.1137254908680916,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/10",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "10",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "10",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1529411822557449,
+              0.105882354080677,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/11",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "11",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "11",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              1.0,
+              0.2980392277240753,
+              1.0
+            ],
+            "controlAddress": "/12",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "12",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "12",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/13",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "13",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "13",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              0.3490196168422699,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/14",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "14",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "14",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.09803921729326248,
+              0.09803921729326248,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/15",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "15",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "15",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.5333333611488342,
+              1.0,
+              0.2980392277240753,
+              1.0
+            ],
+            "controlAddress": "/16",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "16",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "16",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3294117748737335,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/17",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "17",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "17",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1137254908680916,
+              0.3490196168422699,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/18",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "18",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "18",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0784313753247261,
+              0.168627455830574,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/19",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "19",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "19",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              1.0,
+              0.2980392277240753,
+              1.0
+            ],
+            "controlAddress": "/20",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "20",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "20",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/21",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "21",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "21",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3490196168422699,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/22",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "22",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "22",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.09803921729326248,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/23",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "23",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "23",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              1.0,
+              0.3686274588108063,
+              1.0
+            ],
+            "controlAddress": "/24",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "24",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "24",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.09803921729326248,
+              1.0
+            ],
+            "controlAddress": "/25",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "25",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "25",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3490196168422699,
+              0.05098039284348488,
+              1.0
+            ],
+            "controlAddress": "/26",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "26",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "26",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.09803921729326248,
+              0.007843137718737125,
+              1.0
+            ],
+            "controlAddress": "/27",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "27",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "27",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              1.0,
+              0.5333333611488342,
+              1.0
+            ],
+            "controlAddress": "/28",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "28",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "28",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.3333333432674408,
+              1.0
+            ],
+            "controlAddress": "/29",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "29",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "29",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3490196168422699,
+              0.1137254908680916,
+              1.0
+            ],
+            "controlAddress": "/30",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "30",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "30",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.1215686276555061,
+              0.07058823853731155,
+              1.0
+            ],
+            "controlAddress": "/31",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "31",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "31",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              1.0,
+              0.7176470756530762,
+              1.0
+            ],
+            "controlAddress": "/32",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "32",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "32",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.6000000238418579,
+              1.0
+            ],
+            "controlAddress": "/33",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "33",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "33",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3490196168422699,
+              0.2078431397676468,
+              1.0
+            ],
+            "controlAddress": "/34",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "34",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "34",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.09803921729326248,
+              0.07058823853731155,
+              1.0
+            ],
+            "controlAddress": "/35",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "35",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "35",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              0.7647058963775635,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/36",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "36",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "36",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.6627451181411743,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/37",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "37",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "37",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.2549019753932953,
+              0.321568638086319,
+              1.0
+            ],
+            "controlAddress": "/38",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "38",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "38",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.062745101749897,
+              0.09803921729326248,
+              1.0
+            ],
+            "controlAddress": "/39",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "39",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "39",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              0.5333333611488342,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/40",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "40",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "40",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3333333432674408,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/41",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "41",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "41",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.1137254908680916,
+              0.3490196168422699,
+              1.0
+            ],
+            "controlAddress": "/42",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "42",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "42",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0313725508749485,
+              0.09803921729326248,
+              1.0
+            ],
+            "controlAddress": "/43",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "43",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "43",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2980392277240753,
+              0.2980392277240753,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/44",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "44",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "44",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/45",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "45",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "45",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0,
+              0.3490196168422699,
+              1.0
+            ],
+            "controlAddress": "/46",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "46",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "46",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0,
+              0.09803921729326248,
+              1.0
+            ],
+            "controlAddress": "/47",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "47",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "47",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.529411792755127,
+              0.2980392277240753,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/48",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "48",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "48",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3294117748737335,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/49",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "49",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "49",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.09803921729326248,
+              0.0,
+              0.3921568691730499,
+              1.0
+            ],
+            "controlAddress": "/50",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "50",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "50",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.05882352963089943,
+              0.0,
+              0.1882352977991104,
+              1.0
+            ],
+            "controlAddress": "/51",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "51",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "51",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.2980392277240753,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/52",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "52",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "52",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/53",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "53",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "53",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              0.0,
+              0.3490196168422699,
+              1.0
+            ],
+            "controlAddress": "/54",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "54",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "54",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.09803921729326248,
+              0.0,
+              0.09803921729326248,
+              1.0
+            ],
+            "controlAddress": "/55",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "55",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "55",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.2980392277240753,
+              0.529411792755127,
+              1.0
+            ],
+            "controlAddress": "/56",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "56",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "56",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.0,
+              0.3294117748737335,
+              1.0
+            ],
+            "controlAddress": "/57",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "57",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "57",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              0.0,
+              0.1137254908680916,
+              1.0
+            ],
+            "controlAddress": "/58",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "58",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "58",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1333333402872086,
+              0.0,
+              0.07450980693101883,
+              1.0
+            ],
+            "controlAddress": "/59",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "59",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "59",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.08235294371843338,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/60",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "60",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "60",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.6000000238418579,
+              0.2078431397676468,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/61",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "61",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "61",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4745098054409027,
+              0.3176470696926117,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/62",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "62",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "62",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2627451121807098,
+              0.3921568691730499,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/63",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "63",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "63",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0117647061124444,
+              0.2235294133424759,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/64",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "64",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "64",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3411764800548553,
+              0.2078431397676468,
+              1.0
+            ],
+            "controlAddress": "/65",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "65",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "65",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.3294117748737335,
+              0.4980392158031464,
+              1.0
+            ],
+            "controlAddress": "/66",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "66",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "66",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/67",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "67",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "67",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.2705882489681244,
+              0.3098039329051971,
+              1.0
+            ],
+            "controlAddress": "/68",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "68",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "68",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1450980454683304,
+              0.0,
+              0.800000011920929,
+              1.0
+            ],
+            "controlAddress": "/69",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "69",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "69",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4980392158031464,
+              0.4980392158031464,
+              0.4980392158031464,
+              1.0
+            ],
+            "controlAddress": "/70",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "70",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "70",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.125490203499794,
+              0.125490203499794,
+              0.125490203499794,
+              1.0
+            ],
+            "controlAddress": "/71",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "71",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "71",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/72",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "72",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "72",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.7411764860153198,
+              1.0,
+              0.1764705926179886,
+              1.0
+            ],
+            "controlAddress": "/73",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "73",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "73",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.686274528503418,
+              0.929411768913269,
+              0.0235294122248888,
+              1.0
+            ],
+            "controlAddress": "/74",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "74",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "74",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3921568691730499,
+              1.0,
+              0.03529411926865578,
+              1.0
+            ],
+            "controlAddress": "/75",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "75",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "75",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.062745101749897,
+              0.5450980663299561,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/76",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "76",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "76",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.529411792755127,
+              1.0
+            ],
+            "controlAddress": "/77",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "77",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "77",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.6627451181411743,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/78",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "78",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "78",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              0.1647058874368668,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/79",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "79",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "79",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2470588237047195,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/80",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "80",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "80",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.47843137383461,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/81",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "81",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "81",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.6980392336845398,
+              0.1019607856869698,
+              0.4901960790157318,
+              1.0
+            ],
+            "controlAddress": "/82",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "82",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "82",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.250980406999588,
+              0.1294117718935013,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/83",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "83",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "83",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.2901960909366608,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/84",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "84",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "84",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.5333333611488342,
+              0.8823529481887817,
+              0.0235294122248888,
+              1.0
+            ],
+            "controlAddress": "/85",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "85",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "85",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4470588266849518,
+              1.0,
+              0.08235294371843338,
+              1.0
+            ],
+            "controlAddress": "/86",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "86",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "86",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/87",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "87",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "87",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2313725501298904,
+              1.0,
+              0.1490196138620377,
+              1.0
+            ],
+            "controlAddress": "/88",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "88",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "88",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3490196168422699,
+              1.0,
+              0.4431372582912445,
+              1.0
+            ],
+            "controlAddress": "/89",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "89",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "89",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2196078449487686,
+              1.0,
+              0.800000011920929,
+              1.0
+            ],
+            "controlAddress": "/90",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "90",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "90",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.3568627536296844,
+              0.5411764979362488,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/91",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "91",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "91",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1921568661928177,
+              0.3176470696926117,
+              0.7764706015586853,
+              1.0
+            ],
+            "controlAddress": "/92",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "92",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "92",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.529411792755127,
+              0.4980392158031464,
+              0.9137254953384399,
+              1.0
+            ],
+            "controlAddress": "/93",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "93",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "93",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.8274509906768799,
+              0.1137254908680916,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/94",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "94",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "94",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.0,
+              0.364705890417099,
+              1.0
+            ],
+            "controlAddress": "/95",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "95",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "95",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.4980392158031464,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/96",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "96",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "96",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.7254902124404907,
+              0.6901960968971252,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/97",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "97",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "97",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.5647059082984924,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/98",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "98",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "98",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.5137255191802979,
+              0.364705890417099,
+              0.02745098061859608,
+              1.0
+            ],
+            "controlAddress": "/99",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "99",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "99",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2235294133424759,
+              0.168627455830574,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/100",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "100",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "100",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.0784313753247261,
+              0.2980392277240753,
+              0.062745101749897,
+              1.0
+            ],
+            "controlAddress": "/101",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "101",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "101",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.05098039284348488,
+              0.3137255012989044,
+              0.2196078449487686,
+              1.0
+            ],
+            "controlAddress": "/102",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "102",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "102",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.08235294371843338,
+              0.08235294371843338,
+              0.1647058874368668,
+              1.0
+            ],
+            "controlAddress": "/103",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "103",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "103",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.08627451211214066,
+              0.125490203499794,
+              0.3529411852359772,
+              1.0
+            ],
+            "controlAddress": "/104",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "104",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "104",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4117647111415863,
+              0.2352941185235977,
+              0.1098039224743843,
+              1.0
+            ],
+            "controlAddress": "/105",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "105",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "105",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.658823549747467,
+              0.0,
+              0.03921568766236305,
+              1.0
+            ],
+            "controlAddress": "/106",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "106",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "106",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.8705882430076599,
+              0.3176470696926117,
+              0.239215686917305,
+              1.0
+            ],
+            "controlAddress": "/107",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "107",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "107",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.8470588326454163,
+              0.4156862795352936,
+              0.1098039224743843,
+              1.0
+            ],
+            "controlAddress": "/108",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "108",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "108",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              1.0,
+              0.8823529481887817,
+              0.1490196138620377,
+              1.0
+            ],
+            "controlAddress": "/109",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "109",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "109",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.6196078658103943,
+              0.8823529481887817,
+              0.1843137294054031,
+              1.0
+            ],
+            "controlAddress": "/110",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "110",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "110",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4039215743541718,
+              0.7098039388656616,
+              0.05882352963089943,
+              1.0
+            ],
+            "controlAddress": "/111",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "111",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "111",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1176470592617989,
+              0.1176470592617989,
+              0.1882352977991104,
+              1.0
+            ],
+            "controlAddress": "/112",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "112",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "112",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.8627451062202454,
+              1.0,
+              0.4196078479290009,
+              1.0
+            ],
+            "controlAddress": "/113",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "113",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "113",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.501960813999176,
+              1.0,
+              0.7411764860153198,
+              1.0
+            ],
+            "controlAddress": "/114",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "114",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "114",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.6039215922355652,
+              0.6000000238418579,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/115",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "115",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "115",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.5568627715110779,
+              0.4000000059604645,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/116",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "116",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "116",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.250980406999588,
+              0.250980406999588,
+              0.250980406999588,
+              1.0
+            ],
+            "controlAddress": "/117",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "117",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "117",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.4588235318660736,
+              0.4588235318660736,
+              0.4588235318660736,
+              1.0
+            ],
+            "controlAddress": "/118",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "118",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "118",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.8784313797950745,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "controlAddress": "/119",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "119",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "119",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.6274510025978088,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/120",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "120",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "120",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2078431397676468,
+              0.0,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/121",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "121",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "121",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.1019607856869698,
+              0.8156862854957581,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/122",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "122",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "122",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.02745098061859608,
+              0.2588235437870026,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/123",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "123",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "123",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.7254902124404907,
+              0.6901960968971252,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/124",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "124",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "124",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.2470588237047195,
+              0.1921568661928177,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/125",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "125",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "125",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.7019608020782471,
+              0.3725490272045135,
+              0.0,
+              1.0
+            ],
+            "controlAddress": "/126",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "126",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "126",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      },
+      {
+        "parameters": [
+          {
+            "value": [
+              0.294117659330368,
+              0.08235294371843338,
+              0.007843137718737125,
+              1.0
+            ],
+            "controlAddress": "/127",
+            "feedbackOnly": false,
+            "type": "Color",
+            "niceName": "127",
+            "customizable": true,
+            "removable": false,
+            "description": "Custom control of type Color",
+            "hideInEditor": false
+          }
+        ],
+        "niceName": "127",
+        "editorIsCollapsed": true,
+        "type": "Color Parameter"
+      }
+    ],
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  },
+  "presets": {
+    "viewOffset": [
+      0,
+      0
+    ],
+    "viewZoom": 1.0
+  }
+}
