@@ -110,9 +110,9 @@ var colors = [
 ];
 
 // noted in [channel,note]
-var noteNotes = {
+var noteNotes = { // AG > This Variable is all the regular notes
 	pads: {
-		main: [
+		main: [ // AG > THese are all the RGB Pads
 			[[1,32], [1,33], [1,34], [1,35], [1,36], [1,37], [1,38], [1,39], [1,82]],
 			[[1,24], [1,25], [1,26], [1,27], [1,28], [1,29], [1,30], [1,31], [1,83]],
 			[[1,16], [1,17], [1,18], [1,19], [1,20], [1,21], [1,22], [1,23], [1,84]],
@@ -121,7 +121,7 @@ var noteNotes = {
 			[[1,52], [2,52], [3,52], [4,52], [5,52], [6,52], [7,52], [8,52], [1,81]],
 			[[1,51], [2,51], [3,51], [4,51], [5,51], [6,51], [7,51], [8,51], [1,80]]
 		],
-		faders: [
+		faders: [ // AG > THese are all the CHannel controls (Mute Solo A/B and Record-Arm)
 			[[1,50], [1,66], [1,49], [1,48]],
 			[[2,50], [2,66], [2,49], [2,48]],
 			[[3,50], [3,66], [3,49], [3,48]],
@@ -133,7 +133,7 @@ var noteNotes = {
 		]
 	},
 	buttons: {
-		top: {
+		top: { // AG > Buttons Top Block
 			"pan": [1, 87],
 			"sends": [1,88],
 			"user": [1,89],
@@ -148,7 +148,7 @@ var noteNotes = {
 			"nudgePlus": [1, 101],
 		},
 
-		encoders: {
+		encoders: { // AG > Buttons Bottom Block (need renaming)
 			"1DevicePrev": [1,58],
 			"2DeviceNext": [1,59],
 			"3BankPrev": [1,60],
@@ -161,7 +161,7 @@ var noteNotes = {
 			"shift": [1,98],
 			"bank": [1,103]
 		},
-		bankSelect: {
+		bankSelect: { // AG >  Bank Select
 			up: [1,94],
 			down: [1,95],
 			left: [1,97],
@@ -171,30 +171,31 @@ var noteNotes = {
 };
 
 var ccNotes = {
-	encoders: {
+	encoders: {// AG > This is the Knobs
 		top: [[1,48], [1,49], [1,50], [1,51], [1,52], [1,53], [1,54], [1,55]],
 		side: [[1,16], [1,17], [1,18], [1,19], [1,20], [1,21], [1,22], [1,23]],
-		cue: [1,47],
+		cue: [1,47], // AG > The Encoders
 		tempo: [1,13]
-	},
+	}, // AG > Th faders inc Master and Cross
 	faders: [[1,7], [2,7], [3,7], [4,7], [5,7], [6,7], [7,7], [8,7], [1,14], [1,15]]
 };
 
+// AG > THis is all the Names of the buttos that light up
 var buttonLedKeys = ["pan","sends","user","play","record","session","metronome", "1DevicePrev", "2DeviceNext", "3BankPrev", "4BankNext", "5DevOnOff", "6DevLock", "7ClipDevView", "8DetailView", "bank"];
 
 
-var noteValueObj = [[],[],[],[],[],[],[],[],[]];
-var ccValueObj = [[],[],[],[],[],[],[],[],[]];
-var colorParameterObj = [[],[],[],[],[]];
-var modeParameterObj = [[],[],[],[],[]];
-var faderPadParameterObj = [[],[],[],[],[],[],[],[]];
-var buttonParameterObj = {};
+var noteValueObj = [[],[],[],[],[],[],[],[],[]]; // AG > 
+var ccValueObj = [[],[],[],[],[],[],[],[],[]]; // AG > 
+var colorParameterObj = [[],[],[],[],[]]; // AG > 
+var modeParameterObj = [[],[],[],[],[]]; // AG > 
+var faderPadParameterObj = [[],[],[],[],[],[],[],[]]; // AG > 
+var buttonParameterObj = {}; // AG > 
 
 
 
-function refresh() {
+function refresh() {  // AG > 
 	util.delayThreadMS(200);
-	setMidiMode();
+	setMidiMode(); // AG > THis calls the Sysex for Mode Selection and needs to have three options
 	util.delayThreadMS(200);
 	resendMidi();
 }
