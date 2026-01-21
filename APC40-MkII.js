@@ -263,8 +263,9 @@ function testRGB(x){
 testRGB();
 
 */
-var x = noteNote.clipLaunch[3];
 
-function testArray(x){
-    script.log(x);
+function testAddress(){
+    script.log(noteNote.clipLaunch[6][1]);
 };
+
+testAddress();
