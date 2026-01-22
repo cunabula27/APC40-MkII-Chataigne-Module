@@ -5,15 +5,19 @@ A Chataigne module for the Akai APC40 MkII MIDI Controller
 
 *Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).*
 
-## Implemented:
+-----
 
-### Utilities (Right click menu)
+### *Implemented:*
 
-#### Set APC40 Mode
+
+## Utilities (Right click menu)
+
+- ### Set APC40 Mode
 Choose between Generic, Ableton Live and Alternate Ableton Live (Modes 0, 1, and 2).
 
-#### Set LED Ring Mode
+- ### Set LED Ring Mode
 Choose between Off, Single, Volume and Pan styles. 
+Options to apply to All, Track Knobs, Device Knobs (All) and Device Knobs by Track and Master (only applies to Generic Mode).
 
 -----
 
