@@ -22,7 +22,7 @@
                 "type":"Container",
                 "collapsed":true,
 
-                "Assignable Knobs (Top)":
+                "Track Knobs (Top)":
                 {
                     "type":"Container",
                     "collapsed":true, 
@@ -456,7 +456,7 @@
             "type":"Container",
             "collapsed":true,
 
-            "Assignable Knobs (Top)":
+            "Track Knobs (Top)":
             {
                 "type":"Container",
                 "collapsed":true,
@@ -909,17 +909,18 @@
                 {
                     "type":"Enum", "options":
                     {
-                        "All":0,
-                        "Assignable Knobs (Top)":1,
-                        "Device Knobs (Right) All Modes":2,
-                        "Device Knobs (Right) Generic Mode Track 2":3,
-                        "Device Knobs (Right) Generic Mode Track 3":4,
-                        "Device Knobs (Right) Generic Mode Track 4":5,
-                        "Device Knobs (Right) Generic Mode Track 5":6,
-                        "Device Knobs (Right) Generic Mode Track 6":7,
-                        "Device Knobs (Right) Generic Mode Track 7":2,
-                        "Device Knobs (Right) Generic Mode Track 8":2,
-                        "Device Knobs (Right) Generic Mode Master":2
+                        "All":                                      [ 0,79],
+                        "Track Knobs (Top)":                   [ 0, 7],
+                        "Device Knobs (Right) All Modes":           [ 8,79],
+                        "Device Knobs (Right) Generic Mode Track 1":[ 8,15],
+                        "Device Knobs (Right) Generic Mode Track 2":[16,23],
+                        "Device Knobs (Right) Generic Mode Track 3":[24,31],
+                        "Device Knobs (Right) Generic Mode Track 4":[32,39],
+                        "Device Knobs (Right) Generic Mode Track 5":[40,47],
+                        "Device Knobs (Right) Generic Mode Track 6":[48,55],
+                        "Device Knobs (Right) Generic Mode Track 7":[56,63],
+                        "Device Knobs (Right) Generic Mode Track 8":[64,71],
+                        "Device Knobs (Right) Generic Mode Master" :[72,79]
                     }
                 },
                 "Mode":
