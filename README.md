@@ -2,7 +2,14 @@
 
 N. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).
 
-# APC40-mkII-Chataigne-Module
+# Implemented:
+
+### Utilities (Right click menu)
+
+## Set APC40 ModeMode
+Choose between Generic, Ableton Live and Alternate Ableton Live (Modes 0, 1, and 2).
+
+# APC40-MkII-Chataigne-Module
 A Chataigne module for the Akai APC40 MkII MIDI Controller
 
 ## OLD Current Features I need to reinstate:
