@@ -1,4 +1,6 @@
-var RBGmodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+// Global Variables
+
+var RBGmodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; // All the different ways the RGB pads can behave, this is the third byte of a MIDI Note On message
 
 // All note addresses are in the format [channel, note]
 
@@ -215,15 +217,13 @@ var faderPadParameterObj = [[],[],[],[],[],[],[],[]]; // AG > EMPTY ARRAY DECLAR
 
 var buttonParameterObj = {}; // AG > WHAT'S THIS FOR???
 
-function setAPC40mode(Mode) { // Reset Controller
-    var message;
-    if      (Mode == 64){message = "Generic";               }
-    else if (Mode == 65){message = "Ableton Live";          } 
-    else if (Mode == 66){message = "Alternate Ableton Live";};
-    local.sendSysex(71, 127, 41, 96, 0, 4, Mode, 8, 2, 1);
-    script.log("APC40 MkII set to " + message + " Mode with Sysex Message ");
-};
+// End of Global Variables //
 
+function setAPC40mode(mode) { // Reset Controller
+    local.sendSysex(71, 127, 41, 96, 0, 4, mode[0], 8, 2, 1);
+    script.log("APC40 MkII set to " + mode[1] + " Mode with Sysex Message ");
+    script.log(mode);
+};
 
 /*
 function setLEDringMode(Group, Mode) {

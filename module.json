@@ -891,9 +891,9 @@
                 {
                     "type":"Enum", "options":
                     {
-                        "Generic":64, 
-                        "Ableton Live":65, 
-                        "Alternate Ableton Live":66
+                        "Generic":[64, "Generic"],
+                        "Ableton Live":[65, "Ableton Live"],
+                        "Alternate Ableton Live":[66, "Alternate Ableton Live"]
                     }
                 }
             }
