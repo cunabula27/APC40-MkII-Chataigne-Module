@@ -1,5 +1,7 @@
 # DON'T TRY AND USE THIS - ACTIVE DEVELOPMENT
 
+N. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).
+
 # APC40-mkII-Chataigne-Module
 A Chataigne module for the Akai APC40 MkII MIDI Controller
 
