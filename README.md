@@ -3,7 +3,7 @@
 # APC40-MkII-Chataigne-Module
 A Chataigne module for the Akai APC40 MkII MIDI Controller
 
-Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).
+*Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).*
 
 ## Implemented:
 
@@ -18,15 +18,16 @@ Choose between Off, Single, Volume and Pan styles.
 -----
 
 ## Additional Files
-- APC40_Clip_Launch_LED_Colours (Velocity-Name).json
 - APC40_Clip_Launch_LED_Colours (Velocity).json
-Custom variable Groups which hold all the colours that the APC40 MkII is programmed to use for RGB pads. 
+- APC40_Clip_Launch_LED_Colours (Velocity-Name).json
+
+Custom variables which hold all the colours that the APC40 MkII is programmed to use for RGB pads - the same information just with simple and verbose names. 
 
 To use:
 
 1. Copy all the code in the file.
 
-2. In Chataigne go to the **Custom Variables** panel and click on the Green + icon to create a new group, then in the **Inspector** panel Right Click on the Header and select ***Paste (replace)***.
+2. In Chataigne go to the **Custom Variables** panel and click on the Green + icon to create a new group, then in the **Inspector** panel right click on the Header and select ***Paste (replace)***.
 
 -----
 
