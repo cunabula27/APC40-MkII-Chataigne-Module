@@ -5,12 +5,12 @@ var RBGmodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; // All the different way
 // All note addresses are in the format [channel, note]
 
 var noteNote = {                // This variable is all the regular notes
-    clipLaunch:[                // Clip Launch Pads ordered as arranged on the APC40
-        [1,32], [1,33], [1,34], [1,35], [1,36], [1,37], [1,38], [1,39], 
-        [1,24], [1,25], [1,26], [1,27], [1,28], [1,29], [1,30], [1,31],
-        [1,16], [1,17], [1,18], [1,19], [1,20], [1,21], [1,22], [1,23], 
-        [1, 8], [1, 9], [1,10], [1,11], [1,12], [1,13], [1,14], [1,15],  
-        [1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7]
+    clipLaunch:[                // Clip Launch Pads ordered as arranged on the APC40 [0] - [39]
+        [1,32], [1,33], [1,34], [1,35], [1,36], [1,37], [1,38], [1,39], //  [0] -  [7]
+        [1,24], [1,25], [1,26], [1,27], [1,28], [1,29], [1,30], [1,31], //  [8] - [15]
+        [1,16], [1,17], [1,18], [1,19], [1,20], [1,21], [1,22], [1,23], // [16] - [23]
+        [1, 8], [1, 9], [1,10], [1,11], [1,12], [1,13], [1,14], [1,15], // [24] - [31]
+        [1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 7]  // [32] - [39]
     ],
     sceneLaunch:[               // Scene Launch Pads ordered as arranged on the APC40 top to bottom
         [1,82], 
@@ -25,20 +25,15 @@ var noteNote = {                // This variable is all the regular notes
     trackSelector:[             // Track Selectors 1-8 + Master
         [1,51], [2,51], [3,51], [4,51], [5,51], [6,51], [7,51], [8,51],    [1,80] 
     ],
-    trackControl:{
-        mute:[                  // Track 1-8 Mute [1-8]
-            [1,50], [2,50], [3,50], [4,50], [5,50], [6,50], [7,50], [8,50]
-        ],
-        solo:[                  // Track 1-8 Solo [S]
-            [1,66], [2,66], [3,66], [4,66], [5,66], [6,66], [7,66], [8,66] 
-        ],
-        crossfadeAssign:[       // Track 1-8 Crossfade Assign [A/B]
-            [1,49], [2,49], [3,49], [4,49], [5,49], [6,49], [7,49], [8,49]
-        ],
-        recordArm:[             // Track 1-8 Record-Arm [.]
-            [1,48], [2,48], [3,48], [4,48], [5,48], [6,48], [7,48], [8,48]
-        ]
-    },
+    trackControl:[
+        [1,50], [2,50], [3,50], [4,50], [5,50], [6,50], [7,50], [8,50], //  [0] -  [7] // Track 1-8 Mute [1-8]
+              
+        [1,66], [2,66], [3,66], [4,66], [5,66], [6,66], [7,66], [8,66], //  [8] - [15] // Track 1-8 Crossfade Assign [A/B]
+    
+        [1,49], [2,49], [3,49], [4,49], [5,49], [6,49], [7,49], [8,49], // [16] - [23] // Track 1-8 Solo [S]
+        
+        [1,48], [2,48], [3,48], [4,48], [5,48], [6,48], [7,48], [8,48], // [24] - [31] // Track 1-8 Record-Arm [.]
+    ],
     button:[                    // Button controls 
             [1, 87], //  [0] Buttons Top - pan
             [1, 88], //  [1] Buttons Top - sends
@@ -228,20 +223,14 @@ function setLEDringMode(group, mode) {
     };
 };
 
-
+function clearPads(wipe) {
+    for (i = wipe[1]; i < wipe[2]+1; i++){
+        local.sendNoteOff(noteNote[wipe[0]][i][0], noteNote[wipe[0]][i][1]);
+    };
+};
 
 function testRGB(){
     var x = local.parameters.lights.rgbPadMode_Colour.clipLaunchPadColour.layer1_Clip1.get();
     local.sendNoteOn(1, 0, x);
     script.log(x);
 };
-
-/* Put away for now:
-
-function testAddress(){
-    script.log(noteNote.clipLaunch[6][1]);
-};
-
-testAddress();
-
-*/
