@@ -808,7 +808,7 @@
             "type":"Container",
             "collapsed":true,
             
-            "Track 1":      {"type":"Float", "ui":"label","stringDecimals":0,"min":0, "max":127},
+            "Track 1":      {"type":"Integer", "min":0, "max":127},
             "Track 2":      {"type":"Integer", "min":0, "max":127},
             "Track 3":      {"type":"Integer", "min":0, "max":127},
             "Track 4":      {"type":"Integer", "min":0, "max":127},
@@ -817,7 +817,7 @@
             "Track 7":      {"type":"Integer", "min":0, "max":127},
             "Track 8":      {"type":"Integer", "min":0, "max":127},
             "Master":       {"type":"Integer", "min":0, "max":127},
-            "Crossfader":   {"type":"Integer", "min":-63, "max":63}
+            "Crossfader":   {"type":"Integer", "min":0, "max":127}
         },
 
         "Buttons":
