@@ -1,7 +1,8 @@
 # DON'T TRY AND USE THIS - ACTIVE DEVELOPMENT
 
 # APC40-MkII-Chataigne-Module
-A Chataigne module for the Akai APC40 MkII MIDI Controller
+
+A Chataigne module for the Akai APC40 MkII MIDI Controller.
 
 *Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).*
 
@@ -12,16 +13,20 @@ A Chataigne module for the Akai APC40 MkII MIDI Controller
 
 ## Utilities (Right click menu)
 
-- ### Set APC40 Mode
-Choose between Generic, Ableton Live and Alternate Ableton Live (Modes 0, 1, and 2).
+### Set APC40 Mode
+Choose between Generic, Ableton Live and Alternate Ableton Live Modes (Modes 0, 1, and 2).
 
-- ### Set LED Ring Mode
+### Set LED Ring Mode
 Choose between Off, Single, Volume and Pan styles. 
+
 Options to apply to All, Track Knobs, Device Knobs (All) and Device Knobs by Track and Master (only applies to Generic Mode).
+
+### Clear Pads
+Choose between Clip Launch, Scene Launch, Clip Stop, Track Selectors and Track Controls (either All or by individual function). 
 
 -----
 
-## Additional Files
+### Additional Files
 - APC40_Clip_Launch_LED_Colours (Velocity).json
 - APC40_Clip_Launch_LED_Colours (Velocity-Name).json
 
@@ -38,7 +43,7 @@ To use:
 ##### OLD Features I need to reinstate:
 - All inputs mapped
 - LED feedback for all pads and buttons
-- RGB input for color pads (then matched to midi color pallette)
+- RGB input for color pads (then matched to midi color palette)
 - Resync function, restores last status after reconnecting
 
 ###### OLD Planned Features:
