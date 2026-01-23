@@ -67,47 +67,56 @@ To use:
 ------
 [^1] : Explanation of APC 40 MkII Modes:
 
-Generic Mode (Mode 0):
--[CLIP LAUNCH] buttons are momentary and should light its LED when ON.
--[CLIP STOP] buttons are momentary and should light its LED when ON.
--[ACTIVATOR], [SOLO], [RECORD ARM] are toggle buttons and should light its LED
-when ON.
--[TRACK SELECTION] buttons (1-8 + MASTER) are radio style and only one of the 9
-buttons is ON at a time. When ON its LED should light. These buttons will NOT send
-out MIDI in generic mode for its state. These buttons dictate which one of nine banks
-the DEVICE CONTROL knobs and DEVICE CONTROL switches belong to. These
-knobs and switches will output on a different MIDI channel based on the current
-Track Selection (track 1 = MIDI channel 0, track 8 = MIDI channel 7, MASTER = MIDI
-channel 8). Upon pressing one of the Track Selection buttons, the current position of
-the 8 Device Control knobs will be sent.
--[TRACK ACTIVATOR] buttons (1-8) are toggle buttons and will light its LED when ON.
--[CROSSFADER A/B], is a momentary button and will light its LED when ON.
--[TRACK SOLO], and [RECORD ARM] buttons are toggle buttons and will light its LED
-when ON.
--[DEVICE LEFT (1)], [DEVICE RIGHT (2)], [BANK LEFT (3)], [BANK RIGHT (4)] will be
-toggle style and will light its LED when ON.
--[DEVICE ON/OFF (5)], [DEVICE LOCK (6)], [CLIP/DEVICE VIEW (7)], [DETAIL VIEW
-(8)] will be momentary style and will light its LED when ON.
--[BANK LOCK] button is momentary and will light its LED when ON.
--[SCENE LAUNCH] and [STOP ALL CLIPS] buttons are momentary buttons and will
-light its LED when ON.
--TRACK CONTROL buttons are toggle buttons and will light its LED when ON.
--TRACK CONTROL KNOBS and buttons are NOT banked in any way.
--[UP], [DOWN], [LEFT], [RIGHT], [SHIFT], [NUDGE+], [NUDGE-], [METRONOME], and
-[TAP TEMPO] are momentary buttons.
--[PLAY], [RECORD], and [SESSION RECORD] are momentary buttons and will light its
-LED when ON.
-[PAN], [SENDS], [USER], are toggle buttons and will light its LED when ON.
--LED rings are all set to SINGLE style.
-Notes Regarding Ableton Live Mode (Mode 1):
-Akai APC40 Mk2 Communication Protocol
-Version 1.2 – January 19, 2015 Page 12
-- All buttons are momentary buttons.
-- Device control knobs and buttons are not banked within the APC40 Mk2.
-- LED Rings around the knobs are controlled by the APC40 but can be updated by the
-Host.
-- All other LEDs are controlled by the Host.
-Notes Regarding Alternate Ableton Live Mode (Mode 2):
-- All buttons are momentary buttons.
-- Device control knobs and buttons are not banked within the APC40 Mk2.
-- All LEDs are controlled by the Host.
+### Generic Mode (Mode 0):
+***CLIP LAUNCH*** buttons are momentary and should light their LED when ON.
+
+***CLIP STOP*** buttons are momentary and should light their LED when ON.
+
+***ACTIVATOR (MUTE)***, ***SOLO***, ***RECORD/ARM*** are toggle buttons and should light their LED when ON.
+
+***TRACK SELECTION*** buttons (1-8 + MASTER) are radio style and only one of the nine buttons is ON at a time. When ON its LED should light. These buttons will NOT send out MIDI in generic mode for its state. These buttons dictate which one of nine banks the DEVICE CONTROL knobs and DEVICE CONTROL switches belong to. These knobs and switches will output on a different MIDI channel based on the current Track Selection (track 1 = MIDI channel 0, track 8 = MIDI channel 7, MASTER = MIDI
+channel 8). Upon pressing one of the Track Selection buttons, the current position of the 8 Device Control knobs will be sent.
+
+***TRACK ACTIVATOR*** buttons (1-8) are toggle buttons and will light their LED when ON.
+
+***CROSSFADER A/B***, is a momentary button and will light its LED when ON.
+
+***TRACK SOLO***, and ***RECORD ARM*** buttons are toggle buttons and will light their LED when ON.
+
+***DEVICE LEFT (1)***, ***DEVICE RIGHT (2)***, ***BANK LEFT (3)***, ***BANK RIGHT (4)*** will be toggle style and will light their LED when ON.
+
+***DEVICE ON/OFF (5)***, ***DEVICE LOCK (6)***, ***CLIP/DEVICE VIEW (7)***, ***DETAIL VIEW (8)*** will be momentary style and will light their LED when ON.
+
+***BANK LOCK*** button is momentary and will light its LED when ON.
+
+***SCENE LAUNCH*** and ***STOP ALL CLIPS*** buttons are momentary buttons and will light their LED when ON.
+
+***TRACK CONTROL*** buttons are toggle buttons and will light their LED when ON.
+
+***TRACK CONTROL KNOBS*** and buttons are NOT banked in any way.
+
+***UP***, ***DOWN***, ***LEFT***, ***RIGHT***, ***SHIFT***, ***NUDGE+***, ***NUDGE-***, ***METRONOME***, and ***TAP TEMPO*** are momentary buttons.
+
+***PLAY***, ***RECORD***, and ***SESSION RECORD*** are momentary buttons and will light their LED when ON.
+
+***PAN***, ***SENDS***, ***USER***, are toggle buttons and will light their LED when ON.
+
+LED rings are all set to SINGLE style.
+
+### Notes Regarding Ableton Live Mode (Mode 1):
+
+All buttons are momentary buttons.
+
+Device control knobs and buttons are not banked within the APC40 MkII.
+
+LED Rings around the knobs are controlled by the APC40 but can be updated by the Host.
+
+All other LEDs are controlled by the Host.
+
+### Notes Regarding Alternate Ableton Live Mode (Mode 2):
+
+All buttons are momentary buttons.
+
+Device control knobs and buttons are not banked within the APC40 MkII.
+
+All LEDs are controlled by the Host.
