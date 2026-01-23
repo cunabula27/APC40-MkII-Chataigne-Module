@@ -1,4 +1,4 @@
-// Global Variables
+// GLOBAL VARIABLES //////////////////////////
 
 var RBGmodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; // All the different ways the RGB pads can behave, this is the third byte of a MIDI Note On message
 
@@ -209,9 +209,77 @@ var faderPadParameterObj = [[],[],[],[],[],[],[],[]]; // AG > EMPTY ARRAY DECLAR
 
 var buttonParameterObj = {}; // AG > WHAT'S THIS FOR???
 
-// End of Global Variables //
+// GLOBAL VARIABLES END //////////////////////
 
-function setAPC40mode(mode) { // Reset Controller
+// MAIN //////////////////////////////////////
+
+function init()
+{
+	
+;}
+
+function moduleParameterChanged(param)
+{
+	if(param.isParameter())
+	{
+		script.log("Module parameter changed : "+param.name+" > "+param.get());
+	}else 
+	{
+		script.log("Module parameter triggered : "+param.name);	
+	};
+};
+
+/*
+ This function will be called each time a value of this module has changed, meaning a parameter or trigger inside the "Values" panel of this module
+ This function only exists because the script is in a module
+*/
+
+function moduleValueChanged(value)
+{
+	if(value.isParameter())
+	{
+		script.log("Module value changed : "+value.name+" > "+value.get());	
+	}else 
+	{
+		script.log("Module value triggered : "+value.name);	
+	};
+};
+
+function noteOnEvent(channel, pitch, velocity)
+{
+	script.log("Note on received "+channel+", "+pitch+", "+velocity);
+};
+
+function noteOffEvent(channel, pitch, velocity)
+{
+	script.log("Note off received "+channel+", "+pitch+", "+velocity);
+};
+
+function ccEvent(channel, number, value)
+{
+	script.log("ControlChange received "+channel+", "+number+", "+value);
+};
+
+function ccEvent(channel, number, value)
+{
+	script.log("ControlChange received "+channel+", "+number+", "+value);
+};
+
+function sysExEvent(data)
+{
+	script.log("Sysex Message received, "+data.length+" bytes :");
+	for(var i=0; i < data.length; i++)
+	{
+		script.log(" > "+data[i]);
+	};
+};
+
+
+// MAIN END //////////////////////////////////
+
+// UTILITIES START ///////////////////////////
+
+function setAPC40mode(mode) { 
     local.sendSysex(71, 127, 41, 96, 0, 4, mode[0], 8, 2, 1);
     script.log("APC40 MkII set to " + mode[1] + " Mode with Sysex Message ");
     script.log(mode);
@@ -228,6 +296,10 @@ function clearPads(wipe) {
         local.sendNoteOff(noteNote[wipe[0]][i][0], noteNote[wipe[0]][i][1]);
     };
 };
+
+// UTILITIES // END /////////////////////////////
+
+// TESTING //////////////////////////////////////
 
 function testRGB(){
     var x = local.parameters.lights.rgbPadMode_Colour.clipLaunchPadColour.layer1_Clip1.get();
