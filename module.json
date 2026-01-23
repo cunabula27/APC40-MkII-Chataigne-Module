@@ -910,7 +910,7 @@
                     "type":"Enum", "options":
                     {
                         "All":                                      [ 0,79],
-                        "Track Knobs (Top)":                   [ 0, 7],
+                        "Track Knobs (Top)":                        [ 0, 7],
                         "Device Knobs (Right) All Modes":           [ 8,79],
                         "Device Knobs (Right) Generic Mode Track 1":[ 8,15],
                         "Device Knobs (Right) Generic Mode Track 2":[16,23],
@@ -934,27 +934,27 @@
                     }
                 }
             }
-            
         },
-        "Reset RGB Pads":
+
+        "Clear Pads":
         {
             "menu":"Utilities",
-            "callback":"setLEDringMode",
+            "callback":"clearPads",
             "parameters":
             {
                 "Group":
                 {
                     "type":"Enum", "options":
                     {
-                        "All":0,
-                        "Clip Launch Pads":1,
-                        "Scene Launch Pads":2,
-                        "Clip Stop Pads":3,
-                        "Track Select Pads":4,
-                        "Mute [1-8]":5,
-                        "Crossfade Assign [A|B]":6,
-                        "Solo [S]":7,
-                        "Record-Arm [\u2219]":8
+                        "Clip Launch Pads":["clipLaunch", 0, 39],
+                        "Scene Launch Pads":["sceneLaunch", 0, 5],
+                        "Clip Stop Pads":["clipStop", 0, 7],
+                        "Track Select Pads":["trackSelector", 0, 8],
+                        "Track Control (All)":["trackControl", 0, 31],
+                        "Mute [1-8]":["trackControl", 0, 7],
+                        "Crossfade Assign [A|B]":["trackControl", 8, 15],
+                        "Solo [S]":["trackControl", 16, 23],
+                        "Record-Arm [\u2219]":["trackControl", 24, 31]
                     }
                 }
             }     
