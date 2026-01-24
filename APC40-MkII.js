@@ -216,16 +216,18 @@ var buttonParameterObj = {}; // AG > WHAT'S THIS FOR???
 function init()
 {
 	
-;}
+};
 
 function moduleParameterChanged(param)
 {
-	if(param.isParameter())
-	{
-		script.log("Module parameter changed : "+param.name+" > "+param.get());
-	}else 
-	{
-		script.log("Module parameter triggered : "+param.name);	
+    if (param.isParameter()){
+        if (param.getControlAddress().contains("led")){
+            script.log("CC");
+        } else {
+            script.log("NOTE");
+        };
+    } else {
+        script.log("Module parameter triggered : "+param.name);	
 	};
 };
 
@@ -236,12 +238,17 @@ function moduleParameterChanged(param)
 
 function moduleValueChanged(value)
 {
-	if(value.isParameter())
-	{
-		script.log("Module value changed : "+value.name+" > "+value.get());	
-	}else 
-	{
-		script.log("Module value triggered : "+value.name);	
+    if(value.isParameter()){
+        if (value.getControlAddress().contains("knob")||value.getControlAddress().contains("faders")){
+            script.log(value.getControlAddress());
+            script.log("CC");
+            script.log("Module value changed : "+value.name+" > "+value.get());
+        } else {
+            script.log("NOTE");
+            script.log("Module value changed : "+value.name+" > "+value.get());
+        }
+    } else {
+        script.log("Module value triggered : "+value.name);	
 	};
 };
 
