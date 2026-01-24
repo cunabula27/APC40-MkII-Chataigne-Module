@@ -27,14 +27,14 @@
                     "type":"Container",
                     "collapsed":true, 
 
-                    "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                    "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                 },
 
                 "Device Knobs (Right) Ableton Modes (1 & 2)":
@@ -42,14 +42,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                    "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                    "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
 
                 },
                 "Device Knobs (Right) Generic Mode (0) Only":
@@ -62,14 +62,14 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 2":
@@ -77,14 +77,14 @@
                         "type":"Container",
                         "collapsed":true,
 
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 3":
@@ -92,14 +92,14 @@
                         "type":"Container",
                         "collapsed":true,
 
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}  
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}  
                     },
 
                     "Track 4":
@@ -107,28 +107,28 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 5":
                     {
                         "type":"Container",
                         "collapsed":true,
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 6":
@@ -136,14 +136,14 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 7":
@@ -151,14 +151,14 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Track 8":
@@ -166,14 +166,14 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     },
 
                     "Master":
@@ -181,14 +181,14 @@
                         "type":"Container",
                         "collapsed":true,
                         
-                        "1": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "2": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "3": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "4": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "5": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "6": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "7": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "8": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
+                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
                     }
                 }
             },
@@ -473,14 +473,14 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "1": {"type":"Integer", "min":0, "max":127},
-                "2": {"type":"Integer", "min":0, "max":127},
-                "3": {"type":"Integer", "min":0, "max":127},
-                "4": {"type":"Integer", "min":0, "max":127},
-                "5": {"type":"Integer", "min":0, "max":127},
-                "6": {"type":"Integer", "min":0, "max":127},
-                "7": {"type":"Integer", "min":0, "max":127},
-                "8": {"type":"Integer", "min":0, "max":127}
+                "(1)": {"type":"Integer", "min":0, "max":127},
+                "(2)": {"type":"Integer", "min":0, "max":127},
+                "(3)": {"type":"Integer", "min":0, "max":127},
+                "(4)": {"type":"Integer", "min":0, "max":127},
+                "(5)": {"type":"Integer", "min":0, "max":127},
+                "(6)": {"type":"Integer", "min":0, "max":127},
+                "(7)": {"type":"Integer", "min":0, "max":127},
+                "(8)": {"type":"Integer", "min":0, "max":127}
             },
 
             "Device Knobs (Right) Ableton Modes (1 & 2)":
@@ -488,14 +488,14 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "1": {"type":"Integer", "min":0, "max":127},
-                "2": {"type":"Integer", "min":0, "max":127},
-                "3": {"type":"Integer", "min":0, "max":127},
-                "4": {"type":"Integer", "min":0, "max":127},
-                "5": {"type":"Integer", "min":0, "max":127},
-                "6": {"type":"Integer", "min":0, "max":127},
-                "7": {"type":"Integer", "min":0, "max":127},
-                "8": {"type":"Integer", "min":0, "max":127}
+                "(1)": {"type":"Integer", "min":0, "max":127},
+                "(2)": {"type":"Integer", "min":0, "max":127},
+                "(3)": {"type":"Integer", "min":0, "max":127},
+                "(4)": {"type":"Integer", "min":0, "max":127},
+                "(5)": {"type":"Integer", "min":0, "max":127},
+                "(6)": {"type":"Integer", "min":0, "max":127},
+                "(7)": {"type":"Integer", "min":0, "max":127},
+                "(8)": {"type":"Integer", "min":0, "max":127}
             },
 
             "Device Knobs (Right) Generic Mode (0) Only":
@@ -508,14 +508,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 2":
@@ -523,14 +523,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 3":
@@ -538,14 +538,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}  
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}  
                 },
 
                 "Track 4":
@@ -553,28 +553,28 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 5":
                 {
                     "type":"Container",
                     "collapsed":true,
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 6":
@@ -582,14 +582,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 7":
@@ -597,14 +597,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Track 8":
@@ -612,14 +612,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 },
 
                 "Master":
@@ -627,14 +627,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "1": {"type":"Integer", "min":0, "max":127},
-                    "2": {"type":"Integer", "min":0, "max":127},
-                    "3": {"type":"Integer", "min":0, "max":127},
-                    "4": {"type":"Integer", "min":0, "max":127},
-                    "5": {"type":"Integer", "min":0, "max":127},
-                    "6": {"type":"Integer", "min":0, "max":127},
-                    "7": {"type":"Integer", "min":0, "max":127},
-                    "8": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Integer", "min":0, "max":127},
+                    "(2)": {"type":"Integer", "min":0, "max":127},
+                    "(3)": {"type":"Integer", "min":0, "max":127},
+                    "(4)": {"type":"Integer", "min":0, "max":127},
+                    "(5)": {"type":"Integer", "min":0, "max":127},
+                    "(6)": {"type":"Integer", "min":0, "max":127},
+                    "(7)": {"type":"Integer", "min":0, "max":127},
+                    "(8)": {"type":"Integer", "min":0, "max":127}
                 }
             },
 
