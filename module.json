@@ -423,27 +423,39 @@
                 }
             },
 
-            "Other Buttons":
+            "Buttons":
             {
                 "type":"Container",
                 "collapsed":true,
                 
-                "Pan":              {"type":"Boolean"},
-                "Sends":            {"type":"Boolean"},
-                "User":             {"type":"Boolean"},
-                "Play":             {"type":"Boolean"},
-                "Record":           {"type":"Boolean"},
-                "Session":          {"type":"Boolean"},
-                "Metronome":        {"type":"Boolean"},
-                "Device Left":      {"type":"Boolean"},
-                "Device Right":     {"type":"Boolean"},
-                "Bank Left":        {"type":"Boolean"},
-                "Bank Right":       {"type":"Boolean"},
-                "Device On/Off":    {"type":"Boolean"},
-                "Device Lock":      {"type":"Boolean"},
-                "Clip/Device View": {"type":"Boolean"},
-                "Detail View":      {"type":"Boolean"},
-                "Bank":             {"type":"Boolean"}
+                "Top Section":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "Pan":                  {"type":"Boolean"},
+                    "Sends":                {"type":"Boolean"},
+                    "User":                 {"type":"Boolean"},
+                    "Play":                 {"type":"Boolean"},
+                    "Record":               {"type":"Boolean"},
+                    "Session":              {"type":"Boolean"},
+                    "Metronome":            {"type":"Boolean"}
+                },
+                "Bottom Section":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "[1] Device Left":      {"type":"Boolean"},
+                    "[2] Device Right":     {"type":"Boolean"},
+                    "[3] Bank Left":        {"type":"Boolean"},
+                    "[4] Bank Right":       {"type":"Boolean"},
+                    "[5] Device On/Off":    {"type":"Boolean"},
+                    "[6] Device Lock":      {"type":"Boolean"},
+                    "[7] Clip/Device View": {"type":"Boolean"},
+                    "[8] Detail View":      {"type":"Boolean"},
+                    "Bank":                 {"type":"Boolean"}
+                }
             }
         }
     },
@@ -847,16 +859,16 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Device Left":      {"type":"Boolean"},
-                "Device Right":     {"type":"Boolean"},
-                "Bank Left":        {"type":"Boolean"},
-                "Bank Right":       {"type":"Boolean"},
-                "Device On/Off":    {"type":"Boolean"},
-                "Device Lock":      {"type":"Boolean"},
-                "Clip/Device View": {"type":"Boolean"},
-                "Detail View":      {"type":"Boolean"},
-                "Shift":            {"type":"Boolean"},
-                "Bank":             {"type":"Boolean"}
+                "[1] Device Left":      {"type":"Boolean"},
+                "[2] Device Right":     {"type":"Boolean"},
+                "[3] Bank Left":        {"type":"Boolean"},
+                "[4] Bank Right":       {"type":"Boolean"},
+                "[5] Device On/Off":    {"type":"Boolean"},
+                "[6] Device Lock":      {"type":"Boolean"},
+                "[7] Clip/Device View": {"type":"Boolean"},
+                "[8] Detail View":      {"type":"Boolean"},
+                "Shift":                {"type":"Boolean"},
+                "Bank":                 {"type":"Boolean"}
             },
 
             "Bank Select":
