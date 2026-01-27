@@ -9,8 +9,61 @@
 
     "hideDefaultCommands":false,
 
+    "defaults":
+	{		
+		"devices":[
+			"APC40 mkII",
+			"APC40 mkII"
+		],
+		"autoAdd":false
+	},
+
+	"hideDefaultParameters":
+	[
+		"autoAdd",
+		"autoFeedback",
+		"useHierarchy"
+	],
+
     "parameters":
     {
+        "Controller Mode":
+            {
+                "description":"Choose how the controller responds to input. The APC40 MkII defaults to Generic Mode on start up. If you're using Resolume it's recommended to choose Alternate Ableton Live Mode.",
+                "type":"Enum", "options": {"Select":[],"Generic":[64, "Generic"], "Ableton Live":[65, "Ableton Live"],"Alternate Ableton Live":[66, "Alternate Ableton Live"]}
+            },
+
+        "Debug":
+            {
+                "description":"Set all module logging to TRUE",
+                "type":"Boolean"
+            },
+
+        "Utilities":
+        {
+            "type":"Container",
+            "collapsed":true,
+
+            "Clear Pads":
+            {
+                
+                "type":"Enum", "options":
+                    {
+                        "Select":[],
+                        "Clip Launch Pads":["clipLaunch", 0, 39],
+                        "Scene Launch Pads":["sceneLaunch", 0, 5],
+                        "Clip Stop Pads":["clipStop", 0, 7],
+                        "Track Select Pads":["trackSelector", 0, 8],
+                        "Track Control (All)":["trackControl", 0, 31],
+                        "Mute [1-8]":["trackControl", 0, 7],
+                        "Crossfade Assign [A|B]":["trackControl", 8, 15],
+                        "Solo [S]":["trackControl", 16, 23],
+                        "Record-Arm [\u2219]":["trackControl", 24, 31]
+                    }
+                
+            }
+        },
+
         "Lights":
         {
             "type":"Container",
@@ -22,173 +75,173 @@
                 "type":"Container",
                 "collapsed":true,
 
+                "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+
                 "Track Knobs (Top)":
                 {
                     "type":"Container",
                     "collapsed":true, 
 
-                    "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                    "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                    "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                 },
 
-                "Device Knobs (Right) Ableton Modes (1 & 2)":
+                "Device Knobs (Right)":
                 {
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                    "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                    "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
 
-                },
-                "Device Knobs (Right) Generic Mode (0) Only":
-                {
-                    "type":"Container",
-                    "collapsed":true,
-
-                    "Track 1":
+                    "Track 1 - Used by all Modes":
                     {
                         "type":"Container",
                         "collapsed":true,
                         
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     },
 
-                    "Track 2":
+                    "Track 2 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
 
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     },
 
-                    "Track 3":
+                    "Track 3 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
 
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}  
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}  
                     },
 
-                    "Track 4":
-                    {
-                        "type":"Container",
-                        "collapsed":true,
-                        
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
-                    },
-
-                    "Track 5":
-                    {
-                        "type":"Container",
-                        "collapsed":true,
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
-                    },
-
-                    "Track 6":
+                    "Track 4 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
                         
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     },
 
-                    "Track 7":
+                    "Track 5 - Generic Mode (0) Only":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
+                    },
+
+                    "Track 6 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
                         
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     },
 
-                    "Track 8":
+                    "Track 7 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
                         
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     },
 
-                    "Master":
+                    "Track 8 - Generic Mode (0) Only":
                     {
                         "type":"Container",
                         "collapsed":true,
                         
-                        "(1)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(2)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(3)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(4)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(5)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(6)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(7)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}},
-                        "(8)": {"type":"Enum", "options":{"Off":0, "Single":1,"Volume":2,"Pan":3}}
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
+                    },
+
+                    "Master - Generic Mode (0) Only":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+                        
+                        "All": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(1)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(2)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(3)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(4)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(5)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(6)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(7)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}},
+                        "(8)": {"type":"Enum", "options":{"Single":1,"Volume":2,"Pan":3, "Off":0}}
                     }
                 }
             },
@@ -893,61 +946,6 @@
     
     "commands":
     {
-        "Set APC40 Mode":
-        {
-            "menu":"Utilities",
-            "callback":"setAPC40mode",
-            "parameters":
-            {
-                "Mode":
-                {
-                    "type":"Enum", "options":
-                    {
-                        "Generic":[64, "Generic"],
-                        "Ableton Live":[65, "Ableton Live"],
-                        "Alternate Ableton Live":[66, "Alternate Ableton Live"]
-                    }
-                }
-            }
-        },
-
-        "Set LED Ring Mode":
-        {
-            "menu":"Utilities",
-            "callback":"setLEDringMode",
-            "parameters":
-            {
-                "Group":
-                {
-                    "type":"Enum", "options":
-                    {
-                        "All":                                      [ 0,79],
-                        "Track Knobs (Top)":                        [ 0, 7],
-                        "Device Knobs (Right) All Modes":           [ 8,79],
-                        "Device Knobs (Right) Generic Mode Track 1":[ 8,15],
-                        "Device Knobs (Right) Generic Mode Track 2":[16,23],
-                        "Device Knobs (Right) Generic Mode Track 3":[24,31],
-                        "Device Knobs (Right) Generic Mode Track 4":[32,39],
-                        "Device Knobs (Right) Generic Mode Track 5":[40,47],
-                        "Device Knobs (Right) Generic Mode Track 6":[48,55],
-                        "Device Knobs (Right) Generic Mode Track 7":[56,63],
-                        "Device Knobs (Right) Generic Mode Track 8":[64,71],
-                        "Device Knobs (Right) Generic Mode Master" :[72,79]
-                    }
-                },
-                "Mode":
-                {
-                    "type":"Enum", "options":
-                    {
-                        "Off":0,
-                        "Single":1,
-                        "Volume":2,
-                        "Pan":3
-                    }
-                }
-            }
-        },
-
         "Clear Pads":
         {
             "menu":"Utilities",
