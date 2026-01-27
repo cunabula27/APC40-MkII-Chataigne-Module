@@ -21,8 +21,8 @@ Choose between Off, Single, Volume and Pan styles.
 
 Options to apply to All, Track Knobs, Device Knobs (All) and Device Knobs by Track and Master (only applies to Generic Mode).
 
-### Clear Pads
-Choose between Clip Launch, Scene Launch, Clip Stop, Track Selectors and Track Controls (either All or by individual function). 
+// ### Clear Pads
+// Choose between Clip Launch, Scene Launch, Clip Stop, Track Selectors and Track Controls (either All or by individual function). 
 
 -----
 
