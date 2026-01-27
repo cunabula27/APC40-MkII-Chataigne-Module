@@ -39,31 +39,6 @@
                 "type":"Boolean"
             },
 
-        "Utilities":
-        {
-            "type":"Container",
-            "collapsed":true,
-
-            "Clear Pads":
-            {
-                
-                "type":"Enum", "options":
-                    {
-                        "Select":[],
-                        "Clip Launch Pads":["clipLaunch", 0, 39],
-                        "Scene Launch Pads":["sceneLaunch", 0, 5],
-                        "Clip Stop Pads":["clipStop", 0, 7],
-                        "Track Select Pads":["trackSelector", 0, 8],
-                        "Track Control (All)":["trackControl", 0, 31],
-                        "Mute [1-8]":["trackControl", 0, 7],
-                        "Crossfade Assign [A|B]":["trackControl", 8, 15],
-                        "Solo [S]":["trackControl", 16, 23],
-                        "Record-Arm [\u2219]":["trackControl", 24, 31]
-                    }
-                
-            }
-        },
-
         "Lights":
         {
             "type":"Container",
@@ -246,10 +221,13 @@
                 }
             },
 
-            "RGB Pad Mode/Colour":
+            "Clip Launch Pad Mode/Colour":
             {
                 "type":"Container",
                 "collapsed":true, 
+
+                "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
+                "Clear Pads": {"type":"Trigger", "description":"Clear the pad - sends NoteOn message with velocity 0, which is black."},
 
                 "Clip Launch Pad Mode":
                 {
@@ -351,7 +329,16 @@
                     "Layer 5 > Clip 6": {"type":"Integer", "min":0, "max":127},
                     "Layer 5 > Clip 7": {"type":"Integer", "min":0, "max":127},
                     "Layer 5 > Clip 8": {"type":"Integer", "min":0, "max":127}
-                },
+                }                
+            },
+
+            "Scene Launch Pad Mode/Colour":
+            {
+                "type":"Container",
+                "collapsed":true,
+
+                "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
+                "Clear Pads": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
 
                 "Scene Launch Pad Mode":
                 {
@@ -364,6 +351,7 @@
                     "Layer 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
                     "Layer 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}}
                 },
+
                 "Scene Launch Pad Colour":
                 {
                     "type":"Container",
@@ -374,16 +362,16 @@
                     "Layer 3": {"type":"Integer", "min":0, "max":127},
                     "Layer 4": {"type":"Integer", "min":0, "max":127},
                     "Layer 5": {"type":"Integer", "min":0, "max":127}
-
                 }
-                
             },
 
             "Clip Stop Pad Mode":
             {
+
                 "type":"Container",
                 "collapsed":true,
                 
+                "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
                 "Track 1": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":3}},
                 "Track 2": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":3}},
                 "Track 3": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":3}},
@@ -399,11 +387,15 @@
                 "type":"Container",
                 "collapsed":true,
 
+                "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
                 "Track Selectors":
                 {
                     "type":"Container",
                     "collapsed":true,
-                    
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
                     "Track 1": {"type":"Boolean"},
                     "Track 2": {"type":"Boolean"},
                     "Track 3": {"type":"Boolean"},
@@ -419,7 +411,9 @@
                 {
                     "type":"Container",
                     "collapsed":true,
-                    
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
                     "Track 1": {"type":"Boolean"},
                     "Track 2": {"type":"Boolean"},
                     "Track 3": {"type":"Boolean"},
@@ -434,7 +428,10 @@
                 {
                     "type":"Container",
                     "collapsed":true,
-                    
+
+                    "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
+                    "Set All": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
                     "Track 1": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
                     "Track 2": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
                     "Track 3": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
@@ -449,7 +446,9 @@
                 {
                     "type":"Container",
                     "collapsed":true,
-                    
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
                     "Track 1": {"type":"Boolean"},
                     "Track 2": {"type":"Boolean"},
                     "Track 3": {"type":"Boolean"},
@@ -464,7 +463,9 @@
                 {
                     "type":"Container",
                     "collapsed":true,
-                    
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
                     "Track 1": {"type":"Boolean"},
                     "Track 2": {"type":"Boolean"},
                     "Track 3": {"type":"Boolean"},
@@ -485,6 +486,8 @@
                 {
                     "type":"Container",
                     "collapsed":true,
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
                     
                     "Pan":                  {"type":"Boolean"},
                     "Sends":                {"type":"Boolean"},
@@ -498,6 +501,8 @@
                 {
                     "type":"Container",
                     "collapsed":true,
+
+                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
                     
                     "[1] Device Left":      {"type":"Boolean"},
                     "[2] Device Right":     {"type":"Boolean"},
