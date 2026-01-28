@@ -120,13 +120,13 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 ## Outbound Relative CC MIDI Messages (*from Controller*)
 
 ||Channel||Note||Value||
-|---|---:|-------|---:|-----|--------:|---|
-|**Tempo Knob**|**1**||**13**||**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
-|**Cue Level**|**1**||**47**||**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
+|---|---|-------|---|
+|**Tempo Knob**|**1**|**13**|**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
+|**Cue Level**|**1**|**47**|**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
 
 Contrary to what I believed, these will both send values from 0-127 depending on how much they have turned since whatever you're sending the MIDI data to (or the controller) last checked. But important to note that turning the knob to the left starts the range from 1 and turning it right starts the range from 127.
 
-|Velocity||
+|Velocity|Meaning|
 |---:|---|
 |**0**|*No change*|
 |**1**|*Controller incremented its value by 1*|
