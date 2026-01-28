@@ -119,7 +119,7 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 
 ## Outbound Relative CC MIDI Messages (*from Controller*)
 
-||Channel||Note||Value||
+|Channel|Note|Value||
 |---|---|-------|---|
 |**Tempo Knob**|**1**|**13**|**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
 |**Cue Level**|**1**|**47**|**0-127**|*Rotary Encoder ( &#8722;1 / +1)*|
