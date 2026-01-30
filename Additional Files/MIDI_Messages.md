@@ -54,7 +54,7 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 |**Track Fader**|**1-8**|*Track*|**7**||**0-127**||
 |**Tempo Knob**|**1**||**13**||**1 / 127**|*Rotary Encoder ( &#8722;1 / +1)*|
 |**Master Fader**|**1**|*Track*|**14**||**0-127**||
-|**Crossfader**|**1-8**|*Track*|**15**||**0-127**||
+|**Crossfader**|**1**|*Track*|**15**||**0-127**||
 |**Device Knobs**|**1-8**|*Track*|**16-23**|*Knob*|**0-127**||
 |**Device Knobs (LED Ring Style)**|**1-8**|*Track*|**24-31**|*Knob*|**0 / 1 / 2 / 3 / 4-127**|*Off / Single / Volume / Pan / Single*|
 |**Cue Level**|**1**||**47**||**1 / 127**|*Rotary Encoder ( &#8722;1 / +1)*|
@@ -84,7 +84,7 @@ NoteOff messages ignore the Velocity value
 |**Device Lock**|**1**||**63**||**127**||
 |**Clip/Device View**|**1**||**64**||**127**||
 |**Detail View**|**1**||**65**||**127**||
-|**Crossfader A/B**|**1-8**|*Track*|**66**||**127**||
+|**Crossfader A/B**|**1**|*Track*|**66**||**127**||
 |**Master**|**1**||**80**||**127**||
 |**Stop All Clips**|**1**||**81**||**127**||
 |**Pan**|**1**||**87**||**127**||
@@ -112,7 +112,7 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 |---|---:|-------|---:|-----|--------:|---|
 |**Track Fader**|**1-8**|*Track*|**7**||**0-127**|
 |**Master Fader**|**1**|*Track*|**14**||**0-127**|
-|**Crossfader**|**1-8**|*Track*|**15**||**0-127**|
+|**Crossfader**|**1**|*Track*|**15**||**0-127**|
 |**Device Knobs**|**1-8**|*Track*|**16-23**|*Knob*|**0-127**|
 |**Track Knobs**|**1**|*Track*|**48-55**|*Knob*|**0-127**|
 |**Footswitch**|**1**||**64**||**1 / 127**|*Released / Depressed*|
