@@ -26,14 +26,20 @@
         "Controller Mode":
             {
                 "description":"Choose how the controller responds to input. The APC40 MkII defaults to Generic Mode on start up. If you're using Resolume it's recommended to choose Alternate Ableton Live Mode.",
-                "type":"Enum", "options": {"Select":[],"Generic":[64, "Generic"], "Ableton Live":[65, "Ableton Live"],"Alternate Ableton Live":[66, "Alternate Ableton Live"]}
+                "type":"Enum", "options": {"Generic":[64, "Generic"], "Ableton Live":[65, "Ableton Live"],"Alternate Ableton Live":[66, "Alternate Ableton Live"]}
             },
 
-        "Debug":
+        "Utilities":
+        {
+            "type":"Container",
+            "collapsed":false,
+
+            "Debug":
             {
                 "description":"Set all module logging to TRUE",
                 "type":"Boolean"
-            },
+            }
+        },
 
         "Lights":
         {
@@ -217,269 +223,269 @@
                 }
             },
 
-        "Pads":
-        {
-            "type":"Container",
-            "collapsed":true,
-
-            "Reset Mode (All)": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
-            "Clear All": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
-
-            "Clip Launch Pads":
-            {
-                "type":"Container",
-                "collapsed":true, 
-
-                "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
-                "Clear All": {"type":"Trigger", "description":"Clear the pad - sends NoteOn message with velocity 0, which is black."},
-
-                "Mode":
-                {
-                    "type":"Container",
-                    "collapsed":true, 
-
-                    "Layer 1 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 1 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-
-                    "Layer 2 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-
-                    "Layer 3 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-
-                    "Layer 4 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-
-                    "Layer 5 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}}
-                },
-
-                "Colour":
-                {
-                    "type":"Container",
-                    "collapsed":true, 
-
-                    "Layer 1 > Clip 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 5": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 6": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 7": {"type":"Integer", "min":0, "max":127},
-                    "Layer 1 > Clip 8": {"type":"Integer", "min":0, "max":127},
-
-                    "Layer 2 > Clip 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 5": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 6": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 7": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2 > Clip 8": {"type":"Integer", "min":0, "max":127},
-
-                    "Layer 3 > Clip 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 5": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 6": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 7": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3 > Clip 8": {"type":"Integer", "min":0, "max":127},
-
-                    "Layer 4 > Clip 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 5": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 6": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 7": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4 > Clip 8": {"type":"Integer", "min":0, "max":127},
-
-                    "Layer 5 > Clip 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 5": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 6": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 7": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5 > Clip 8": {"type":"Integer", "min":0, "max":127}
-                }                
-            },
-
-            "Scene Launch Pads":
+            "Pads":
             {
                 "type":"Container",
                 "collapsed":true,
 
-                "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
+                "Reset Mode (All)": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
                 "Clear All": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
 
-                "Mode":
+                "Clip Launch Pads":
                 {
                     "type":"Container",
                     "collapsed":true, 
 
-                    "Layer 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
-                    "Layer 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}}
+                    "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
+                    "Clear All": {"type":"Trigger", "description":"Clear the pad - sends NoteOn message with velocity 0, which is black."},
+
+                    "Mode":
+                    {
+                        "type":"Container",
+                        "collapsed":true, 
+
+                        "Layer 1 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 1 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+
+                        "Layer 2 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+
+                        "Layer 3 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+
+                        "Layer 4 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+
+                        "Layer 5 > Clip 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 6": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 7": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5 > Clip 8": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}}
+                    },
+
+                    "Colour":
+                    {
+                        "type":"Container",
+                        "collapsed":true, 
+
+                        "Layer 1 > Clip 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 5": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 6": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 7": {"type":"Integer", "min":0, "max":127},
+                        "Layer 1 > Clip 8": {"type":"Integer", "min":0, "max":127},
+
+                        "Layer 2 > Clip 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 5": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 6": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 7": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2 > Clip 8": {"type":"Integer", "min":0, "max":127},
+
+                        "Layer 3 > Clip 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 5": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 6": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 7": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3 > Clip 8": {"type":"Integer", "min":0, "max":127},
+
+                        "Layer 4 > Clip 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 5": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 6": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 7": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4 > Clip 8": {"type":"Integer", "min":0, "max":127},
+
+                        "Layer 5 > Clip 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 5": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 6": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 7": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5 > Clip 8": {"type":"Integer", "min":0, "max":127}
+                    }                
                 },
 
-                "Colour":
-                {
-                    "type":"Container",
-                    "collapsed":true, 
-
-                    "Layer 1": {"type":"Integer", "min":0, "max":127},
-                    "Layer 2": {"type":"Integer", "min":0, "max":127},
-                    "Layer 3": {"type":"Integer", "min":0, "max":127},
-                    "Layer 4": {"type":"Integer", "min":0, "max":127},
-                    "Layer 5": {"type":"Integer", "min":0, "max":127}
-                }
-            },
-
-            "Clip Stop Pads":
-            {
-
-                "type":"Container",
-                "collapsed":true,
-                
-                "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
-                "Track 1": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 2": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 3": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 4": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 5": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 6": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 7": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
-                "Track 8": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}}
-            },
-
-            "Track Controls":
-            {
-                "type":"Container",
-                "collapsed":true,
-
-                "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
-
-                "Track Selectors":
+                "Scene Launch Pads":
                 {
                     "type":"Container",
                     "collapsed":true,
 
-                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+                    "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
+                    "Clear All": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
 
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"},
-                    "Master":  {"type":"Boolean"}
+                    "Mode":
+                    {
+                        "type":"Container",
+                        "collapsed":true, 
+
+                        "Layer 1": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 2": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 3": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 4": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}},
+                        "Layer 5": {"type":"Enum", "options":{"Primary Colour":0, "Secondary Colour - Oneshot 1/24":1, "Secondary Colour - Oneshot 1/16":2, "Secondary Colour - Oneshot 1/8":3, "Secondary Colour - Oneshot 1/4":4, "Secondary Colour - Oneshot 1/2":5, "Secondary Colour - Pulsing 1/24":6, "Secondary Colour - Pulsing 1/16":7, "Secondary Colour - Pulsing 1/8":8, "Secondary Colour - Pulsing 1/4":9, "Secondary Colour - Pulsing 1/2":10, "Secondary Colour - Blinking 1/24":11, "Secondary Colour - Blinking 1/16":12, "Secondary Colour - Blinking 1/8":13, "Secondary Colour - Blinking 1/4":14, "Secondary Colour - Blinking 1/2":15}}
+                    },
+
+                    "Colour":
+                    {
+                        "type":"Container",
+                        "collapsed":true, 
+
+                        "Layer 1": {"type":"Integer", "min":0, "max":127},
+                        "Layer 2": {"type":"Integer", "min":0, "max":127},
+                        "Layer 3": {"type":"Integer", "min":0, "max":127},
+                        "Layer 4": {"type":"Integer", "min":0, "max":127},
+                        "Layer 5": {"type":"Integer", "min":0, "max":127}
+                    }
                 },
 
-                "Mute [1-8]":
+                "Clip Stop Pads":
                 {
+
                     "type":"Container",
                     "collapsed":true,
-
-                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
-
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
-                },
-                
-                "Crossfade Assign [A|B]":
-                {
-                    "type":"Container",
-                    "collapsed":true,
-
+                    
                     "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
-
-                    "Track 1": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 2": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 3": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 4": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 5": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 6": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 7": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
-                    "Track 8": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}}
+                    "Track 1": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 2": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 3": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 4": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 5": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 6": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 7": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
+                    "Track 8": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}}
                 },
-                
-                "Solo [S]":
+
+                "Track Controls":
                 {
                     "type":"Container",
                     "collapsed":true,
 
                     "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
 
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
-                },
-                
-                "Record-Arm [\u2219]":
-                {
-                    "type":"Container",
-                    "collapsed":true,
+                    "Track Selectors":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
 
-                    "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+                        "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
 
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
+                        "Track 1": {"type":"Boolean"},
+                        "Track 2": {"type":"Boolean"},
+                        "Track 3": {"type":"Boolean"},
+                        "Track 4": {"type":"Boolean"},
+                        "Track 5": {"type":"Boolean"},
+                        "Track 6": {"type":"Boolean"},
+                        "Track 7": {"type":"Boolean"},
+                        "Track 8": {"type":"Boolean"},
+                        "Master":  {"type":"Boolean"}
+                    },
+
+                    "Mute [1-8]":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+
+                        "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
+                        "Track 1": {"type":"Boolean"},
+                        "Track 2": {"type":"Boolean"},
+                        "Track 3": {"type":"Boolean"},
+                        "Track 4": {"type":"Boolean"},
+                        "Track 5": {"type":"Boolean"},
+                        "Track 6": {"type":"Boolean"},
+                        "Track 7": {"type":"Boolean"},
+                        "Track 8": {"type":"Boolean"}
+                    },
+                    
+                    "Crossfade Assign [A|B]":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+
+                        "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
+                        "Track 1": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 2": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 3": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 4": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 5": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 6": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 7": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
+                        "Track 8": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}}
+                    },
+                    
+                    "Solo [S]":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+
+                        "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
+                        "Track 1": {"type":"Boolean"},
+                        "Track 2": {"type":"Boolean"},
+                        "Track 3": {"type":"Boolean"},
+                        "Track 4": {"type":"Boolean"},
+                        "Track 5": {"type":"Boolean"},
+                        "Track 6": {"type":"Boolean"},
+                        "Track 7": {"type":"Boolean"},
+                        "Track 8": {"type":"Boolean"}
+                    },
+                    
+                    "Record-Arm [\u2219]":
+                    {
+                        "type":"Container",
+                        "collapsed":true,
+
+                        "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+
+                        "Track 1": {"type":"Boolean"},
+                        "Track 2": {"type":"Boolean"},
+                        "Track 3": {"type":"Boolean"},
+                        "Track 4": {"type":"Boolean"},
+                        "Track 5": {"type":"Boolean"},
+                        "Track 6": {"type":"Boolean"},
+                        "Track 7": {"type":"Boolean"},
+                        "Track 8": {"type":"Boolean"}
+                    }
                 }
-            }
-        },
+            },
 
             "Buttons":
             {
@@ -527,180 +533,184 @@
 
     "values":
     {
-        "Knobs":{
+        "Faders":
+        {
+            "type":"Container",
+            "collapsed":true,
+            
+            "Track 1":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 2":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 3":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 4":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 5":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 6":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 7":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Track 8":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Master":       {"type":"Float", "min":0, "max":127, "ui":"slider"},
+            "Crossfader":   {"type":"Float", "min":0, "max":127, "ui":"slider"}
+        },
+
+        "Knobs":
+        {
             "type":"Container",
             "collapsed":true,
 
             "Track Knobs (Top)":
             {
                 "type":"Container",
-                "collapsed":true,
-                
-                "(1)": {"type":"Integer", "min":0, "max":127},
-                "(2)": {"type":"Integer", "min":0, "max":127},
-                "(3)": {"type":"Integer", "min":0, "max":127},
-                "(4)": {"type":"Integer", "min":0, "max":127},
-                "(5)": {"type":"Integer", "min":0, "max":127},
-                "(6)": {"type":"Integer", "min":0, "max":127},
-                "(7)": {"type":"Integer", "min":0, "max":127},
-                "(8)": {"type":"Integer", "min":0, "max":127}
+                "collapsed":true, 
+
+                "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
             },
 
-            "Device Knobs (Right) Ableton Modes (1 & 2)":
-            {
-                "type":"Container",
-                "collapsed":true,
-                
-                "(1)": {"type":"Integer", "min":0, "max":127},
-                "(2)": {"type":"Integer", "min":0, "max":127},
-                "(3)": {"type":"Integer", "min":0, "max":127},
-                "(4)": {"type":"Integer", "min":0, "max":127},
-                "(5)": {"type":"Integer", "min":0, "max":127},
-                "(6)": {"type":"Integer", "min":0, "max":127},
-                "(7)": {"type":"Integer", "min":0, "max":127},
-                "(8)": {"type":"Integer", "min":0, "max":127}
-            },
-
-            "Device Knobs (Right) Generic Mode (0) Only":
+            "Device Knobs (Right)":
             {
                 "type":"Container",
                 "collapsed":true,
 
-                "Track 1":
+                "Track 1 - Used by all Modes":
                 {
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 },
 
-                "Track 2":
+                "Track 2 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 },
 
-                "Track 3":
+                "Track 3 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}  
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}  
                 },
 
-                "Track 4":
-                {
-                    "type":"Container",
-                    "collapsed":true,
-                    
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
-                },
-
-                "Track 5":
-                {
-                    "type":"Container",
-                    "collapsed":true,
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
-                },
-
-                "Track 6":
+                "Track 4 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 },
 
-                "Track 7":
+                "Track 5 - Generic Mode (0) Only":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                },
+
+                "Track 6 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 },
 
-                "Track 8":
+                "Track 7 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 },
 
-                "Master":
+                "Track 8 - Generic Mode (0) Only":
                 {
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Integer", "min":0, "max":127},
-                    "(2)": {"type":"Integer", "min":0, "max":127},
-                    "(3)": {"type":"Integer", "min":0, "max":127},
-                    "(4)": {"type":"Integer", "min":0, "max":127},
-                    "(5)": {"type":"Integer", "min":0, "max":127},
-                    "(6)": {"type":"Integer", "min":0, "max":127},
-                    "(7)": {"type":"Integer", "min":0, "max":127},
-                    "(8)": {"type":"Integer", "min":0, "max":127}
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                },
+
+                "Master - Generic Mode (0) Only":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
                 }
             },
-
+        
             "Rotary Encoders":
             {
                 "type":"Container",
@@ -711,7 +721,8 @@
             }
         },
 
-        "RGB Pads":{
+        "Pads":
+        {
             "type":"Container",
             "collapsed":true,
 
@@ -776,123 +787,105 @@
                 "Layer 3": {"type":"Boolean"},
                 "Layer 4": {"type":"Boolean"},
                 "Layer 5": {"type":"Boolean"}
+            },
+
+            "Clip Stop Pads":
+            {
+                "type":"Container",
+                "collapsed":true,
+                
+                "Track 1":          {"type":"Boolean"},
+                "Track 2":          {"type":"Boolean"},
+                "Track 3":          {"type":"Boolean"},
+                "Track 4":          {"type":"Boolean"},
+                "Track 5":          {"type":"Boolean"},
+                "Track 6":          {"type":"Boolean"},
+                "Track 7":          {"type":"Boolean"},
+                "Track 8":          {"type":"Boolean"},
+                "Stop All Clips":   {"type":"Boolean"}
+            },
+
+            "Track Controls":
+            {
+                "type":"Container",
+                "collapsed":true,
+
+                "Track Selectors":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "Track 1": {"type":"Boolean"},
+                    "Track 2": {"type":"Boolean"},
+                    "Track 3": {"type":"Boolean"},
+                    "Track 4": {"type":"Boolean"},
+                    "Track 5": {"type":"Boolean"},
+                    "Track 6": {"type":"Boolean"},
+                    "Track 7": {"type":"Boolean"},
+                    "Track 8": {"type":"Boolean"},
+                    "Master":  {"type":"Boolean"}
+                },
+
+                "Mute [1-8]":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+
+                    "Track 1": {"type":"Boolean"},
+                    "Track 2": {"type":"Boolean"},
+                    "Track 3": {"type":"Boolean"},
+                    "Track 4": {"type":"Boolean"},
+                    "Track 5": {"type":"Boolean"},
+                    "Track 6": {"type":"Boolean"},
+                    "Track 7": {"type":"Boolean"},
+                    "Track 8": {"type":"Boolean"}
+                },
+
+                "Crossfade Assign [A|B]":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+
+                    "Track 1": {"type":"Boolean"},
+                    "Track 2": {"type":"Boolean"},
+                    "Track 3": {"type":"Boolean"},
+                    "Track 4": {"type":"Boolean"},
+                    "Track 5": {"type":"Boolean"},
+                    "Track 6": {"type":"Boolean"},
+                    "Track 7": {"type":"Boolean"},
+                    "Track 8": {"type":"Boolean"}
+                },
+
+                "Solo [S]":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "Track 1": {"type":"Boolean"},
+                    "Track 2": {"type":"Boolean"},
+                    "Track 3": {"type":"Boolean"},
+                    "Track 4": {"type":"Boolean"},
+                    "Track 5": {"type":"Boolean"},
+                    "Track 6": {"type":"Boolean"},
+                    "Track 7": {"type":"Boolean"},
+                    "Track 8": {"type":"Boolean"}
+                },
+
+                "Record-Arm [\u2219]":
+                {
+                    "type":"Container",
+                    "collapsed":true,
+                    
+                    "Track 1": {"type":"Boolean"},
+                    "Track 2": {"type":"Boolean"},
+                    "Track 3": {"type":"Boolean"},
+                    "Track 4": {"type":"Boolean"},
+                    "Track 5": {"type":"Boolean"},
+                    "Track 6": {"type":"Boolean"},
+                    "Track 7": {"type":"Boolean"},
+                    "Track 8": {"type":"Boolean"}
+                }
             }
-        },
-
-        "Clip Stop Pads":
-        {
-            "type":"Container",
-            "collapsed":true,
-            
-            "Track 1":          {"type":"Boolean"},
-            "Track 2":          {"type":"Boolean"},
-            "Track 3":          {"type":"Boolean"},
-            "Track 4":          {"type":"Boolean"},
-            "Track 5":          {"type":"Boolean"},
-            "Track 6":          {"type":"Boolean"},
-            "Track 7":          {"type":"Boolean"},
-            "Track 8":          {"type":"Boolean"},
-            "Stop All Clips":   {"type":"Boolean"}
-        },
-
-        "Track Controls":
-        {
-            "type":"Container",
-            "collapsed":true,
-
-            "Track Selectors":
-            {
-                "type":"Container",
-                "collapsed":true,
-                
-                "Track 1": {"type":"Boolean"},
-                "Track 2": {"type":"Boolean"},
-                "Track 3": {"type":"Boolean"},
-                "Track 4": {"type":"Boolean"},
-                "Track 5": {"type":"Boolean"},
-                "Track 6": {"type":"Boolean"},
-                "Track 7": {"type":"Boolean"},
-                "Track 8": {"type":"Boolean"},
-                "Master":  {"type":"Boolean"}
-            },
-
-            "Mute [1-8]":
-            {
-                "type":"Container",
-                "collapsed":true,
-
-                "Track 1": {"type":"Boolean"},
-                "Track 2": {"type":"Boolean"},
-                "Track 3": {"type":"Boolean"},
-                "Track 4": {"type":"Boolean"},
-                "Track 5": {"type":"Boolean"},
-                "Track 6": {"type":"Boolean"},
-                "Track 7": {"type":"Boolean"},
-                "Track 8": {"type":"Boolean"}
-            },
-
-            "Crossfade Assign [A|B]":
-            {
-                "type":"Container",
-                "collapsed":true,
-
-                "Track 1": {"type":"Boolean"},
-                "Track 2": {"type":"Boolean"},
-                "Track 3": {"type":"Boolean"},
-                "Track 4": {"type":"Boolean"},
-                "Track 5": {"type":"Boolean"},
-                "Track 6": {"type":"Boolean"},
-                "Track 7": {"type":"Boolean"},
-                "Track 8": {"type":"Boolean"}
-            },
-
-            "Solo [S]":
-            {
-                "type":"Container",
-                "collapsed":true,
-                
-                "Track 1": {"type":"Boolean"},
-                "Track 2": {"type":"Boolean"},
-                "Track 3": {"type":"Boolean"},
-                "Track 4": {"type":"Boolean"},
-                "Track 5": {"type":"Boolean"},
-                "Track 6": {"type":"Boolean"},
-                "Track 7": {"type":"Boolean"},
-                "Track 8": {"type":"Boolean"}
-            },
-
-            "Record-Arm [\u2219]":
-            {
-                "type":"Container",
-                "collapsed":true,
-                
-                "Track 1": {"type":"Boolean"},
-                "Track 2": {"type":"Boolean"},
-                "Track 3": {"type":"Boolean"},
-                "Track 4": {"type":"Boolean"},
-                "Track 5": {"type":"Boolean"},
-                "Track 6": {"type":"Boolean"},
-                "Track 7": {"type":"Boolean"},
-                "Track 8": {"type":"Boolean"}
-            }
-        
-        },
-
-        "Faders":
-        {
-            "type":"Container",
-            "collapsed":true,
-            
-            "Track 1":      {"type":"Integer", "min":0, "max":127},
-            "Track 2":      {"type":"Integer", "min":0, "max":127},
-            "Track 3":      {"type":"Integer", "min":0, "max":127},
-            "Track 4":      {"type":"Integer", "min":0, "max":127},
-            "Track 5":      {"type":"Integer", "min":0, "max":127},
-            "Track 6":      {"type":"Integer", "min":0, "max":127},
-            "Track 7":      {"type":"Integer", "min":0, "max":127},
-            "Track 8":      {"type":"Integer", "min":0, "max":127},
-            "Master":       {"type":"Integer", "min":0, "max":127},
-            "Crossfader":   {"type":"Integer", "min":0, "max":127}
         },
 
         "Buttons":
@@ -944,9 +937,7 @@
                 "Down":     {"type":"Boolean"},
                 "Left":     {"type":"Boolean"}
             }
-        
         }
-
     },
 
     "scripts":
