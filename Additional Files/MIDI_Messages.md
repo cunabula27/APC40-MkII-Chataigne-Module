@@ -45,6 +45,7 @@ Sending a message with Velocity = 0 gives the same result as a Note Off message 
 |**Session**|**1**||**102**||**0 / 1-127**|*Off* / *On*||
 
 
+
 ## Inbound Absolute CC MIDI Messages (*From PC or local*)
 
 Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
@@ -90,7 +91,7 @@ NoteOff messages ignore the Velocity value
 |**Pan**|**1**||**87**||**127**||
 |**Sends**|**1**||**88**||**127**||
 |**User**|**1**||**89**||**127**||
-|**Metronome**|**1-9**||**90**||**127**|*Per Track including Master?*|
+|**Metronome**|**1**||**90**||**127**||
 |**Play**|**1**||**91**||**127**||
 |**Record**|**1**||**93**||**127**||
 |**Up**|**1**||**94**||**127**||
@@ -102,6 +103,7 @@ NoteOff messages ignore the Velocity value
 |**Nudge &#8722;**|**1**||**100**||**127**||
 |**Nudge +**|**1**||**101**||**127**||
 |**Session**|**1**||**102**||**127**||
+|**Bank Lock**|**1**||**103**||**127**||
 
 
 ## Outbound Absolute CC MIDI Messages (*from Controller*)
