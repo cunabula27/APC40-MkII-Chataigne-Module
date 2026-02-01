@@ -936,6 +936,14 @@
                 "Right":    {"type":"Boolean"},
                 "Down":     {"type":"Boolean"},
                 "Left":     {"type":"Boolean"}
+            },
+
+            "Footswitch":
+            {
+                "type":"Container",
+                "collapsed":true,
+                
+                "Footswitch": {"type":"Boolean"}
             }
         }
     },
