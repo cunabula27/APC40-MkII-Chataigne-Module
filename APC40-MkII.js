@@ -6,7 +6,7 @@
    finding the array index harder. 
    Annotation is [Channel, Note]. [1-8, Note] means there are 8 of them.
 */
-
+/* 
 var noteNote = {                            // This variable is all the regular notes
 
     rgbPad: [                                // [1, Note] Array order is as on control surface. Indices:
@@ -35,23 +35,26 @@ var noteCC = {                              // Control Change Notes
 
     fader: [7, 14, 15]                      // Faders Track [1-8, 7] + Master [1,14] + Crossfader [1,15]
 };
-
+ */
 var apcMode = 0; // TODO add check to see if Device Knob messages over 1 are rejected or not.
 
-var ccAr = [];
+var ccArr = [];
 
-var noteAr = [];
+var noteArr = [];
 
 // HELPER FUNCTIONS //////////////////////////
 
-function trackNo(param, x) {
-    var a = parseInt(param.name.charAt(x));
-    return a;
-};
+// function trackNo(param, x) 
+// {
+//     var a = parseInt(param.name.charAt(x));
+//     return a;
+// };
 
-// MAIN //////////////////////////////////////
+// CHATAIGNE FUNCTIONS ///////////////////////
 
-function init() {
+function init() 
+{
+    // INTERFACE /////////////////////////////
 
     local.parameters.pass_through.setCollapsed(true);
     local.values.infos.setCollapsed(true);
@@ -61,11 +64,22 @@ function init() {
     local.commandTester.setCollapsed(true);
     local.templates.setCollapsed(true);
 
-    // CONSTRUCT NOTE ARRAY AND POPULATE /////////
+    /* CONSTRUCT NOTE ARRAY AND POPULATE /////
 
-    // Format is noteAr[MIDI Note] 
+    Format is:
+    
+    noteArr[MIDI Note][0] value
+                      [1] param (For RGB Pads : Mode)
+                      [2] param (For RGB Pads : Colour)
+                    
+    For notes that cover multiple tracks, format is:
+
+    noteArr[MIDI Note][Track Number][0] value
+                                    [1] param                         
+    */
+
     for (i = 0; i < 104; i++) {
-        noteAr[i] = [];
+        noteArr[i] = [];
     };
 
     var m = -1;                             // Clip Launch Pads
@@ -73,37 +87,37 @@ function init() {
         for (i = 1; i < 9; i++) {
             m++;
             var name = "layer" + j + "_clip" + i;
-            noteAr[m][0] = local.values.pads.clipLaunchPads.getChild(name);
-            noteAr[m][1] = local.parameters.lights.pads.clipLaunchPads.mode.getChild(name);
-            noteAr[m][2] = local.parameters.lights.pads.clipLaunchPads.colour.getChild(name);
+            noteArr[m][0] = local.values.pads.clipLaunchPads.getChild(name);
+            noteArr[m][1] = local.parameters.lights.pads.clipLaunchPads.mode.getChild(name);
+            noteArr[m][2] = local.parameters.lights.pads.clipLaunchPads.colour.getChild(name);
         };
     };
 
     for (i = 82; i < 87; i++) {             // Scene Launch Pads
-        j = "layer" + (i - 81);
-        noteAr[i][0] = local.values.pads.sceneLaunchPads.getChild(j);
-        noteAr[i][1] = local.parameters.lights.pads.sceneLaunchPads.mode.getChild(j);
-        noteAr[i][2] = local.parameters.lights.pads.sceneLaunchPads.colour.getChild(j);
+        var name = "layer" + (i - 81);
+        noteArr[i][0] = local.values.pads.sceneLaunchPads.getChild(name);
+        noteArr[i][1] = local.parameters.lights.pads.sceneLaunchPads.mode.getChild(name);
+        noteArr[i][2] = local.parameters.lights.pads.sceneLaunchPads.colour.getChild(name);
     };
 
-    for (i = 48; i < 53; i++) { noteAr[i] = [[], [], [], [], [], [], [], [], []]; };
+    for (i = 48; i < 53; i++) { noteArr[i] = [[], [], [], [], [], [], [], [], []]; };
 
-    noteAr[66] = [[], [], [], [], [], [], [], [], []];
+    noteArr[66] = [[], [], [], [], [], [], [], [], []];
 
     for (i = 1; i < 9; i++) {
         var name = "track" + i;
-        noteAr[48][i][0] = local.values.pads.trackControls.record_Arm__.getChild(name); // Record/Arm
-        noteAr[48][i][1] = local.parameters.lights.pads.trackControls.record_Arm__.getChild(name);
-        noteAr[49][i][0] = local.values.pads.trackControls.solo_S_.getChild(name); // Solo
-        noteAr[49][i][1] = local.parameters.lights.pads.trackControls.solo_S_.getChild(name);
-        noteAr[50][i][0] = local.values.pads.trackControls.mute_1_8_.getChild(name); // Mute
-        noteAr[50][i][1] = local.parameters.lights.pads.trackControls.mute_1_8_.getChild(name);
-        noteAr[51][i][0] = local.values.pads.trackControls.trackSelectors.getChild(name); // Track Select
-        noteAr[51][i][1] = local.parameters.lights.pads.trackControls.trackSelectors.getChild(name);
-        noteAr[52][i][0] = local.values.pads.clipStopPads.getChild(name);// Clip Stop
-        noteAr[52][i][1] = local.parameters.lights.pads.clipStopPads.getChild(name);
-        noteAr[66][i][0] = local.values.pads.trackControls.crossfadeAssign_AB_.getChild(name); // Crossfader A/B
-        noteAr[66][i][1] = local.parameters.lights.pads.trackControls.crossfadeAssign_AB_.getChild(name);
+        noteArr[48][i][0] = local.values.pads.trackControls.record_Arm__.getChild(name); // Record/Arm
+        noteArr[48][i][1] = local.parameters.lights.pads.trackControls.record_Arm__.getChild(name);
+        noteArr[49][i][0] = local.values.pads.trackControls.solo_S_.getChild(name); // Solo
+        noteArr[49][i][1] = local.parameters.lights.pads.trackControls.solo_S_.getChild(name);
+        noteArr[50][i][0] = local.values.pads.trackControls.mute_1_8_.getChild(name); // Mute
+        noteArr[50][i][1] = local.parameters.lights.pads.trackControls.mute_1_8_.getChild(name);
+        noteArr[51][i][0] = local.values.pads.trackControls.trackSelectors.getChild(name); // Track Select
+        noteArr[51][i][1] = local.parameters.lights.pads.trackControls.trackSelectors.getChild(name);
+        noteArr[52][i][0] = local.values.pads.clipStopPads.getChild(name);// Clip Stop
+        noteArr[52][i][1] = local.parameters.lights.pads.clipStopPads.getChild(name);
+        noteArr[66][i][0] = local.values.pads.trackControls.crossfadeAssign_AB_.getChild(name); // Crossfader A/B
+        noteArr[66][i][1] = local.parameters.lights.pads.trackControls.crossfadeAssign_AB_.getChild(name);
     };
 
     var buttons = [
@@ -114,9 +128,9 @@ function init() {
         ["play", 91],
         ["record", 93],
 
-        ["tapTempo", 99], // Top, No Light
-        ["nudge", 100],  // Top, No Light
-        ["nudge_", 101], // Top, No Light
+        ["tapTempo", 99],   // Top, No Light
+        ["nudge", 100],     // Top, No Light
+        ["nudge_", 101],    // Top, No Light
 
         ["_1_DeviceLeft", 58],
         ["_2_DeviceRight", 59],
@@ -135,59 +149,235 @@ function init() {
     ];
 
     for (i = 0; i < 6; i++) {
-        noteAr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
-        noteAr[buttons[i][1]][1] = local.parameters.lights.buttons.topSection.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][1] = local.parameters.lights.buttons.topSection.getChild(buttons[i][0]);
     };
 
     for (i = 6; i < 9; i++) {
-        noteAr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
     };
 
     for (i = 9; i < 18; i++) {
-        noteAr[buttons[i][1]][0] = local.values.buttons.bottomSection.getChild(buttons[i][0]);
-        noteAr[buttons[i][1]][1] = local.parameters.lights.buttons.bottomSection.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][0] = local.values.buttons.bottomSection.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][1] = local.parameters.lights.buttons.bottomSection.getChild(buttons[i][0]);
     };
 
     for (i = 18; i < 22; i++) {
-        noteAr[buttons[i][1]][0] = true;
-        noteAr[buttons[i][1]][1] = local.values.buttons.bankSelect.getChild(buttons[i][0]);
+        noteArr[buttons[i][1]][0] = true;
+        noteArr[buttons[i][1]][1] = local.values.buttons.bankSelect.getChild(buttons[i][0]);
     };
-
-    noteAr[80] = local.values.pads.trackControls.trackSelectors.getChild(master);
-    noteAr[81] = local.values.pads.clipStopPads.getChild(stopAllClips);
-    noteAr[98] = local.values.buttons.bottomSection.getChild(shift);
-
-    // local.values.pads.trackControls.trackSelectors.master
-    // local.values.pads.clipStopPads.stopAllClips
-    // local.values.buttons.bottomSection.shift
     
-    // CONSTRUCT CC ARRAY AND POPULATE ///////////
-
-    for (i = 0; i < 65; i++) { ccAr[i] = []; };
+    noteArr[80][0] = local.values.pads.trackControls.trackSelectors.getChild("master");
+    noteArr[81][0] = local.values.pads.clipStopPads.getChild("stopAllClips");
+    noteArr[98][0] = local.values.buttons.bottomSection.getChild("shift");
     
-    ccAr[7] = [[], [], [], [], [], [], [], [], []];
+    /* CONSTRUCT CC ARRAY AND POPULATE ///////
 
-    for (i = 16; i < 32; i++) { ccAr[i] = [[], [], [], [], [], [], [], [], []]; };
+    Format is:
+    
+    ccArr[MIDI Note][0] value
+                    [1] param
+                    
+    For CC Notes that cover multiple tracks, format is:
+
+    ccArr[MIDI Note][Track Number][0] value
+                                  [1] param
+    */
+
+    for (i = 0; i < 65; i++) { ccArr[i] = []; };
+
+    ccArr[7] = [[], [], [], [], [], [], [], [], []];
+
+    for (i = 16; i < 32; i++) { ccArr[i] = [[], [], [], [], [], [], [], [], []]; };
 
     for (i = 1; i < 9; i++) {                   // Track Fader
         var name = "track" + i;
-        ccAr[7][i][0] = local.values.faders.getChild(name);
+        ccArr[7][i][0] = local.values.faders.getChild(name);
     };
+
+    ccArr[13][0] = local.values.knobs.rotaryEncoders.getChild("tempo");
+
+    ccArr[14][0] = local.values.faders.getChild("master");
+
+    ccArr[15][0] = local.values.faders.getChild("crossfader");
+
+    for (i = 1; i < 9; i++) {                   // Device Knobs Track 1
+        var name = "_" + i + "_";
+        ccArr[16][i][0] = local.values.knobs.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
+    };
+
+    for (j = 17; j < 24; j++) {                 // Device Knobs Track 2-8 (Mode 0 Only)
+        var k = "track" + (j - 15) + "_GenericMode_0_Only";
+        for (i = 1; i < 9; i++) {
+            var name = "_" + i + "_";
+            ccArr[j][i][0] = local.values.knobs.deviceKnobs_Right_[k].getChild(name);
+        };
+    };
+
+    for (i = 1; i < 9; i++) {                   // Device Knob LED Ring Mode Track 1
+        var name = "_" + i + "_";
+        ccArr[24][i][0] = true;
+        ccArr[24][i][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
+    };
+
+    for (j = 25; j < 32; j++) {                 // Device Knob LED Ring Mode Track 2-8 (Mode 0 Only) 
+        var k = "track" + (j - 23) + "_GenericMode_0_Only";
+        for (i = 1; i < 9; i++) {
+            var name = "_" + i + "_";
+            ccArr[j][i][0] = true;
+            ccArr[j][i][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_[k].getChild(name);
+        };
+    };
+
+    ccArr[47][0] = local.values.knobs.rotaryEncoders.getChild("cueLevel");
 
     for (i = 48; i < 56; i++) {                 // Track Knobs 
-        var name = "_" + (i-47) + "_";
-        ccAr[i][0] = local.values.knobs.trackKnobs_Top_.getChild(name);
+        var name = "_" + (i - 47) + "_";
+        ccArr[i][0] = local.values.knobs.trackKnobs_Top_.getChild(name);
     };
 
-    for (i = 56; i < 64; i++) {                 // Track Knob LED Rings
-        var name = "_" + (i-55) + "_";
-        ccAr[i][0] = true;
-        ccAr[i][1] = local.parameters.lights.ledRingModes.trackKnobs_Top_.getChild(name);
+    for (i = 56; i < 64; i++) {                 // Track Knob LED Ring Mode
+        var name = "_" + (i - 55) + "_";
+        ccArr[i][0] = true;
+        ccArr[i][1] = local.parameters.lights.ledRingModes.trackKnobs_Top_.getChild(name);
     };
 
-    script.log(ccAr);
+    ccArr[64][0] = local.values.buttons.footswitch.getChild("footswitch");
 
 };
+
+// This function will be called each time a parameter of your script has changed
+
+function scriptParameterChanged(param)
+{
+	script.log("Parameter changed : "+param.name); // All parameters have "name" property
+
+	if(param.is(myTrigger)) 
+	{
+		script.log("Trigger !");    //You can check if two variables are the reference to the same parameter or object with the method .is()
+		                            //Here we can for example show a "Ok cancel" box. The result will be called in the messageBoxCallback function below
+		                            //util.showOkCancelBox("myBoxId", "Super warning!", "This is a warning for you", "warning", "Got it","Naaah");
+	}
+	else if(param.is(myEnumParam))
+	{
+		script.log("Key = "+param.getKey()+", data = "+param.get()); //The enum parameter has a special function getKey() to get the key associated to the option. .get() will give you the data associated
+	}
+	else
+	{
+		script.log("Value is "+param.get()); //All parameters have a get() method that will return their value
+	} 
+};
+
+/* MODULE SPECIFIC SCRIPTING /////////////////
+
+	The "local" variable refers to the object containing the scripts. In this case, the local variable refers to the module.
+	It means that you can access any control inside  this module by accessing it through its address.
+	For instance, if the module has a float value named "Density", you can access it via local.values.density
+	Then you can retrieve its value using local.values.density.get() and change its value using local.values.density.set()
+
+/////////////////////////////////////////// */
+
+// This function will be called each time a parameter of this module has changed, meaning a parameter or trigger inside the "Parameters" panel of this module
+
+function moduleParameterChanged(param) 
+{
+    if (param.isParameter()) {
+
+        if (param.name == "controllerMode") { setAPC40mode(param.get()); };
+        if (param.name == "debug") { debug(param); };
+
+        script.log("Module parameter changed : " + param.name + " > " + param.get());
+
+    } else {
+
+        script.log("Module parameter triggered : " + param.name);
+    }
+};
+
+// This function will be called each time a value of this module has changed, meaning a parameter or trigger inside the "Values" panel of this module
+
+function moduleValueChanged(value)
+{
+	if(value.isParameter())
+	{
+		script.log("Module value changed : "+value.name+" > "+value.get());	
+	}else 
+	{
+		script.log("Module value triggered : "+value.name);	
+	}
+};
+
+/* NIDI MODULE SPECIFIC FUNCTIONS ////////////
+
+local.sendNoteOn(channel, note, velocity);
+local.sendNoteOff(channel, note);
+local.sendCC(channel, note, value);
+local.sendSysex(15,20,115,10);
+
+You can intercept MIDI Events with the functions below:
+
+/////////////////////////////////////////// */
+
+function noteOnEvent(channel, pitch, velocity)
+{
+    if (noteArr[pitch][0]) // Check Mapping
+    {
+        script.log("NoteOn received "+channel+", "+pitch+", "+velocity);
+    }
+    else
+    {
+        script.log("No mapping for this Midi Note found");
+    };
+};
+
+function noteOffEvent(channel, pitch, velocity)
+{
+    if (noteArr[pitch][0]) // Check Mapping
+    {
+        script.log("NoteOff received "+channel+", "+pitch+", "+velocity);
+    }
+    else
+    {
+        script.log("No mapping for this Midi Note found");
+    };
+};
+
+function ccEvent(channel, number, value)
+{
+    if (ccArr[pitch][0]) // Check Mapping
+    {
+        script.log("ControlChange received "+channel+", "+number+", "+value);
+    }
+    else
+    {
+        script.log("No mapping for this Midi CC found");
+    };
+};
+
+function sysExEvent(data)
+{
+	script.log("Sysex Message received, "+data.length+" bytes :");
+	for(var i=0; i < data.length; i++)
+	{
+		script.log(" > "+data[i]);
+	}
+};
+
+/* This function, if you declare it, will launch a timer at 50hz, calling this method on each tick
+
+function update(deltaTime)
+{
+	script.log("Update : "+util.getTime()+", delta = "+deltaTime); //deltaTime is the time between now and last update() call, util.getTime() will give you a timestamp relative to either the launch time of the software, or the start of the computer.
+};*/
+
+/* This function, if you declare it, will be called when after a user has made a choice from a okCancel box or YesNoCancel box that you launched from this script 
+
+function messageBoxCallback(id, result)
+{
+	script.log("Message box callback : "+id+" > "+result); //deltaTime is the time between now and last update() call, util.getTime() will give you a timestamp relative to either the launch time of the software, or the start of the computer.
+}; */
+
+// THIS MODULE SPECIFIC FUNCTIONS ////////////
 
 // TURN THE LIGHTS ON ////////////////////////
 
@@ -287,21 +477,21 @@ function clearRGBPads(x, y) {
     }
 };
 
-function handleCC(channel, number, value) {
-    var obj = ccValueObj[channel][number];
-    if (!!obj) {
-        if (obj.name == "encoderCueLevel" || obj.name == "encoderTempo") {
-            if (value > 63) value = value - 128;
-            obj.set(value);
-        }
-        else {
-            obj.set((value / 127));
-        }
-    }
-    else {
-        script.log("No Mapping for this Midi CC found");
-    }
-}
+// function handleCC(channel, number, value) {
+//     var obj = ccValueObj[channel][number];
+//     if (!!obj) {
+//         if (obj.name == "encoderCueLevel" || obj.name == "encoderTempo") {
+//             if (value > 63) value = value - 128;
+//             obj.set(value);
+//         }
+//         else {
+//             obj.set((value / 127));
+//         }
+//     }
+//     else {
+//         script.log("No Mapping for this Midi CC found");
+//     }
+// }
 
 // EVERYTHING THAT HAPPENS TO PARAMETERS /////
 
@@ -331,8 +521,8 @@ function moduleParameterChanged(param) {
                 };
             };
             
-//             script.log(noteAr);
-// script.log(ccAr);
+//             script.log(noteArr);
+// script.log(ccArr);
         } else {
 
             if (param)
@@ -364,12 +554,12 @@ function moduleValueChanged(value) {
     var noteOrCC = value.getControlAddress();
     if(value.isParameter()){
         if (noteOrCC.contains("knob") || noteOrCC.contains("faders")){
-ccAr[1][7][0].set(value);
-var obj = ccAr[1][7][0];
+ccArr[1][7][0].set(value);
+var obj = ccArr[1][7][0];
            // myIntParam.set(2);
            script.log(obj.name);
             script.log("CC");
-            script.log(ccAr[1][7][0]);
+            script.log(ccArr[1][7][0]);
         } else {
             script.log("NOTE");
             script.log("Module value changed : "+value.name+" > "+value.get());
@@ -385,7 +575,7 @@ var obj = ccAr[1][7][0];
 function noteOnEvent(channel, note, velocity) { 
     if (note <= 39 ||                       // Clip Launch Pads
        (note >= 82 && note <= 85)) {        // Scene Launch Pads
-        lightRGBPad(noteAr[note][0], noteAr[note][1], channel, note, velocity);
+        lightRGBPad(noteArr[note][0], noteArr[note][1], channel, note, velocity);
     };
 };
  */
@@ -417,24 +607,14 @@ function noteOnEvent(channel, note, velocity) {
 // 	script.log("Note off received "+channel+", "+note+", "+velocity);
 // };
 
-function sysExEvent(data) // JUST LOGGING THIS FOR THE TIME BEING
-{
-    script.log("Sysex Message received, " + data.length + " bytes :");
-    for (var i = 0; i < data.length; i++) {
-        script.log(" > " + data[i]);
-    };
-};
-
 /* function ccEvent(channel, number, value) {
 
-    if (number == 7) { local.values.faders[ccAr[channel][number][0]].set(value); };
+    if (number == 7) { local.values.faders[ccArr[channel][number][0]].set(value); };
     if (number == 7 && channel <= 8) {x = "track" + channel; local.values.faders[x].set(value);
       
     };
 
 }; */
-
-
 
 /* function ccEvent(channel, number, value) {
     
@@ -492,13 +672,12 @@ function sysExEvent(data) // JUST LOGGING THIS FOR THE TIME BEING
     script.log("ControlChange received " + channel + ", " + number + ", " + value);
 }; */
 
-// MAIN END //////////////////////////////////
-
-// UTILITIES START ///////////////////////////
+// UTILITIES /////////////////////////////////
 
 function setAPC40mode(mode) {
     local.sendSysex(71, 127, 41, 96, 0, 4, mode[0], 8, 2, 1);
     script.log("APC40 MkII set to " + mode[1] + " Mode with Sysex Message ");
+    apcMode = mode;
 };
 
 function debug(param) {
@@ -513,9 +692,9 @@ function debug(param) {
     };
 };
 
-// UTILITIES // END /////////////////////////////
-
-// TESTING //////////////////////////////////////
+// TESTING ///////////////////////////////////
 
 // var heirarchy = local.parameters.lights.getContainers();
 // script.log(heirarchy);
+
+//////////////////////////////////////////////
