@@ -272,13 +272,11 @@ function moduleParameterChanged(param) {
         // TRIGGERS
 
         script.log("Module parameter triggered : " + param.name);
-    }
+    };
 };
  
-function moduleValueChanged(value)
-{
-	if(value.isParameter())
-	{
+function moduleValueChanged(value) {
+    if (value.isParameter()) {
 
         // CC Faders Inc Master and Crossfader  local.sendCC(channel, note, value);
 
@@ -301,13 +299,11 @@ function moduleValueChanged(value)
         // NOTE Track Controls                  local.sendNoteOn(channel, note, velocity);
 
         // NOTE Buttons                         local.sendNoteOn(channel, note, velocity);
-    
-		script.log("Module value changed : "+value.name+" > "+value.get());	
-	}else 
-	{
-        // NO TRIGGERS AT PRESENT
-		script.log("Module value triggered : "+value.name);	
-	}
+
+        script.log("Module value changed : " + value.name + " > " + value.get());
+    } else {
+        script.log("Module value triggered : " + value.name);	// NO TRIGGERS AT PRESENT
+    }
 };
 
 // MIDI MODULE SPECIFIC FUNCTIONS ////////////
@@ -379,31 +375,38 @@ function ccEvent(channel, number, value) {
     if (ccArr[number][0])                                               // Remove Completely unmapped CCs
     {
         if (number >= 24 && number <= 31 && channel <= 9) {             // Device Knobs LED Mode
+
             if (value >= 4) { var norm = 1; } else { norm = value; }
             ccArr[number][channel][1].set(norm);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
+
         } else if (number >= 56 && number <= 63 && channel == 1) {      // Track Knobs LED Mode
+
             if (value >= 4) { var norm = 1; } else { norm = value; }
             ccArr[number][1].set(norm);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
+
         } else if (number >= 16 && number <= 23 && channel <= 9) {      // Device Knobs Value
+            
             ccArr[number][channel][0].set(value);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
+
         } else if (number >= 48 && number <= 55 && channel == 1) {      // Track Knobs Value
+
             ccArr[number][0].set(value);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
+
         } else if (number == 7) {                                       // Track Faders
+
             ccArr[7][channel][0].set(value);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
-        } else if (channel == 1) {                                      // Everything else
+
+        } else if (channel == 1) {     
+                                             // Everything else
             ccArr[number][0].set(value);
-            //script.log("ControlChange received " + channel + ", " + number + ", " + value);
-        } else {
-            script.log("No mapping for this Midi CC found");
-        };
+
+        } else { script.log("No mapping for this Midi CC found"); };
+
         script.log("ControlChange received " + channel + ", " + number + ", " + value);
     }
+
     else { script.log("No mapping for this Midi CC found"); };
+
 };
 
 function sysExEvent(data)
@@ -516,5 +519,3 @@ function debug(param) {
 // script.log(heirarchy);
 
 //////////////////////////////////////////////
-
-script.log(apcMode);
