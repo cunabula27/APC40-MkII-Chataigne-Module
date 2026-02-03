@@ -42,6 +42,35 @@ var ccArr = [];
 
 var noteArr = [];
 
+var buttons = [
+    "pan", 87,
+    "sends", 88,
+    "user", 89,
+    "metronome", 90,
+    "play", 91,
+    "record", 93,
+    "session", 102,
+
+    "tapTempo", 99,   // Top, No Light
+    "nudge", 100,     // Top, No Light
+    "nudge_", 101,    // Top, No Light
+
+    "_1_DeviceLeft", 58,
+    "_2_DeviceRight", 59,
+    "_3_BankLeft", 60,
+    "_4_BankRight", 61,
+    "_5_DeviceOn_Off", 62,
+    "_6_DeviceLock", 63,
+    "_7_Clip_DeviceView", 64,
+    "_8_DetailView", 65,
+    "bank", 103,
+
+    "up", 94,
+    "right", 96,
+    "down", 95,
+    "left", 97
+];
+
 // HELPER FUNCTIONS //////////////////////////
 
 // function trackNo(param, x) 
@@ -120,57 +149,31 @@ function init()
         noteArr[66][i][1] = local.parameters.lights.pads.trackControls.crossfadeAssign_AB_.getChild(name);
     };
 
-    var buttons = [
-        ["pan", 87],
-        ["sends", 88],
-        ["user", 89],
-        ["metronome", 90],
-        ["play", 91],
-        ["record", 93],
-
-        ["tapTempo", 99],   // Top, No Light
-        ["nudge", 100],     // Top, No Light
-        ["nudge_", 101],    // Top, No Light
-
-        ["_1_DeviceLeft", 58],
-        ["_2_DeviceRight", 59],
-        ["_3_BankLeft", 60],
-        ["_4_BankRight", 61],
-        ["_5_DeviceOn_Off", 62],
-        ["_6_DeviceLock", 63],
-        ["_7_Clip_DeviceView", 64],
-        ["_8_DetailView", 65],
-        ["bank", 103],
-
-        ["up", 94],
-        ["right", 96],
-        ["down", 95],
-        ["left", 97]
-    ];
-
-    for (i = 0; i < 6; i++) {
-        noteArr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
-        noteArr[buttons[i][1]][1] = local.parameters.lights.buttons.topSection.getChild(buttons[i][0]);
+    for (i = 0; i < 14; i=i+2) {
+        noteArr[buttons[i+1]][0] = local.values.buttons.topSection.getChild(buttons[i]);
+        noteArr[buttons[i+1]][1] = local.parameters.lights.buttons.topSection.getChild(buttons[i]);
     };
 
-    for (i = 6; i < 9; i++) {
-        noteArr[buttons[i][1]][0] = local.values.buttons.topSection.getChild(buttons[i][0]);
+    for (i = 14; i < 20; i=i+2) {
+        noteArr[buttons[i+1]][0] = local.values.buttons.topSection.getChild(buttons[i]);
     };
 
-    for (i = 9; i < 18; i++) {
-        noteArr[buttons[i][1]][0] = local.values.buttons.bottomSection.getChild(buttons[i][0]);
-        noteArr[buttons[i][1]][1] = local.parameters.lights.buttons.bottomSection.getChild(buttons[i][0]);
+    for (i = 20; i < 38; i=i+2) {
+        noteArr[buttons[i+1]][0] = local.values.buttons.bottomSection.getChild(buttons[i]);
+        noteArr[buttons[i+1]][1] = local.parameters.lights.buttons.bottomSection.getChild(buttons[i]);
     };
 
-    for (i = 18; i < 22; i++) {
-        noteArr[buttons[i][1]][0] = true;
-        noteArr[buttons[i][1]][1] = local.values.buttons.bankSelect.getChild(buttons[i][0]);
+    for (i = 38; i < 46; i=i+2) {
+        noteArr[buttons[i+1]][0] = true;
+        noteArr[buttons[i+1]][1] = local.values.buttons.bankSelect.getChild(buttons[i]);
     };
+
+   
     
     noteArr[80][0] = local.values.pads.trackControls.trackSelectors.getChild("master");
     noteArr[81][0] = local.values.pads.clipStopPads.getChild("stopAllClips");
     noteArr[98][0] = local.values.buttons.bottomSection.getChild("shift");
-    
+
     /* CONSTRUCT CC ARRAY AND POPULATE ///////
 
     Format is:
@@ -188,9 +191,9 @@ function init()
 
     ccArr[7] = [[], [], [], [], [], [], [], [], []];
 
-    for (i = 16; i < 32; i++) { ccArr[i] = [[], [], [], [], [], [], [], [], []]; };
+    for (i = 16; i < 32; i++) { ccArr[i] = [[], [], [], [], [], [], [], [], [], []]; };
 
-    for (i = 1; i < 9; i++) {                   // Track Fader
+    for (i = 1; i < 9; i++) {               // Track Fader
         var name = "track" + i;
         ccArr[7][i][0] = local.values.faders.getChild(name);
     };
@@ -200,33 +203,52 @@ function init()
     ccArr[14][0] = local.values.faders.getChild("master");
 
     ccArr[15][0] = local.values.faders.getChild("crossfader");
-
-    for (i = 1; i < 9; i++) {                   // Device Knobs Track 1
-        var name = "_" + i + "_";
-        ccArr[16][i][0] = local.values.knobs.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
+    
+  
+    for (i = 16; i < 24; i++) {             // Device Knobs Track 1
+        var j = i - 15;
+        var name = "_" + j + "_";
+        ccArr[i][1][0] = local.values.knobs.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
     };
 
-    for (j = 17; j < 24; j++) {                 // Device Knobs Track 2-8 (Mode 0 Only)
-        var k = "track" + (j - 15) + "_GenericMode_0_Only";
-        for (i = 1; i < 9; i++) {
-            var name = "_" + i + "_";
-            ccArr[j][i][0] = local.values.knobs.deviceKnobs_Right_[k].getChild(name);
+    for (k = 2; k < 9; k++) {               // Device Knobs Track 2-8 (Mode 0 Only)
+        var m = "track" + k + "_GenericMode_0_Only";
+        for (i = 16; i < 24; i++) {
+            var j = i - 15;             
+            var name = "_" + j + "_";
+            ccArr[i][k][0] = local.values.knobs.deviceKnobs_Right_[m].getChild(name);
         };
     };
 
-    for (i = 1; i < 9; i++) {                   // Device Knob LED Ring Mode Track 1
-        var name = "_" + i + "_";
-        ccArr[24][i][0] = true;
-        ccArr[24][i][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
+    for (i = 16; i < 24; i++) {             // Device Knobs Master Track (Mode 0 Only)
+        var j = i - 15;
+        var name = "_" + j + "_";
+        ccArr[i][9][0] = local.values.knobs.deviceKnobs_Right_.master_GenericMode_0_Only.getChild(name);
     };
 
-    for (j = 25; j < 32; j++) {                 // Device Knob LED Ring Mode Track 2-8 (Mode 0 Only) 
-        var k = "track" + (j - 23) + "_GenericMode_0_Only";
-        for (i = 1; i < 9; i++) {
-            var name = "_" + i + "_";
-            ccArr[j][i][0] = true;
-            ccArr[j][i][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_[k].getChild(name);
+    for (i = 24; i < 32; i++) {             // Device Knob LED Ring Mode Track 1
+        var j = i - 23;
+        var name = "_" + j + "_";
+        ccArr[i][1][0] = true;
+        ccArr[i][1][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
+    };
+
+
+    for (k = 2; k < 9; k++) {               // Device Knobs LED Ring Mode Track 2-8 (Mode 0 Only)
+        var m = "track" + k + "_GenericMode_0_Only";
+        for (i = 24; i < 32; i++) {
+            var j = i - 23;
+            var name = "_" + j + "_";
+            ccArr[i][k][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_[m].getChild(name);
+
         };
+    };
+
+    for (i = 24; i < 32; i++) {             // Device Knob LED Ring Mode Master Track (Mode 0 Only)
+        var j = i - 23;
+        var name = "_" + j + "_";
+        ccArr[i][9][0] = true;
+        ccArr[i][9][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_.master_GenericMode_0_Only.getChild(name);
     };
 
     ccArr[47][0] = local.values.knobs.rotaryEncoders.getChild("cueLevel");
@@ -243,7 +265,6 @@ function init()
     };
 
     ccArr[64][0] = local.values.buttons.footswitch.getChild("footswitch");
-
 };
 
 // This function will be called each time a parameter of your script has changed
@@ -268,7 +289,7 @@ function scriptParameterChanged(param)
 	} 
 };
 
-/* MODULE SPECIFIC SCRIPTING /////////////////
+/* MODULE SPECIFIC FUNCTIONS /////////////////
 
 	The "local" variable refers to the object containing the scripts. In this case, the local variable refers to the module.
 	It means that you can access any control inside  this module by accessing it through its address.
@@ -279,16 +300,31 @@ function scriptParameterChanged(param)
 
 // This function will be called each time a parameter of this module has changed, meaning a parameter or trigger inside the "Parameters" panel of this module
 
-function moduleParameterChanged(param) 
-{
+function moduleParameterChanged(param) {
     if (param.isParameter()) {
-
-        if (param.name == "controllerMode") { setAPC40mode(param.get()); };
-        if (param.name == "debug") { debug(param); };
-
+        if (param.name == "controllerMode") {
+            setAPC40mode(param.get());
+        } else if (param.name == "debug") {
+            debug(param);
+        } else if (param.getControlAddress().contains("led")) {
+            if (param.name == "all") {
+                setRingModeGroup(param);
+            } else {
+                setRingModeSingle(param);
+            };
+        } else if (param.name.charAt(0) == "l") {
+            lightRgb(param);
+        } else if (param.getParent().name.charAt(11) == "s") {
+            lightTri(param); // Three state button
+        } else {
+            lightBin(param); // Binary button
+        };
         script.log("Module parameter changed : " + param.name + " > " + param.get());
-
     } else {
+
+        if (param.name == "clearAll"){clearBank(param);}
+
+        // TRIGGERS
 
         script.log("Module parameter triggered : " + param.name);
     }
@@ -312,7 +348,6 @@ function moduleValueChanged(value)
 local.sendNoteOn(channel, note, velocity);
 local.sendNoteOff(channel, note);
 local.sendCC(channel, note, value);
-local.sendSysex(15,20,115,10);
 
 You can intercept MIDI Events with the functions below:
 
@@ -330,28 +365,45 @@ function noteOnEvent(channel, pitch, velocity)
     };
 };
 
-function noteOffEvent(channel, pitch, velocity)
-{
+function noteOffEvent(channel, pitch, velocity) {
     if (noteArr[pitch][0]) // Check Mapping
     {
-        script.log("NoteOff received "+channel+", "+pitch+", "+velocity);
+        // noteArr[pitch]
+        script.log("NoteOff received " + channel + ", " + pitch + ", " + velocity);
     }
-    else
-    {
+    else {
         script.log("No mapping for this Midi Note found");
     };
 };
 
-function ccEvent(channel, number, value)
-{
-    if (ccArr[pitch][0]) // Check Mapping
+function ccEvent(channel, number, value) {
+    if (ccArr[number][0])                                               // Remove Completely unmapped CCs
     {
-        script.log("ControlChange received "+channel+", "+number+", "+value);
+        if (number >= 24 && number <= 31 && channel <= 9) {             // Device Knobs LED Mode
+            if (value >= 4) { var norm = 1; } else { norm = value; }
+            ccArr[number][channel][1].set(norm);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else if (number >= 56 && number <= 63 && channel == 1) {      // Track Knobs LED Mode
+            if (value >= 4) { var norm = 1; } else { norm = value; }
+            ccArr[number][1].set(norm);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else if (number >= 16 && number <= 23 && channel <= 9) {      // Device Knobs Value
+            ccArr[number][channel][0].set(value);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else if (number >= 48 && number <= 55 && channel == 1) {      // Track Knobs Value
+            ccArr[number][0].set(value);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else if (number == 7) {                                       // Track Faders
+            ccArr[7][channel][0].set(value);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else if (channel == 1) {                                      // Everything else
+            ccArr[number][0].set(value);
+            script.log("ControlChange received " + channel + ", " + number + ", " + value);
+        } else {
+            script.log("No mapping for this Midi CC found");
+        };
     }
-    else
-    {
-        script.log("No mapping for this Midi CC found");
-    };
+    else { script.log("No mapping for this Midi CC found"); };
 };
 
 function sysExEvent(data)
@@ -363,314 +415,80 @@ function sysExEvent(data)
 	}
 };
 
-/* This function, if you declare it, will launch a timer at 50hz, calling this method on each tick
-
-function update(deltaTime)
-{
-	script.log("Update : "+util.getTime()+", delta = "+deltaTime); //deltaTime is the time between now and last update() call, util.getTime() will give you a timestamp relative to either the launch time of the software, or the start of the computer.
-};*/
-
-/* This function, if you declare it, will be called when after a user has made a choice from a okCancel box or YesNoCancel box that you launched from this script 
-
-function messageBoxCallback(id, result)
-{
-	script.log("Message box callback : "+id+" > "+result); //deltaTime is the time between now and last update() call, util.getTime() will give you a timestamp relative to either the launch time of the software, or the start of the computer.
-}; */
-
 // THIS MODULE SPECIFIC FUNCTIONS ////////////
 
 // TURN THE LIGHTS ON ////////////////////////
 
-function setRingModeSingle(param, noteIndex, chanIndex) {
-    if (chanIndex == "K") {             // Track Knobs
-        local.sendCC(1, noteCC.knob[noteIndex - 1] + 8, param.get());
-    } else if (chanIndex == "r") {      // Master Track, Mode 0
-        local.sendCC(9, noteCC.knob[noteIndex + 7] + 8, param.get());
-    } else {                            // Device Knobs Track 1-8
-        local.sendCC(chanIndex, noteCC.knob[noteIndex + 7] + 8, param.get());
+function setRingModeSingle(param) 
+{
+    var chanIndex = param.getParent().name.charAt(5);
+    var noteIndex = parseInt(param.name.charAt(1));
+    if (chanIndex == "K") {// Track Knobs
+        local.sendCC(1, noteIndex + 55, param.get());
+    } else {
+        if (chanIndex == "r") {// Master Track, Mode 0
+            local.sendCC(9, noteIndex + 23, param.get());
+        } else {
+            chanIndex = parseInt(chanIndex);// Device Knobs Track 1-8
+            local.sendCC(chanIndex, noteIndex + 23, param.get());
+        };
     };
 };
 
-function setRingModeGroup(param, chanIndex) {
-    for (var noteIndex = 1; noteIndex < 9; noteIndex++) {
-        setRingModeSingle(param, noteIndex, chanIndex);
+function setRingModeGroup(param) {
+    var siblings = param.getParent().getControllables(true, false);
+    for (i = 1; i < 9; i++) {
+        siblings[i].setData(param.get());
     };
 };
 
-function lightRgb(a, b, channel, note, velocity) {   // The Clip and Scene Launch Pads
-
-    script.log("a= " + a);
-    script.log("b= " + b);
-    script.log("channel= " + channel);
-    script.log("note= " + note);
-    script.log("velocity= " + velocity);
-
-    var test = a.get();
-
-    script.log("a.get() = " + a.get());
-
-    if (a.get() = channel - 1) {
-
-        b.set(velocity);
-
-        // script.log("b= "+ b);
-        // script.log("test = " +test);
-        local.sendNoteOn(1, note, velocity);
+function lightRgb(param) {   // The Clip and Scene Launch Pads
+    var midiNote;
+    if (param.name.charAt(11)) {
+        midiNote = ((parseInt(param.name.charAt(5)) - 1) * 8) + (parseInt(param.name.charAt(11)) - 1);
+    } else {
+        midiNote = parseInt(param.name.charAt(5)) + 81;
     };
-
-
-
-
-
-
-
-
-    /*  var y = trackNo(param, 5);
-     if (param.getParent().getParent().name.charAt(0) == "c") { //clip
-         var x = trackNo(param, 11) - 1;
-         var z = x + 40 - (8 * y);
-         var channel = local.parameters.lights.pads.clipLaunchPads.mode[param.name].get();
-         var velocity = local.parameters.lights.pads.clipLaunchPads.colour[param.name].get();
-     } else { //scene
-         z = y + 39;
-         var channel = local.parameters.lights.pads.sceneLaunchPads.mode[param.name].get();
-         var velocity = local.parameters.lights.pads.sceneLaunchPads.colour[param.name].get();
-     };
-     var note = noteNote.rgbPad[z];
-     local.sendNoteOn(channel, note, velocity); */
+    if (param.getParent().name.charAt(0) == "m") {      // use Mode get Colour
+        local.sendNoteOn(param.get(), midiNote, noteArr[midiNote][2].get());
+    } else {                                            // Use colour get Mode
+        local.sendNoteOn(noteArr[midiNote][1].get(), midiNote, param.get());
+    };
 };
 
 function lightTri(param) {      // Clip Stop and Crossfade Assign 
-    var channel = trackNo(param, 5);
-    var velocity = param.get();
-    if (param.getParent().name.charAt(1) == "l") {
-        var note = 52;
-    } else { note = 66; };
-    local.sendNoteOn(channel, note, velocity);
+    var chanIndex = param.name.charAt(5);
+    var note = 66;
+    if (param.getParent().name=="clipStopPads"){note = 52;}
+    local.sendNoteOn(chanIndex, note, param.get());
 };
 
 function lightBin(param) {       // Any button with Boolean condition
-    var channel = 1;
-    script.log(param.getParent().getParent().name);
-    if (param.getParent().getParent().name == "buttons") {
-        var note = noteNote.button[param.name];
+    var note;
+    if (param.getParent().getParent().name == "trackControls") {
+        var chanIndex = param.name.charAt(5);
+        var nameCheck = param.getParent().name.charAt(0);
+        if (nameCheck == "m") { note = 50; } else
+        if (nameCheck == "s") { note = 49; } else
+        if (nameCheck == "r") { note = 48; } else { note = 51; };
     } else {
-        channel = trackNo(param, 5);
-        if (param.getParent().name.charAt(0) == "m") { note = 50; };
-        if (param.getParent().name.charAt(0) == "s") { note = 49; };
-        if (param.getParent().name.charAt(0) == "r") { note = 48; };
-        if (param.getParent().name.charAt(0) == "t") {
-            note = 51;
-            if (!trackNo(param, 5)) { note = 80; };
-        };
+        chanIndex = 1;
+        var i = buttons.indexOf(param.name);
+        note = buttons[i + 1];
     };
-    var velocity = param.get();
-    local.sendNoteOn(channel, note, velocity);
+    local.sendNoteOn(chanIndex, note, param.get());
 };
 
-// TURN THEM OFF AGAIN ///////////////////////
+// TURN THE LIGHTS OFF ///////////////////////
 
-function clearRGBPads(x, y) {
-    for (i = x; i < y; i++) {
-        local.sendNoteOff(1, noteNote.rgbPad[i]);
-        // myIntParam.set(0);
-    }
-};
-
-// function handleCC(channel, number, value) {
-//     var obj = ccValueObj[channel][number];
-//     if (!!obj) {
-//         if (obj.name == "encoderCueLevel" || obj.name == "encoderTempo") {
-//             if (value > 63) value = value - 128;
-//             obj.set(value);
-//         }
-//         else {
-//             obj.set((value / 127));
-//         }
-//     }
-//     else {
-//         script.log("No Mapping for this Midi CC found");
-//     }
-// }
-
-// EVERYTHING THAT HAPPENS TO PARAMETERS /////
-
-/* 
-function moduleParameterChanged(param) {
-    var noteOrCC = param.getControlAddress();
-    if (param.isParameter()) {
-
-        if (param.name == "controllerMode") {
-            setAPC40mode(param.get());
-
-        } else if (param.name == "debug") {
-            debug(param);
-
-        } else if (noteOrCC.contains("led")) {
-            var noteIndex = parseInt(param.name.charAt(1));
-            var chanIndex = param.getParent().name.charAt(5);
-            if (chanIndex == "n") { setRingModeGroup(param, "K"); };      // All Rings
-            if (chanIndex == "n" || chanIndex == "e") {
-                setRingModeGroup(param, "r");
-                for (var i = 1; i < 9; i++) { setRingModeGroup(param, i); };
-            } else {
-                if (noteIndex) {            // Any single Ring
-                    setRingModeSingle(param, noteIndex, chanIndex);
-                } else {                    // All Track Rings
-                    setRingModeGroup(param, chanIndex);
-                };
-            };
-            
-//             script.log(noteArr);
-// script.log(ccArr);
-        } else {
-
-            if (param)
-                lightRGBPad(param);
-            } else if (param.getParent().name.charAt(0) == "c") {
-                light012(param);
-            } else {
-                light01(param);
-            };
-            script.log("param = "+param+" param.name = "+param.name+" param.get() = "+param.get());
+function clearBank(param) {
+    if (param.name == "clearAll") {
+        var siblings = param.getParent().getControllables(true, false);
+        for (i = 0; i < 9; i++) {
+            siblings[i].set(0);
         };
-    } else {
-
-        if (param.getParent().name == "pads") { clearRGBPads(0, 45); };
-
-        if (param.getParent().name == "clipLaunchPads") { clearRGBPads(0, 40); };
-
-        if (param.getParent().name == "sceneLaunchPads") { clearRGBPads(40, 45); };
-
-        // TRIGGERS GO HERE
-
-        script.log("Module parameter triggered : " + param.name);
     };
-};
-
-// EVERYTHING THAT HAPPENS TO VALUES /////////
-
-function moduleValueChanged(value) {
-    var noteOrCC = value.getControlAddress();
-    if(value.isParameter()){
-        if (noteOrCC.contains("knob") || noteOrCC.contains("faders")){
-ccArr[1][7][0].set(value);
-var obj = ccArr[1][7][0];
-           // myIntParam.set(2);
-           script.log(obj.name);
-            script.log("CC");
-            script.log(ccArr[1][7][0]);
-        } else {
-            script.log("NOTE");
-            script.log("Module value changed : "+value.name+" > "+value.get());
-        };
-    } else {
-        script.log("Module value triggered : "+value.name);	
-    };
-};
-
-// Logs incoming Note On, leaving controller to do what it's programmed to do. 
-// Does turning off Module logging bypass this? Need to check.
-
-function noteOnEvent(channel, note, velocity) { 
-    if (note <= 39 ||                       // Clip Launch Pads
-       (note >= 82 && note <= 85)) {        // Scene Launch Pads
-        lightRGBPad(noteArr[note][0], noteArr[note][1], channel, note, velocity);
-    };
-};
- */
-// }else if (note >= 82 && note <= 86) { // Scene Launch Pads
-
-// } else if (note == 52 && channel <= 8) { // Clip Stop Pads
-
-// } else if (note == 66 && channel <= 8) { // Crossfader A/B
-
-// } else if (note >= 48 && note <= 51) {
-
-// } else if (
-//     (note >= 58 && note <= 65) ||
-//     (note == 80) || 
-//     (note == 81) || 
-//     (note >= 87 && note <= 91) || 
-//     (note >= 93 && note <= 102) && 
-//     (channel == 1)) {
-
-//     } else {
-//         script.log("No Mapping for this Midi Note found");
-//     };
-
-// 	script.log("Note on received "+channel+", "+note+", "+velocity);
-// };
-
-// function noteOffEvent(channel, note, velocity)
-// {
-// 	script.log("Note off received "+channel+", "+note+", "+velocity);
-// };
-
-/* function ccEvent(channel, number, value) {
-
-    if (number == 7) { local.values.faders[ccArr[channel][number][0]].set(value); };
-    if (number == 7 && channel <= 8) {x = "track" + channel; local.values.faders[x].set(value);
-      
-    };
-
-}; */
-
-/* function ccEvent(channel, number, value) {
-    
-    var x, y, z;
-
-    if (number == 7 && channel <= 8) {                          // Track Faders
-        x = "track" + channel; local.values.faders[x].set(value);
-    } else if (number == 13 && channel == 1) {                  // Tempo Knob
-
-    } else if (number == 14 && channel == 1) {                  // Master Fader
-        local.values.faders.master.set(value);
-    } else if (number == 15 && channel == 1) {                  // Crossfader
-        local.values.faders.crossfader.set(value);
-    } else if (number >= 16 && number <= 23 && channel <= 9) {
-        x = number - 15;
-        y = "_" + x + "_";
-        if (channel == 1) {                                                             // Device Knobs All Modes
-            local.values.knobs.deviceKnobs_Right_.track1_UsedByAllModes[y].set(value);
-        } else if (channel >= 2 && channel <= 8) {                                      // Device Knobs Generic Mode (0) Tracks 2-8
-            z = "track" + channel + "_GenericMode_0_Only";
-            local.values.knobs.deviceKnobs_Right_[z][y].set(value);
-        } else {                                                                        // Device Knobs Generic Mode (0) Master Track
-            local.values.knobs.deviceKnobs_Right_.master_GenericMode_0_Only[y].set(value);
-        };
-    } else if (number >= 24 && number <= 31 && channel <= 9) {  // Device Knobs LED assignment
-        if (channel == 1) {                                                             // Device Knobs All Modes
-            x = number - 23;
-            y = "_" + x + "_";
-            local.parameters.lights.ledRingModes.deviceKnobs_Right_.track1_UsedByAllModes[y].set(value);
-        } else if (channel >= 2 && channel <= 8) {                                      // Device Knobs Generic Mode (0) Tracks 2-8
-            x = number - 23;
-            y = "_" + x + "_";
-            z = "track" + channel + "_GenericMode_0_Only";
-            local.parameters.lights.ledRingModes.deviceKnobs_Right_[z][y].set(value);
-        } else {                                                                        // Device Knobs Generic Mode (0) Master Track
-            x = number - 23;
-            y = "_" + x + "_";
-            local.parameters.lights.ledRingModes.deviceKnobs_Right_.master_GenericMode_0_Only[y].set(value);
-        };
-    } else if (number == 47) {                                  // Cue Level
-
-    } else if (number >= 48 && number <= 55 && channel == 1) {  // Track Knobs
-        x = number - 47;
-        y = "_" + x + "_";
-        local.values.knobs.trackKnobs_Top_[y].set(value);
-    } else if (number >= 56 && number <= 63 && channel == 1) {  // Track Knobs LED
-        x = number - 55;
-        y = "_" + x + "_";
-        local.parameters.lights.ledRingModes.trackKnobs_Top_[y].set(value);
-    } else if (number == 64 && channel == 1) {                  // Footswitch 
-
-    } else {                                                    // No controller mapping
-        script.log("No Mapping for this Midi CC found.");
-    };
-    script.log("ControlChange received " + channel + ", " + number + ", " + value);
-}; */
+}
 
 // UTILITIES /////////////////////////////////
 
