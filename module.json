@@ -716,8 +716,8 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Cue Level": {"type":"Integer"},
-                "Tempo":     {"type":"Integer"}
+                "Cue Level": {"type":"Integer", "alwaysNotify":true},
+                "Tempo":     {"type":"Integer", "alwaysNotify":true}
             }
         },
 
@@ -793,7 +793,7 @@
             {
                 "type":"Container",
                 "collapsed":true,
-                
+
                 "Track 1":          {"type":"Boolean"},
                 "Track 2":          {"type":"Boolean"},
                 "Track 3":          {"type":"Boolean"},
