@@ -248,7 +248,8 @@ function moduleParameterChanged(param) {
 };
  
 function moduleValueChanged(value) {
-    if (value.getControlAddress().contains == "knob") {
+    
+    if (value.getControlAddress().contains("knob")) {
         var channel = 1;
         var note;
         if (value.getParent().name == "trackKnobs_Top_") {
@@ -259,7 +260,6 @@ function moduleValueChanged(value) {
             note = parseInt(value.name.charAt(1)) + 15;
         };
         local.sendCC(channel, note, value.get());
-        script.log("Module value changed : " + value.niceName + " > " + value.get());
     };
 };
 
