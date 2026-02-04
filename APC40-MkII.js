@@ -120,12 +120,9 @@ function init()
     };
 
     for (i = 38; i < 46; i=i+2) {
-        noteArr[buttons[i+1]][0] = true;
-        noteArr[buttons[i+1]][1] = local.values.buttons.bankSelect.getChild(buttons[i]);
+        noteArr[buttons[i+1]][0] = local.values.buttons.bankSelect.getChild(buttons[i]);
     };
 
-   
-    
     noteArr[80][0] = local.values.pads.trackControls.trackSelectors.getChild("master");
     noteArr[81][0] = local.values.pads.clipStopPads.getChild("stopAllClips");
     noteArr[98][0] = local.values.buttons.bottomSection.getChild("shift");
@@ -155,12 +152,9 @@ function init()
     };
 
     ccArr[13][0] = local.values.knobs.rotaryEncoders.getChild("tempo");
-
     ccArr[14][0] = local.values.faders.getChild("master");
-
     ccArr[15][0] = local.values.faders.getChild("crossfader");
     
-  
     for (i = 16; i < 24; i++) {             // Device Knobs Track 1
         var j = i - 15;
         var name = "_" + j + "_";
@@ -189,14 +183,12 @@ function init()
         ccArr[i][1][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_.track1_UsedByAllModes.getChild(name);
     };
 
-
     for (k = 2; k < 9; k++) {               // Device Knobs LED Ring Mode Track 2-8 (Mode 0 Only)
         var m = "track" + k + "_GenericMode_0_Only";
         for (i = 24; i < 32; i++) {
             var j = i - 23;
             var name = "_" + j + "_";
             ccArr[i][k][1] = local.parameters.lights.ledRingModes.deviceKnobs_Right_[m].getChild(name);
-
         };
     };
 
@@ -221,26 +213,6 @@ function init()
     };
 
     ccArr[64][0] = local.values.buttons.footswitch.getChild("footswitch");
-};
-
-function scriptParameterChanged(param)
-{
-	script.log("Parameter changed : "+param.name); // All parameters have "name" property
-
-	if(param.is(myTrigger)) 
-	{
-		script.log("Trigger !");    //You can check if two variables are the reference to the same parameter or object with the method .is()
-		                            //Here we can for example show a "Ok cancel" box. The result will be called in the messageBoxCallback function below
-		                            //util.showOkCancelBox("myBoxId", "Super warning!", "This is a warning for you", "warning", "Got it","Naaah");
-	}
-	else if(param.is(myEnumParam))
-	{
-		script.log("Key = "+param.getKey()+", data = "+param.get()); //The enum parameter has a special function getKey() to get the key associated to the option. .get() will give you the data associated
-	}
-	else
-	{
-		script.log("Value is "+param.get()); //All parameters have a get() method that will return their value
-	} 
 };
 
 // MODULE SPECIFIC FUNCTIONS /////////////////
@@ -276,69 +248,38 @@ function moduleParameterChanged(param) {
 };
  
 function moduleValueChanged(value) {
-    if (value.isParameter()) {
-
-        // CC Faders Inc Master and Crossfader  local.sendCC(channel, note, value);
-
-        // CC Track Knobs                       local.sendCC(channel, note, value);
-
-        // CC Device Knobs 1                    local.sendCC(channel, note, value);
-
-        // CC Device Knobs 2-8                  local.sendCC(channel, note, value);
-
-        // CC Device Knobs Master               local.sendCC(channel, note, value);
-
-        // CC Rotary Encoders                   local.sendCC(channel, note, value);
-
-        // NOTE Clip Launch pads                local.sendNoteOn(channel, note, velocity);
-
-        // NOTE Scene Launch pads               local.sendNoteOn(channel, note, velocity);
-
-        // NOTE CLip Stop pads                  local.sendNoteOn(channel, note, velocity);
-
-        // NOTE Track Controls                  local.sendNoteOn(channel, note, velocity);
-
-        // NOTE Buttons                         local.sendNoteOn(channel, note, velocity);
-
-        script.log("Module value changed : " + value.name + " > " + value.get());
-    } else {
-        script.log("Module value triggered : " + value.name);	// NO TRIGGERS AT PRESENT
-    }
+    if (value.getControlAddress().contains == "knob") {
+        var channel = 1;
+        var note;
+        if (value.getParent().name == "trackKnobs_Top_") {
+            note = parseInt(value.name.charAt(1)) + 47;
+        } else {
+            channel = parseInt(value.getParent().name.charAt(5));
+            if (!channel) { channel = 9; };                     // Master
+            note = parseInt(value.name.charAt(1)) + 15;
+        };
+        local.sendCC(channel, note, value.get());
+        script.log("Module value changed : " + value.niceName + " > " + value.get());
+    };
 };
 
 // MIDI MODULE SPECIFIC FUNCTIONS ////////////
 
 function noteOnEvent(channel, pitch, velocity) {
-    if (noteArr[pitch][0]) // Check Mapping
+    if (noteArr[pitch][0])                                          // Check Mapping
     {
         if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) {        // RGB Buttons
-
-            noteArr[pitch][1].set(channel);
-            noteArr[pitch][2].set(velocity);
-
+            noteArr[pitch][0].set(127);
         } else if (pitch >= 48 && pitch <= 51 && channel <= 8) {    // Track Control Pads
-
-            noteArr[pitch][channel][1].set(velocity);
-
+            noteArr[pitch][channel][0].set(127);
         } else if (pitch == 52 && channel <= 8) {                   // Clip Stop Pad
-
-            if (velocity > 2) { velocity = 1; }
-            noteArr[pitch][channel][1].setData(velocity);
-
+            noteArr[pitch][channel][0].setData(127);
         } else if (pitch == 66 && channel <= 8) {                   // Crossfader A/B
-
-            if (velocity > 1) { velocity = 2; }
-            noteArr[pitch][channel][1].setData(velocity);
-
-        } else if (channel == 1) {                                  // Any other button - perhaps filter those that don't light ???
-
-            noteArr[pitch][1].set(velocity);
-
+            noteArr[pitch][channel][0].setData(127);
+        } else if (channel == 1) {                                  // Any other button
+            noteArr[pitch][0].set(127);
         } else { script.log("No mapping for this Midi Note found"); };
-
-        script.log("NoteOn received " + channel + ", " + pitch + ", " + velocity);
-    }
-    else {
+    } else {
         script.log("No mapping for this Midi Note found");
     };
 };
@@ -347,26 +288,15 @@ function noteOffEvent(channel, pitch, velocity) {
     if (noteArr[pitch][0]) // Check Mapping
     {
         if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) { // RGB Pad no change to channel just in case
-
-            noteArr[pitch][1].set(channel);
-            noteArr[pitch][2].set(0);
-
+            noteArr[pitch][0].set(0);
         } else if ((pitch >= 48 && pitch <= 51 && channel <= 8) || (pitch == 66 && channel <= 8)) {
-
-            noteArr[pitch][channel][1].set(0);
+            noteArr[pitch][channel][0].set(0);
         } else if ((pitch == 52 && channel <= 8) || (pitch == 66 && channel <= 8)) {
-
-            noteArr[pitch][channel][1].setData(0);
-
-        } else if (channel == 1) { // Any other button - perhaps filter those that don't light ???
-
-            noteArr[pitch][1].set(0);
-
+            noteArr[pitch][channel][0].setData(0);
+        } else if (channel == 1) { 
+            noteArr[pitch][0].set(0);
         } else { script.log("No mapping for this Midi Note found"); };
-
-        script.log("NoteOff received " + channel + ", " + pitch + ", " + velocity);
-    }
-    else {
+    } else {
         script.log("No mapping for this Midi Note found");
     };
 };
@@ -375,38 +305,23 @@ function ccEvent(channel, number, value) {
     if (ccArr[number][0])                                               // Remove Completely unmapped CCs
     {
         if (number >= 24 && number <= 31 && channel <= 9) {             // Device Knobs LED Mode
-
             if (value >= 4) { var norm = 1; } else { norm = value; }
             ccArr[number][channel][1].set(norm);
-
         } else if (number >= 56 && number <= 63 && channel == 1) {      // Track Knobs LED Mode
-
             if (value >= 4) { var norm = 1; } else { norm = value; }
             ccArr[number][1].set(norm);
-
         } else if (number >= 16 && number <= 23 && channel <= 9) {      // Device Knobs Value
-            
             ccArr[number][channel][0].set(value);
-
         } else if (number >= 48 && number <= 55 && channel == 1) {      // Track Knobs Value
-
             ccArr[number][0].set(value);
-
         } else if (number == 7) {                                       // Track Faders
-
             ccArr[7][channel][0].set(value);
-
-        } else if (channel == 1) {     
-                                             // Everything else
+        } else if (channel == 1) {                                      // Everything else              
             ccArr[number][0].set(value);
-
         } else { script.log("No mapping for this Midi CC found"); };
-
         script.log("ControlChange received " + channel + ", " + number + ", " + value);
     }
-
     else { script.log("No mapping for this Midi CC found"); };
-
 };
 
 function sysExEvent(data)
