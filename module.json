@@ -538,16 +538,16 @@
             "type":"Container",
             "collapsed":true,
             
-            "Track 1":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 2":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 3":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 4":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 5":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 6":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 7":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Track 8":      {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Master":       {"type":"Float", "min":0, "max":127, "ui":"slider"},
-            "Crossfader":   {"type":"Float", "min":0, "max":127, "ui":"slider"}
+            "Track 1":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 2":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 3":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 4":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 5":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 6":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 7":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Track 8":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Master":       {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
+            "Crossfader":   {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true}
         },
 
         "Knobs":
@@ -716,8 +716,8 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Cue Level": {"type":"Integer", "alwaysNotify":true},
-                "Tempo":     {"type":"Integer", "alwaysNotify":true}
+                "Cue Level": {"type":"Integer", "min":0,"max":127, "alwaysNotify":true, "readOnly": true},
+                "Tempo":     {"type":"Integer", "min":0,"max":127, "alwaysNotify":true, "readOnly": true}
             }
         },
 
@@ -731,50 +731,50 @@
                 "type":"Container",
                 "collapsed":true,
 
-                "Layer 1 > Clip 1": {"type":"Boolean"},
-                "Layer 1 > Clip 2": {"type":"Boolean"},
-                "Layer 1 > Clip 3": {"type":"Boolean"},
-                "Layer 1 > Clip 4": {"type":"Boolean"},
-                "Layer 1 > Clip 5": {"type":"Boolean"},
-                "Layer 1 > Clip 6": {"type":"Boolean"},
-                "Layer 1 > Clip 7": {"type":"Boolean"},
-                "Layer 1 > Clip 8": {"type":"Boolean"},
+                "Layer 1 > Clip 1": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 2": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 3": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 4": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 5": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 6": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 7": {"type":"Boolean", "readOnly": true},
+                "Layer 1 > Clip 8": {"type":"Boolean", "readOnly": true},
 
-                "Layer 2 > Clip 1": {"type":"Boolean"},
-                "Layer 2 > Clip 2": {"type":"Boolean"},
-                "Layer 2 > Clip 3": {"type":"Boolean"},
-                "Layer 2 > Clip 4": {"type":"Boolean"},
-                "Layer 2 > Clip 5": {"type":"Boolean"},
-                "Layer 2 > Clip 6": {"type":"Boolean"},
-                "Layer 2 > Clip 7": {"type":"Boolean"},
-                "Layer 2 > Clip 8": {"type":"Boolean"},
+                "Layer 2 > Clip 1": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 2": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 3": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 4": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 5": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 6": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 7": {"type":"Boolean", "readOnly": true},
+                "Layer 2 > Clip 8": {"type":"Boolean", "readOnly": true},
 
-                "Layer 3 > Clip 1": {"type":"Boolean"},
-                "Layer 3 > Clip 2": {"type":"Boolean"},
-                "Layer 3 > Clip 3": {"type":"Boolean"},
-                "Layer 3 > Clip 4": {"type":"Boolean"},
-                "Layer 3 > Clip 5": {"type":"Boolean"},
-                "Layer 3 > Clip 6": {"type":"Boolean"},
-                "Layer 3 > Clip 7": {"type":"Boolean"},
-                "Layer 3 > Clip 8": {"type":"Boolean"},
+                "Layer 3 > Clip 1": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 2": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 3": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 4": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 5": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 6": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 7": {"type":"Boolean", "readOnly": true},
+                "Layer 3 > Clip 8": {"type":"Boolean", "readOnly": true},
 
-                "Layer 4 > Clip 1": {"type":"Boolean"},
-                "Layer 4 > Clip 2": {"type":"Boolean"},
-                "Layer 4 > Clip 3": {"type":"Boolean"},
-                "Layer 4 > Clip 4": {"type":"Boolean"},
-                "Layer 4 > Clip 5": {"type":"Boolean"},
-                "Layer 4 > Clip 6": {"type":"Boolean"},
-                "Layer 4 > Clip 7": {"type":"Boolean"},
-                "Layer 4 > Clip 8": {"type":"Boolean"},
+                "Layer 4 > Clip 1": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 2": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 3": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 4": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 5": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 6": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 7": {"type":"Boolean", "readOnly": true},
+                "Layer 4 > Clip 8": {"type":"Boolean", "readOnly": true},
 
-                "Layer 5 > Clip 1": {"type":"Boolean"},
-                "Layer 5 > Clip 2": {"type":"Boolean"},
-                "Layer 5 > Clip 3": {"type":"Boolean"},
-                "Layer 5 > Clip 4": {"type":"Boolean"},
-                "Layer 5 > Clip 5": {"type":"Boolean"},
-                "Layer 5 > Clip 6": {"type":"Boolean"},
-                "Layer 5 > Clip 7": {"type":"Boolean"},
-                "Layer 5 > Clip 8": {"type":"Boolean"}
+                "Layer 5 > Clip 1": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 2": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 3": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 4": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 5": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 6": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 7": {"type":"Boolean", "readOnly": true},
+                "Layer 5 > Clip 8": {"type":"Boolean", "readOnly": true}
             },
 
             "Scene Launch Pads":
@@ -782,11 +782,11 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Layer 1": {"type":"Boolean"},
-                "Layer 2": {"type":"Boolean"},
-                "Layer 3": {"type":"Boolean"},
-                "Layer 4": {"type":"Boolean"},
-                "Layer 5": {"type":"Boolean"}
+                "Layer 1": {"type":"Boolean", "readOnly": true},
+                "Layer 2": {"type":"Boolean", "readOnly": true},
+                "Layer 3": {"type":"Boolean", "readOnly": true},
+                "Layer 4": {"type":"Boolean", "readOnly": true},
+                "Layer 5": {"type":"Boolean", "readOnly": true}
             },
 
             "Clip Stop Pads":
@@ -794,15 +794,15 @@
                 "type":"Container",
                 "collapsed":true,
 
-                "Track 1":          {"type":"Boolean"},
-                "Track 2":          {"type":"Boolean"},
-                "Track 3":          {"type":"Boolean"},
-                "Track 4":          {"type":"Boolean"},
-                "Track 5":          {"type":"Boolean"},
-                "Track 6":          {"type":"Boolean"},
-                "Track 7":          {"type":"Boolean"},
-                "Track 8":          {"type":"Boolean"},
-                "Stop All Clips":   {"type":"Boolean"}
+                "Track 1":          {"type":"Boolean", "readOnly": true},
+                "Track 2":          {"type":"Boolean", "readOnly": true},
+                "Track 3":          {"type":"Boolean", "readOnly": true},
+                "Track 4":          {"type":"Boolean", "readOnly": true},
+                "Track 5":          {"type":"Boolean", "readOnly": true},
+                "Track 6":          {"type":"Boolean", "readOnly": true},
+                "Track 7":          {"type":"Boolean", "readOnly": true},
+                "Track 8":          {"type":"Boolean", "readOnly": true},
+                "Stop All Clips":   {"type":"Boolean", "readOnly": true}
             },
 
             "Track Controls":
@@ -815,15 +815,15 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"},
-                    "Master":  {"type":"Boolean"}
+                    "Track 1": {"type":"Boolean", "readOnly": true},
+                    "Track 2": {"type":"Boolean", "readOnly": true},
+                    "Track 3": {"type":"Boolean", "readOnly": true},
+                    "Track 4": {"type":"Boolean", "readOnly": true},
+                    "Track 5": {"type":"Boolean", "readOnly": true},
+                    "Track 6": {"type":"Boolean", "readOnly": true},
+                    "Track 7": {"type":"Boolean", "readOnly": true},
+                    "Track 8": {"type":"Boolean", "readOnly": true},
+                    "Master":  {"type":"Boolean", "readOnly": true}
                 },
 
                 "Mute [1-8]":
@@ -831,14 +831,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
+                    "Track 1": {"type":"Boolean", "readOnly": true},
+                    "Track 2": {"type":"Boolean", "readOnly": true},
+                    "Track 3": {"type":"Boolean", "readOnly": true},
+                    "Track 4": {"type":"Boolean", "readOnly": true},
+                    "Track 5": {"type":"Boolean", "readOnly": true},
+                    "Track 6": {"type":"Boolean", "readOnly": true},
+                    "Track 7": {"type":"Boolean", "readOnly": true},
+                    "Track 8": {"type":"Boolean", "readOnly": true}
                 },
 
                 "Crossfade Assign [A|B]":
@@ -846,14 +846,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
+                    "Track 1": {"type":"Boolean", "readOnly": true},
+                    "Track 2": {"type":"Boolean", "readOnly": true},
+                    "Track 3": {"type":"Boolean", "readOnly": true},
+                    "Track 4": {"type":"Boolean", "readOnly": true},
+                    "Track 5": {"type":"Boolean", "readOnly": true},
+                    "Track 6": {"type":"Boolean", "readOnly": true},
+                    "Track 7": {"type":"Boolean", "readOnly": true},
+                    "Track 8": {"type":"Boolean", "readOnly": true}
                 },
 
                 "Solo [S]":
@@ -861,14 +861,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
+                    "Track 1": {"type":"Boolean", "readOnly": true},
+                    "Track 2": {"type":"Boolean", "readOnly": true},
+                    "Track 3": {"type":"Boolean", "readOnly": true},
+                    "Track 4": {"type":"Boolean", "readOnly": true},
+                    "Track 5": {"type":"Boolean", "readOnly": true},
+                    "Track 6": {"type":"Boolean", "readOnly": true},
+                    "Track 7": {"type":"Boolean", "readOnly": true},
+                    "Track 8": {"type":"Boolean", "readOnly": true}
                 },
 
                 "Record-Arm [\u2219]":
@@ -876,14 +876,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "Track 1": {"type":"Boolean"},
-                    "Track 2": {"type":"Boolean"},
-                    "Track 3": {"type":"Boolean"},
-                    "Track 4": {"type":"Boolean"},
-                    "Track 5": {"type":"Boolean"},
-                    "Track 6": {"type":"Boolean"},
-                    "Track 7": {"type":"Boolean"},
-                    "Track 8": {"type":"Boolean"}
+                    "Track 1": {"type":"Boolean", "readOnly": true},
+                    "Track 2": {"type":"Boolean", "readOnly": true},
+                    "Track 3": {"type":"Boolean", "readOnly": true},
+                    "Track 4": {"type":"Boolean", "readOnly": true},
+                    "Track 5": {"type":"Boolean", "readOnly": true},
+                    "Track 6": {"type":"Boolean", "readOnly": true},
+                    "Track 7": {"type":"Boolean", "readOnly": true},
+                    "Track 8": {"type":"Boolean", "readOnly": true}
                 }
             }
         },
@@ -898,16 +898,16 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Pan":          {"type":"Boolean"},
-                "Sends":        {"type":"Boolean"},
-                "User":         {"type":"Boolean"},
-                "Play":         {"type":"Boolean"},
-                "Record":       {"type":"Boolean"},
-                "Session":      {"type":"Boolean"},
-                "Metronome":    {"type":"Boolean"},
-                "Tap Tempo":    {"type":"Boolean"},
-                "Nudge \u2212": {"type":"Boolean"},
-                "Nudge +":      {"type":"Boolean"}
+                "Pan":          {"type":"Boolean", "readOnly": true},
+                "Sends":        {"type":"Boolean", "readOnly": true},
+                "User":         {"type":"Boolean", "readOnly": true},
+                "Play":         {"type":"Boolean", "readOnly": true},
+                "Record":       {"type":"Boolean", "readOnly": true},
+                "Session":      {"type":"Boolean", "readOnly": true},
+                "Metronome":    {"type":"Boolean", "readOnly": true},
+                "Tap Tempo":    {"type":"Boolean", "readOnly": true},
+                "Nudge \u2212": {"type":"Boolean", "readOnly": true},
+                "Nudge +":      {"type":"Boolean", "readOnly": true}
             },
 
             "Bottom Section":
@@ -915,16 +915,16 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "[1] Device Left":      {"type":"Boolean"},
-                "[2] Device Right":     {"type":"Boolean"},
-                "[3] Bank Left":        {"type":"Boolean"},
-                "[4] Bank Right":       {"type":"Boolean"},
-                "[5] Device On/Off":    {"type":"Boolean"},
-                "[6] Device Lock":      {"type":"Boolean"},
-                "[7] Clip/Device View": {"type":"Boolean"},
-                "[8] Detail View":      {"type":"Boolean"},
-                "Shift":                {"type":"Boolean"},
-                "Bank":                 {"type":"Boolean"}
+                "[1] Device Left":      {"type":"Boolean", "readOnly": true},
+                "[2] Device Right":     {"type":"Boolean", "readOnly": true},
+                "[3] Bank Left":        {"type":"Boolean", "readOnly": true},
+                "[4] Bank Right":       {"type":"Boolean", "readOnly": true},
+                "[5] Device On/Off":    {"type":"Boolean", "readOnly": true},
+                "[6] Device Lock":      {"type":"Boolean", "readOnly": true},
+                "[7] Clip/Device View": {"type":"Boolean", "readOnly": true},
+                "[8] Detail View":      {"type":"Boolean", "readOnly": true},
+                "Shift":                {"type":"Boolean", "readOnly": true},
+                "Bank":                 {"type":"Boolean", "readOnly": true}
             },
 
             "Bank Select":
@@ -932,10 +932,10 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Up":       {"type":"Boolean"},
-                "Right":    {"type":"Boolean"},
-                "Down":     {"type":"Boolean"},
-                "Left":     {"type":"Boolean"}
+                "Up":       {"type":"Boolean", "readOnly": true},
+                "Right":    {"type":"Boolean", "readOnly": true},
+                "Down":     {"type":"Boolean", "readOnly": true},
+                "Left":     {"type":"Boolean", "readOnly": true}
             },
 
             "Footswitch":
@@ -943,7 +943,7 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Footswitch": {"type":"Boolean"}
+                "Footswitch": {"type":"Boolean", "readOnly": true}
             }
         }
     },
