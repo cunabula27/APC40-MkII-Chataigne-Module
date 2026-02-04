@@ -66,7 +66,9 @@ To use:
 
 ------
 
-## **Explanation of APC 40 MkII Modes:**
+<details>
+
+<summary>Explanation of APC 40 MkII Modes:</summary>
 
 ### **Generic Mode (Mode 0):**
 ***CLIP LAUNCH*** buttons are momentary and should light their LED when ON.

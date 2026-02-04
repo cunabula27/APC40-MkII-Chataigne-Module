@@ -6,7 +6,7 @@ So I don't have to read the MIDI specification document again, here are all the 
 
 ## Inbound NoteOn MIDI Messages (*From PC or local*)
 
-Sending a message with Velocity = 0 gives the same result as a Note Off message but Note Off is preffered.
+Sending a message with Velocity = 0 gives the same result as a Note Off message but Note Off is preferred.
 
 ||Channel||Note||Velocity||
 |---|---:|-------|---:|-----|--------:|---|
