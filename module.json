@@ -228,16 +228,15 @@
                 "type":"Container",
                 "collapsed":true,
 
-                "Reset Mode (All)": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
-                "Clear All": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
+                "Clear All": {"type":"Trigger", "description":"Reset all LEDS to default (Off)"},
 
-                "Clip Launch Pads":
+                "Clip Launch":
                 {
                     "type":"Container",
                     "collapsed":true, 
 
                     "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
-                    "Clear All": {"type":"Trigger", "description":"Clear the pad - sends NoteOn message with velocity 0, which is black."},
+                    "Clear All": {"type":"Trigger", "description":"Reset all pads to default (Off)"},
 
                     "Mode":
                     {
@@ -342,13 +341,13 @@
                     }                
                 },
 
-                "Scene Launch Pads":
+                "Scene Launch":
                 {
                     "type":"Container",
                     "collapsed":true,
 
                     "Reset Mode": {"type":"Trigger", "description":"Reset all pads to 'Primary Colour'"},
-                    "Clear All": {"type":"Trigger", "description":"Clear the pads - sends NoteOn message with velocity 0, which is black."},
+                    "Clear All": {"type":"Trigger", "description":"Reset all pads to default (Off)"},
 
                     "Mode":
                     {
@@ -375,13 +374,13 @@
                     }
                 },
 
-                "Clip Stop Pads":
+                "Clip Stop":
                 {
 
                     "type":"Container",
                     "collapsed":true,
                     
-                    "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+                    "Clear All": {"type":"Trigger", "description":"Set all pads to 'Off'"},
                     "Track 1": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
                     "Track 2": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
                     "Track 3": {"type":"Enum", "options":{"Off":0, "On":1, "Blink":2}},
@@ -439,7 +438,7 @@
                         "type":"Container",
                         "collapsed":true,
 
-                        "Reset All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
+                        "Clear All": {"type":"Trigger", "description":"Sets all pads to 'Off'"},
 
                         "Track 1": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
                         "Track 2": {"type":"Enum", "options":{"Off":0, "A (Yellow)":1, "B (Orange)":3}},
@@ -538,16 +537,16 @@
             "type":"Container",
             "collapsed":true,
             
-            "Track 1":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 2":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 3":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 4":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 5":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 6":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 7":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Track 8":      {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Master":       {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true},
-            "Crossfader":   {"type":"Float", "min":0, "max":127, "ui":"slider", "readOnly": true}
+            "Track 1":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 2":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 3":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 4":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 5":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 6":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 7":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Track 8":      {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Master":       {"type":"Float", "min":0, "max":1, "ui":"slider", "readOnly": true},
+            "Crossfader":   {"type":"Float", "min":-1, "max":1, "ui":"slider", "readOnly": true}
         },
 
         "Knobs":
@@ -560,14 +559,14 @@
                 "type":"Container",
                 "collapsed":true, 
 
-                "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
             },
 
             "Device Knobs (Right)":
@@ -580,14 +579,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 2 - Generic Mode (0) Only":
@@ -595,14 +594,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 3 - Generic Mode (0) Only":
@@ -610,14 +609,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}  
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}  
                 },
 
                 "Track 4 - Generic Mode (0) Only":
@@ -625,14 +624,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 5 - Generic Mode (0) Only":
@@ -640,14 +639,14 @@
                     "type":"Container",
                     "collapsed":true,
 
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 6 - Generic Mode (0) Only":
@@ -655,14 +654,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 7 - Generic Mode (0) Only":
@@ -670,14 +669,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Track 8 - Generic Mode (0) Only":
@@ -685,14 +684,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 },
 
                 "Master - Generic Mode (0) Only":
@@ -700,14 +699,14 @@
                     "type":"Container",
                     "collapsed":true,
                     
-                    "(1)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(2)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(3)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(4)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(5)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(6)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(7)": {"type":"Float", "min":0, "max":127, "ui":"slider"},
-                    "(8)": {"type":"Float", "min":0, "max":127, "ui":"slider"}
+                    "(1)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(2)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(3)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(4)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(5)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(6)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(7)": {"type":"Float", "min":0, "max":1, "ui":"slider"},
+                    "(8)": {"type":"Float", "min":0, "max":1, "ui":"slider"}
                 }
             },
         
@@ -716,8 +715,8 @@
                 "type":"Container",
                 "collapsed":true,
                 
-                "Cue Level": {"type":"Integer", "min":0,"max":127, "alwaysNotify":true, "readOnly": true},
-                "Tempo":     {"type":"Integer", "min":0,"max":127, "alwaysNotify":true, "readOnly": true}
+                "Cue Level": {"type":"Integer", "min":-63,"max":63, "readOnly": true},
+                "Tempo":     {"type":"Integer", "min":-63,"max":63, "readOnly": true}
             }
         },
 
@@ -726,7 +725,7 @@
             "type":"Container",
             "collapsed":true,
 
-            "Clip Launch Pads":
+            "Clip Launch":
             {
                 "type":"Container",
                 "collapsed":true,
@@ -777,7 +776,7 @@
                 "Layer 5 > Clip 8": {"type":"Boolean", "readOnly": true}
             },
 
-            "Scene Launch Pads":
+            "Scene Launch":
             {
                 "type":"Container",
                 "collapsed":true,
@@ -789,7 +788,7 @@
                 "Layer 5": {"type":"Boolean", "readOnly": true}
             },
 
-            "Clip Stop Pads":
+            "Clip Stop":
             {
                 "type":"Container",
                 "collapsed":true,
