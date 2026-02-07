@@ -85,7 +85,7 @@ NoteOff messages ignore the Velocity value
 |**Device Lock**|**1**||**63**||**127**||
 |**Clip/Device View**|**1**||**64**||**127**||
 |**Detail View**|**1**||**65**||**127**||
-|**Crossfader A/B**|**1**|*Track*|**66**||**127**||
+|**Crossfader A/B**|**1-8**|*Track*|**66**||**127**||
 |**Master**|**1**||**80**||**127**||
 |**Stop All Clips**|**1**||**81**||**127**||
 |**Pan**|**1**||**87**||**127**||
