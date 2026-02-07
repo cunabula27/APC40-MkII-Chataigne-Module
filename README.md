@@ -1,68 +1,92 @@
-# DON'T TRY AND USE THIS - ACTIVE DEVELOPMENT
-
 # **APC40-MkII-Chataigne-Module**
 
 A Chataigne module for the Akai APC40 MkII MIDI Controller.
 
-*Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).*
+Version : <!--0.1.0--> **NOT FOR TESTING OR PRODUCTION USE YET**
+
+Requires Chataigne version 1.10.00 or higher.
+
+<!--Chataigne can be downloaded here -->
+
+<!-- *Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).* -->
 
 -----
+## **Settings**
+### Controller Mode 
+Choose between Generic, Ableton Live and Alternate Ableton Live Modes (Modes 0, 1, and 2). The controller always starts in Generic Mode when powered on, I don't make the rules.
 
-### *Implemented:*
+*(See explanation of APC40 modes below)*
 
+## **Utilities**
 
-## **Utilities (Right click menu)**
+### Debug
+Toggles logging for all connections and scripts.
 
-### Set APC40 Mode *(See explanation of APC40 modes below)*
-Choose between Generic, Ableton Live and Alternate Ableton Live Modes (Modes 0, 1, and 2).
+------
+## **Features (in Parameters section)**
 
 ### Set LED Ring Mode
 Choose between Off, Single, Volume and Pan styles. 
 
-Options to apply to All, Track Knobs, Device Knobs (All) and Device Knobs by Track and Master (only applies to Generic Mode).
+Options to apply to All, Track Knobs, Device Knobs (All), Device Knobs by Track + Master (only applies to Generic Mode) and by individual knob.
 
-// ### Clear Pads
-// Choose between Clip Launch, Scene Launch, Clip Stop, Track Selectors and Track Controls (either All or by individual function). 
+### Clear all Pads and Buttons
+All, by type (Pad/Button) or by control block.
 
------
+### Reset Mode for all Clip and Scene Launch pads
+All or by control block. This will reset any flashing behaviour without changing the colour.
 
-### Additional Files
-- APC40_Clip_Launch_LED_Colours (Velocity).json
-- APC40_Clip_Launch_LED_Colours (Velocity-Name).json
+All pad and buttons can have any of their visual properties set by hand.
 
-Custom variables which hold all the colours that the APC40 MkII is programmed to use for RGB pads - the same information just with simple and verbose names. 
+------
 
-To use:
+## **Commands**
 
-1. Copy all the code in the file.
+### Set Knob Ring Mode
+Choose between Off, Single, Volume and Pan styles. 
 
-2. In Chataigne go to the **Custom Variables** panel and click on the Green + icon to create a new group, then in the **Inspector** panel right click on the Header and select ***Paste (replace)***.
+Options to apply to All, Track Knobs, Device Knobs (All), Device Knobs by Track + Master (only applies to Generic Mode) and by individual knob.
 
------
+### Set Knob Ring Value
+Should be self-explanatory. Range is 0-1.
 
-##### OLD Features I need to reinstate:
-- All inputs mapped
-- LED feedback for all pads and buttons
-- RGB input for color pads (then matched to midi color palette)
-- Resync function, restores last status after reconnecting
+### Set Clip Launch Pad
+Set both Colour and Mode, or either. Will also set pad to Off if you select Colour : 0, Mode : Primary Colour.
 
-###### OLD Planned Features:
-- Pulsing/blinking for non-color pads/buttons
-- User-reset functions
+### Set Scene Launch Pad
+Set both Colour and Mode, or either. Will also set pad to Off if you select Colour : 0, Mode : Primary Colour.
 
-## TO DO - Cunabula
-- Learn enough JS to work out how much I might break things by renaming and reordering them.
+### Set Clip Stop Pad
+On, Off, Blinking. Nb. Stop All Clips pad doesn't have an LED but use this command to trigger it.
+
+### Set Track Select Pad
+Set to On or Off.
+
+### Track Control Pad
+Set Mute, Solo, Crossfade Assign and Record/Arm LEDs On or Off. Selecting Crossfade Assign gives you the options of Off, A (Yellow) and B (Orange).
+
+### Set Button LED
+
+Set all the buttons with LEDs to either On or Off
+
+---------
+
+All input and output messages and states should match the **Akai APC40 MkII Communications Protocol** document Version 1.2 (which is a fun read).
+
+---------
 
 ## Additional Files
-- APC40_Clip_Launch_LED_Colours (Velocity-Name).json
-- APC40_Clip_Launch_LED_Colours (Velocity).json
-Custom variable Groups which hold all the colours that the APC40 MkII is programmed to use for RGB pads. 
+
+- APC40_MkII_Colours_Velocity_.json
+Custom variable which hold all the colours that the APC40 MkII is programmed to use for RGB pads. 
+ - Resolume_Colours.json
+ Custom variable which hold all the Resolume UI Colours for theming. 
 
 To use:
 
 1. Copy all the code in the file.
 
-2. In Chataigne go to the **Custom Variables** panel and click on the Green + icon to create a new group, then in the **Inspector** panel Right Click on the Header and select ***Paste (replace)***.
+2. In Chataigne go to the **Custom Variables** panel and click on the Green + icon to create a new group, select the group, then in the **Inspector** panel right click on the Header and select ***Paste (replace)***.
 
 ------
 
