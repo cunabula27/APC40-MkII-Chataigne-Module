@@ -19,6 +19,9 @@
             "description": "Choose how the controller responds to input. The APC40 MkII defaults to Generic Mode on start up. If you're using Resolume it's recommended to choose Alternate Ableton Live Mode.",
             "type": "Enum",
             "options": {
+                "Select": [
+                    ""
+                ],
                 "Generic": [
                     64,
                     "Generic"
@@ -33,12 +36,128 @@
                 ]
             }
         },
+        "Pad Layout":{
+            "description": "Choose between Ableton Style : Clip Launch Pads named by Track (1-8, left to right), and Clip position (1-5, top to bottom) and Scene Launch Pads numbered 1-5, (top to bottom) or Resolume Style : Clip Launch Pads named by Layer (1-5, bottom to top), and Clip position (1-8, left to right) and Scene Launch Pads numbered 1-5, (bottom to top). Or don't bother, Clip Launch Pads will be Named Clip 1-40 in rows (left to right, bottom to top), Scene Launch Pads 1-5 (top to bottom).",
+            "type": "Enum", "options": {"Select":"","Ableton Style":0, "Resolume Style":1}
+        },
+
         "Utilities": {
             "type": "Container",
             "collapsed": false,
             "Debug": {
                 "description": "Set all module logging to TRUE",
                 "type": "Boolean"
+            }
+        },
+        "LED Ring Modes": {
+            "type": "Container",
+            "collapsed": true,
+            "All": {
+                "type": "Enum",
+                "options": {
+                    "Single": 1,
+                    "Volume": 2,
+                    "Pan": 3,
+                    "Off": 0
+                }
+            },
+            "Track Knobs (Top)": {
+                "type": "Container",
+                "collapsed": true,
+                "All": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(1)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(2)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(3)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(4)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(5)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(6)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(7)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "(8)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                }
+            },
+            "Device Knobs (Right)": {
+                "type": "Container",
+                "collapsed": true,
+                "All": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                }
             }
         }
     },
@@ -110,1422 +229,74 @@
         "Knobs": {
             "type": "Container",
             "collapsed": true,
-            "Values": {
+            "Track Knobs (Top)": {
                 "type": "Container",
                 "collapsed": true,
-                "Track Knobs (Top)": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "(1)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(2)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(3)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(4)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(5)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(6)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(7)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    },
-                    "(8)": {
-                        "type": "Float",
-                        "min": 0,
-                        "max": 1,
-                        "ui": "slider"
-                    }
+                "(1)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
                 },
-                "Device Knobs (Right)": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "Track 1 - Used by all Modes": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 2 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 3 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 4 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 5 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 6 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 7 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Track 8 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    },
-                    "Master - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "(1)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(2)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(3)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(4)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(5)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(6)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(7)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        },
-                        "(8)": {
-                            "type": "Float",
-                            "min": 0,
-                            "max": 1,
-                            "ui": "slider"
-                        }
-                    }
+                "(2)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
                 },
-                "Rotary Encoders": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "Cue Level": {
-                        "type": "Integer",
-                        "min": -63,
-                        "max": 63
-                    },
-                    "Tempo": {
-                        "type": "Integer",
-                        "min": -63,
-                        "max": 63
-                    }
+                "(3)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
+                },
+                "(4)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
+                },
+                "(5)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
+                },
+                "(6)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
+                },
+                "(7)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
+                },
+                "(8)": {
+                    "type": "Float",
+                    "min": 0,
+                    "max": 1,
+                    "ui": "slider"
                 }
             },
-            "LED Ring Modes": {
+            "Device Knobs (Right)": {
+                "type": "Container",
+                "collapsed": true
+            },
+            "Rotary Encoders": {
                 "type": "Container",
                 "collapsed": true,
-                "All": {
-                    "type": "Enum",
-                    "options": {
-                        "Single": 1,
-                        "Volume": 2,
-                        "Pan": 3,
-                        "Off": 0
-                    }
+                "Cue Level": {
+                    "type": "Integer",
+                    "min": -63,
+                    "max": 63
                 },
-                "Track Knobs (Top)": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "All": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(1)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(2)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(3)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(4)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(5)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(6)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(7)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "(8)": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    }
-                },
-                "Device Knobs (Right)": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "All": {
-                        "type": "Enum",
-                        "options": {
-                            "Single": 1,
-                            "Volume": 2,
-                            "Pan": 3,
-                            "Off": 0
-                        }
-                    },
-                    "Track 1 - Used by all Modes": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 2 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 3 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 4 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 5 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 6 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 7 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Track 8 - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    },
-                    "Master - Generic Mode (0) Only": {
-                        "type": "Container",
-                        "collapsed": true,
-                        "All": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(1)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(2)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(3)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(4)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(5)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(6)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(7)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        },
-                        "(8)": {
-                            "type": "Enum",
-                            "options": {
-                                "Single": 1,
-                                "Volume": 2,
-                                "Pan": 3,
-                                "Off": 0
-                            }
-                        }
-                    }
+                "Tempo": {
+                    "type": "Integer",
+                    "min": -63,
+                    "max": 63
                 }
             }
         },
@@ -1547,205 +318,329 @@
                     "type": "Trigger",
                     "description": "Reset all pads to 'Primary Colour'"
                 },
+                "Pad": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Clip 1": {
+                        "type": "Boolean"
+                    },
+                    "Clip 2": {
+                        "type": "Boolean"
+                    },
+                    "Clip 3": {
+                        "type": "Boolean"
+                    },
+                    "Clip 4": {
+                        "type": "Boolean"
+                    },
+                    "Clip 5": {
+                        "type": "Boolean"
+                    },
+                    "Clip 6": {
+                        "type": "Boolean"
+                    },
+                    "Clip 7": {
+                        "type": "Boolean"
+                    },
+                    "Clip 8": {
+                        "type": "Boolean"
+                    },
+                    "Clip 9": {
+                        "type": "Boolean"
+                    },
+                    "Clip 10": {
+                        "type": "Boolean"
+                    },
+                    "Clip 11": {
+                        "type": "Boolean"
+                    },
+                    "Clip 12": {
+                        "type": "Boolean"
+                    },
+                    "Clip 13": {
+                        "type": "Boolean"
+                    },
+                    "Clip 14": {
+                        "type": "Boolean"
+                    },
+                    "Clip 15": {
+                        "type": "Boolean"
+                    },
+                    "Clip 16": {
+                        "type": "Boolean"
+                    },
+                    "Clip 17": {
+                        "type": "Boolean"
+                    },
+                    "Clip 18": {
+                        "type": "Boolean"
+                    },
+                    "Clip 19": {
+                        "type": "Boolean"
+                    },
+                    "Clip 20": {
+                        "type": "Boolean"
+                    },
+                    "Clip 21": {
+                        "type": "Boolean"
+                    },
+                    "Clip 22": {
+                        "type": "Boolean"
+                    },
+                    "Clip 23": {
+                        "type": "Boolean"
+                    },
+                    "Clip 24": {
+                        "type": "Boolean"
+                    },
+                    "Clip 25": {
+                        "type": "Boolean"
+                    },
+                    "Clip 26": {
+                        "type": "Boolean"
+                    },
+                    "Clip 27": {
+                        "type": "Boolean"
+                    },
+                    "Clip 28": {
+                        "type": "Boolean"
+                    },
+                    "Clip 29": {
+                        "type": "Boolean"
+                    },
+                    "Clip 30": {
+                        "type": "Boolean"
+                    },
+                    "Clip 31": {
+                        "type": "Boolean"
+                    },
+                    "Clip 32": {
+                        "type": "Boolean"
+                    },
+                    "Clip 33": {
+                        "type": "Boolean"
+                    },
+                    "Clip 34": {
+                        "type": "Boolean"
+                    },
+                    "Clip 35": {
+                        "type": "Boolean"
+                    },
+                    "Clip 36": {
+                        "type": "Boolean"
+                    },
+                    "Clip 37": {
+                        "type": "Boolean"
+                    },
+                    "Clip 38": {
+                        "type": "Boolean"
+                    },
+                    "Clip 39": {
+                        "type": "Boolean"
+                    },
+                    "Clip 40": {
+                        "type": "Boolean"
+                    }
+                },
                 "Colour": {
                     "type": "Container",
                     "collapsed": true,
-                    "Layer 1 > Clip 1": {
+                    "Clip 1": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 2": {
+                    "Clip 2": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 3": {
+                    "Clip 3": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 4": {
+                    "Clip 4": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 5": {
+                    "Clip 5": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 6": {
+                    "Clip 6": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 7": {
+                    "Clip 7": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 1 > Clip 8": {
+                    "Clip 8": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 1": {
+                    "Clip 9": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 2": {
+                    "Clip 10": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 3": {
+                    "Clip 11": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 4": {
+                    "Clip 12": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 5": {
+                    "Clip 13": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 6": {
+                    "Clip 14": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 7": {
+                    "Clip 15": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2 > Clip 8": {
+                    "Clip 16": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 1": {
+                    "Clip 17": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 2": {
+                    "Clip 18": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 3": {
+                    "Clip 19": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 4": {
+                    "Clip 20": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 5": {
+                    "Clip 21": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 6": {
+                    "Clip 22": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 7": {
+                    "Clip 23": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3 > Clip 8": {
+                    "Clip 24": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 1": {
+                    "Clip 25": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 2": {
+                    "Clip 26": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 3": {
+                    "Clip 27": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 4": {
+                    "Clip 28": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 5": {
+                    "Clip 29": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 6": {
+                    "Clip 30": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 7": {
+                    "Clip 31": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4 > Clip 8": {
+                    "Clip 32": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 1": {
+                    "Clip 33": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 2": {
+                    "Clip 34": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 3": {
+                    "Clip 35": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 4": {
+                    "Clip 36": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 5": {
+                    "Clip 37": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 6": {
+                    "Clip 38": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 7": {
+                    "Clip 39": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5 > Clip 8": {
+                    "Clip 40": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
@@ -1754,7 +649,7 @@
                 "Mode": {
                     "type": "Container",
                     "collapsed": true,
-                    "Layer 1 > Clip 1": {
+                    "Clip 1": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1775,7 +670,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 2": {
+                    "Clip 2": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1796,7 +691,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 3": {
+                    "Clip 3": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1817,7 +712,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 4": {
+                    "Clip 4": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1838,7 +733,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 5": {
+                    "Clip 5": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1859,7 +754,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 6": {
+                    "Clip 6": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1880,7 +775,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 7": {
+                    "Clip 7": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1901,7 +796,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 1 > Clip 8": {
+                    "Clip 8": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1922,7 +817,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 1": {
+                    "CLip 9": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1943,7 +838,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 2": {
+                    "Clip 10": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1964,7 +859,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 3": {
+                    "Clip 11": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -1985,7 +880,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 4": {
+                    "Clip 12": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2006,7 +901,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 5": {
+                    "Clip 13": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2027,7 +922,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 6": {
+                    "Clip 14": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2048,7 +943,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 7": {
+                    "Clip 15": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2069,7 +964,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2 > Clip 8": {
+                    "Clip 16": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2090,7 +985,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 1": {
+                    "Clip 17": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2111,7 +1006,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 2": {
+                    "Clip 18": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2132,7 +1027,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 3": {
+                    "Clip 19": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2153,7 +1048,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 4": {
+                    "Clip 20": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2174,7 +1069,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 5": {
+                    "Clip 21": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2195,7 +1090,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 6": {
+                    "Clip 22": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2216,7 +1111,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 7": {
+                    "Clip 23": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2237,7 +1132,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3 > Clip 8": {
+                    "Clip 24": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2258,7 +1153,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 1": {
+                    "Clip 25": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2279,7 +1174,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 2": {
+                    "Clip 26": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2300,7 +1195,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 3": {
+                    "Clip 27": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2321,7 +1216,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 4": {
+                    "Clip 28": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2342,7 +1237,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 5": {
+                    "Clip 29": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2363,7 +1258,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 6": {
+                    "Clip 30": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2384,7 +1279,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 7": {
+                    "Clip 31": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2405,7 +1300,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4 > Clip 8": {
+                    "Clip 32": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2426,7 +1321,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 1": {
+                    "Clip 33": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2447,7 +1342,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 2": {
+                    "Clip 34": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2468,7 +1363,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 3": {
+                    "Clip 35": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2489,7 +1384,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 4": {
+                    "Clip 36": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2510,7 +1405,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 5": {
+                    "Clip 37": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2531,7 +1426,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 6": {
+                    "Clip 38": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2552,7 +1447,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 7": {
+                    "Clip 39": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2573,7 +1468,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5 > Clip 8": {
+                    "Clip 40": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2607,30 +1502,49 @@
                     "type": "Trigger",
                     "description": "Reset all pads to 'Primary Colour'"
                 },
+                "Pad": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Scene 1": {
+                        "type": "Boolean"
+                    },
+                    "Scene 2": {
+                        "type": "Boolean"
+                    },
+                    "Scene 3": {
+                        "type": "Boolean"
+                    },
+                    "Scene 4": {
+                        "type": "Boolean"
+                    },
+                    "Scene 5": {
+                        "type": "Boolean"
+                    }
+                },
                 "Colour": {
                     "type": "Container",
                     "collapsed": true,
-                    "Layer 1": {
+                    "Scene 1": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 2": {
+                    "Scene 2": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 3": {
+                    "Scene 3": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 4": {
+                    "Scene 4": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
                     },
-                    "Layer 5": {
+                    "Scene 5": {
                         "type": "Integer",
                         "min": 0,
                         "max": 127
@@ -2639,7 +1553,7 @@
                 "Mode": {
                     "type": "Container",
                     "collapsed": true,
-                    "Layer 1": {
+                    "Scene 1": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2660,7 +1574,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 2": {
+                    "Scene 2": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2681,7 +1595,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 3": {
+                    "Scene 3": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2702,7 +1616,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 4": {
+                    "Scene 4": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2723,7 +1637,7 @@
                             "Secondary Colour - Blinking 1/2": 15
                         }
                     },
-                    "Layer 5": {
+                    "Scene 5": {
                         "type": "Enum",
                         "options": {
                             "Primary Colour": 0,
@@ -2753,72 +1667,104 @@
                     "type": "Trigger",
                     "description": "Set all pads to 'Off'"
                 },
-                "Track 1": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
+                "Pad": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Track 1": {
+                        "type": "Boolean"
+                    },
+                    "Track 2": {
+                        "type": "Boolean"
+                    },
+                    "Track 3": {
+                        "type": "Boolean"
+                    },
+                    "Track 4": {
+                        "type": "Boolean"
+                    },
+                    "Track 5": {
+                        "type": "Boolean"
+                    },
+                    "Track 6": {
+                        "type": "Boolean"
+                    },
+                    "Track 7": {
+                        "type": "Boolean"
+                    },
+                    "Track 8": {
+                        "type": "Boolean"
+                    },
+                    "Stop All Clips": {
+                        "type": "Boolean"
                     }
                 },
-                "Track 2": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
+                "Style": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Track 1": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 2": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 3": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 4": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 5": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 6": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 7": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
+                    },
+                    "Track 8": {
+                        "type": "Enum",
+                        "options": {
+                            "Off": 0,
+                            "On": 1,
+                            "Blink": 2
+                        }
                     }
-                },
-                "Track 3": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Track 4": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Track 5": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Track 6": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Track 7": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Track 8": {
-                    "type": "Enum",
-                    "options": {
-                        "Off": 0,
-                        "On": 1,
-                        "Blink": 2
-                    }
-                },
-                "Stop All Clips": {
-                    "type": "Boolean"
                 }
             },
             "Track Controls": {
@@ -2902,136 +1848,169 @@
                         "type": "Trigger",
                         "description": "Sets all pads to 'Off'"
                     },
-                    "Track 1": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
+                    "Pad": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Boolean"
+                        },
+                        "Track 2": {
+                            "type": "Boolean"
+                        },
+                        "Track 3": {
+                            "type": "Boolean"
+                        },
+                        "Track 4": {
+                            "type": "Boolean"
+                        },
+                        "Track 5": {
+                            "type": "Boolean"
+                        },
+                        "Track 6": {
+                            "type": "Boolean"
+                        },
+                        "Track 7": {
+                            "type": "Boolean"
+                        },
+                        "Track 8": {
+                            "type": "Boolean"
                         }
                     },
-                    "Track 2": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 3": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 4": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 5": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 6": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 7": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
-                        }
-                    },
-                    "Track 8": {
-                        "type": "Enum",
-                        "options": {
-                            "Off": 0,
-                            "A (Yellow)": 1,
-                            "B (Orange)": 3
+                    "Style": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 2": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 3": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 4": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 5": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 6": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 7": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
+                        },
+                        "Track 8": {
+                            "type": "Enum",
+                            "options": {
+                                "Off": 0,
+                                "A (Yellow)": 1,
+                                "B (Orange)": 3
+                            }
                         }
                     }
                 },
-                "Solo [S]": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "Clear All": {
-                        "type": "Trigger",
-                        "description": "Sets all pads to 'Off'"
+                    "Solo [S]": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Clear All": {
+                            "type": "Trigger",
+                            "description": "Sets all pads to 'Off'"
+                        },
+                        "Track 1": {
+                            "type": "Boolean"
+                        },
+                        "Track 2": {
+                            "type": "Boolean"
+                        },
+                        "Track 3": {
+                            "type": "Boolean"
+                        },
+                        "Track 4": {
+                            "type": "Boolean"
+                        },
+                        "Track 5": {
+                            "type": "Boolean"
+                        },
+                        "Track 6": {
+                            "type": "Boolean"
+                        },
+                        "Track 7": {
+                            "type": "Boolean"
+                        },
+                        "Track 8": {
+                            "type": "Boolean"
+                        }
                     },
-                    "Track 1": {
-                        "type": "Boolean"
-                    },
-                    "Track 2": {
-                        "type": "Boolean"
-                    },
-                    "Track 3": {
-                        "type": "Boolean"
-                    },
-                    "Track 4": {
-                        "type": "Boolean"
-                    },
-                    "Track 5": {
-                        "type": "Boolean"
-                    },
-                    "Track 6": {
-                        "type": "Boolean"
-                    },
-                    "Track 7": {
-                        "type": "Boolean"
-                    },
-                    "Track 8": {
-                        "type": "Boolean"
-                    }
-                },
-                "Record-Arm [\u2219]": {
-                    "type": "Container",
-                    "collapsed": true,
-                    "Clear All": {
-                        "type": "Trigger",
-                        "description": "Sets all pads to 'Off'"
-                    },
-                    "Track 1": {
-                        "type": "Boolean"
-                    },
-                    "Track 2": {
-                        "type": "Boolean"
-                    },
-                    "Track 3": {
-                        "type": "Boolean"
-                    },
-                    "Track 4": {
-                        "type": "Boolean"
-                    },
-                    "Track 5": {
-                        "type": "Boolean"
-                    },
-                    "Track 6": {
-                        "type": "Boolean"
-                    },
-                    "Track 7": {
-                        "type": "Boolean"
-                    },
-                    "Track 8": {
-                        "type": "Boolean"
+                    "Record-Arm [\u2219]": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Clear All": {
+                            "type": "Trigger",
+                            "description": "Sets all pads to 'Off'"
+                        },
+                        "Track 1": {
+                            "type": "Boolean"
+                        },
+                        "Track 2": {
+                            "type": "Boolean"
+                        },
+                        "Track 3": {
+                            "type": "Boolean"
+                        },
+                        "Track 4": {
+                            "type": "Boolean"
+                        },
+                        "Track 5": {
+                            "type": "Boolean"
+                        },
+                        "Track 6": {
+                            "type": "Boolean"
+                        },
+                        "Track 7": {
+                            "type": "Boolean"
+                        },
+                        "Track 8": {
+                            "type": "Boolean"
+                        }
                     }
                 }
-            }
+            
         },
         "Buttons": {
             "type": "Container",
