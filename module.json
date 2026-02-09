@@ -36,11 +36,16 @@
                 ]
             }
         },
-        "Pad Layout":{
+        "Pad Layout": {
             "description": "Choose between Ableton Style : Clip Launch Pads named by Track (1-8, left to right), and Clip position (1-5, top to bottom) and Scene Launch Pads numbered 1-5, (top to bottom) or Resolume Style : Clip Launch Pads named by Layer (1-5, bottom to top), and Clip position (1-8, left to right) and Scene Launch Pads numbered 1-5, (bottom to top). Or don't bother, Clip Launch Pads will be Named Clip 1-40 in rows (left to right, bottom to top), Scene Launch Pads 1-5 (top to bottom).",
-            "type": "Enum", "options": {"Select":"","Ableton Style":0, "Resolume Style":1}
+            "type": "Enum",
+            "options": {
+                "Select": "",
+                "Ableton Style": 0,
+                "Resolume Style": 1,
+                "Default": 2
+            }
         },
-
         "Utilities": {
             "type": "Container",
             "collapsed": false,
@@ -49,19 +54,30 @@
                 "type": "Boolean"
             }
         },
+        "Clear and Reset Pads": {
+            "type": "Container",
+            "collapsed": false,
+            "Clear Clip Pads": {
+                "description": "Turn off all Lights and Reset Mode",
+                "type": "Trigger"
+            },
+            "Clear Scene Pads": {
+                "description": "Turn off all Lights and Reset Mode",
+                "type": "Trigger"
+            },
+            "Reset Clip Pad Mode": {
+                "description": "Reset to Primary Colour",
+                "type": "Trigger"
+            },
+            "Reset Scene Pad Mode": {
+                "description": "Reset to Primary Colour",
+                "type": "Trigger"
+            }
+        },
         "LED Ring Modes": {
             "type": "Container",
             "collapsed": true,
-            "All": {
-                "type": "Enum",
-                "options": {
-                    "Single": 1,
-                    "Volume": 2,
-                    "Pan": 3,
-                    "Off": 0
-                }
-            },
-            "Track Knobs (Top)": {
+            "Set by Group": {
                 "type": "Container",
                 "collapsed": true,
                 "All": {
@@ -73,6 +89,28 @@
                         "Off": 0
                     }
                 },
+                "All Track Knobs (Top)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                },
+                "All Device Knobs (Right)": {
+                    "type": "Enum",
+                    "options": {
+                        "Single": 1,
+                        "Volume": 2,
+                        "Pan": 3,
+                        "Off": 0
+                    }
+                }
+            },
+            "Track Knobs (Top)": {
+                "type": "Container",
+                "collapsed": true,
                 "(1)": {
                     "type": "Enum",
                     "options": {
@@ -148,16 +186,7 @@
             },
             "Device Knobs (Right)": {
                 "type": "Container",
-                "collapsed": true,
-                "All": {
-                    "type": "Enum",
-                    "options": {
-                        "Single": 1,
-                        "Volume": 2,
-                        "Pan": 3,
-                        "Off": 0
-                    }
-                }
+                "collapsed": true
             }
         }
     },
@@ -169,61 +198,71 @@
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 2": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 3": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 4": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 5": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 6": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 7": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Track 8": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Master": {
                 "type": "Float",
                 "min": 0,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             },
             "Crossfader": {
                 "type": "Float",
                 "min": -1,
                 "max": 1,
-                "ui": "slider"
+                "ui": "slider",
+                "readOnly": true
             }
         },
         "Knobs": {
@@ -303,1225 +342,50 @@
         "Pads": {
             "type": "Container",
             "collapsed": true,
-            "Clear All Pads": {
-                "type": "Trigger",
-                "description": "Reset all LEDS to default (Off)"
-            },
             "Clip Launch": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Reset all pads to default (Off)"
-                },
-                "Reset Mode": {
-                    "type": "Trigger",
-                    "description": "Reset all pads to 'Primary Colour'"
-                },
-                "Pad": {
+                "Press": {
                     "type": "Container",
-                    "collapsed": true,
-                    "Clip 1": {
-                        "type": "Boolean"
-                    },
-                    "Clip 2": {
-                        "type": "Boolean"
-                    },
-                    "Clip 3": {
-                        "type": "Boolean"
-                    },
-                    "Clip 4": {
-                        "type": "Boolean"
-                    },
-                    "Clip 5": {
-                        "type": "Boolean"
-                    },
-                    "Clip 6": {
-                        "type": "Boolean"
-                    },
-                    "Clip 7": {
-                        "type": "Boolean"
-                    },
-                    "Clip 8": {
-                        "type": "Boolean"
-                    },
-                    "Clip 9": {
-                        "type": "Boolean"
-                    },
-                    "Clip 10": {
-                        "type": "Boolean"
-                    },
-                    "Clip 11": {
-                        "type": "Boolean"
-                    },
-                    "Clip 12": {
-                        "type": "Boolean"
-                    },
-                    "Clip 13": {
-                        "type": "Boolean"
-                    },
-                    "Clip 14": {
-                        "type": "Boolean"
-                    },
-                    "Clip 15": {
-                        "type": "Boolean"
-                    },
-                    "Clip 16": {
-                        "type": "Boolean"
-                    },
-                    "Clip 17": {
-                        "type": "Boolean"
-                    },
-                    "Clip 18": {
-                        "type": "Boolean"
-                    },
-                    "Clip 19": {
-                        "type": "Boolean"
-                    },
-                    "Clip 20": {
-                        "type": "Boolean"
-                    },
-                    "Clip 21": {
-                        "type": "Boolean"
-                    },
-                    "Clip 22": {
-                        "type": "Boolean"
-                    },
-                    "Clip 23": {
-                        "type": "Boolean"
-                    },
-                    "Clip 24": {
-                        "type": "Boolean"
-                    },
-                    "Clip 25": {
-                        "type": "Boolean"
-                    },
-                    "Clip 26": {
-                        "type": "Boolean"
-                    },
-                    "Clip 27": {
-                        "type": "Boolean"
-                    },
-                    "Clip 28": {
-                        "type": "Boolean"
-                    },
-                    "Clip 29": {
-                        "type": "Boolean"
-                    },
-                    "Clip 30": {
-                        "type": "Boolean"
-                    },
-                    "Clip 31": {
-                        "type": "Boolean"
-                    },
-                    "Clip 32": {
-                        "type": "Boolean"
-                    },
-                    "Clip 33": {
-                        "type": "Boolean"
-                    },
-                    "Clip 34": {
-                        "type": "Boolean"
-                    },
-                    "Clip 35": {
-                        "type": "Boolean"
-                    },
-                    "Clip 36": {
-                        "type": "Boolean"
-                    },
-                    "Clip 37": {
-                        "type": "Boolean"
-                    },
-                    "Clip 38": {
-                        "type": "Boolean"
-                    },
-                    "Clip 39": {
-                        "type": "Boolean"
-                    },
-                    "Clip 40": {
-                        "type": "Boolean"
-                    }
+                    "collapsed": true
                 },
-                "Colour": {
+                "Light": {
                     "type": "Container",
-                    "collapsed": true,
-                    "Clip 1": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 2": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 3": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 4": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 5": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 6": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 7": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 8": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 9": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 10": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 11": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 12": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 13": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 14": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 15": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 16": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 17": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 18": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 19": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 20": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 21": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 22": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 23": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 24": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 25": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 26": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 27": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 28": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 29": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 30": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 31": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 32": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 33": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 34": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 35": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 36": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 37": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 38": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 39": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    },
-                    "Clip 40": {
-                        "type": "Integer",
-                        "min": 0,
-                        "max": 127
-                    }
+                    "collapsed": true
                 },
                 "Mode": {
                     "type": "Container",
-                    "collapsed": true,
-                    "Clip 1": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 2": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 3": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 4": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 5": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 6": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 7": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 8": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "CLip 9": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 10": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 11": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 12": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 13": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 14": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 15": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 16": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 17": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 18": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 19": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 20": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 21": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 22": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 23": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 24": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 25": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 26": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 27": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 28": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 29": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 30": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 31": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 32": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 33": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 34": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 35": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 36": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 37": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 38": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 39": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    },
-                    "Clip 40": {
-                        "type": "Enum",
-                        "options": {
-                            "Primary Colour": 0,
-                            "Secondary Colour - Oneshot 1/24": 1,
-                            "Secondary Colour - Oneshot 1/16": 2,
-                            "Secondary Colour - Oneshot 1/8": 3,
-                            "Secondary Colour - Oneshot 1/4": 4,
-                            "Secondary Colour - Oneshot 1/2": 5,
-                            "Secondary Colour - Pulsing 1/24": 6,
-                            "Secondary Colour - Pulsing 1/16": 7,
-                            "Secondary Colour - Pulsing 1/8": 8,
-                            "Secondary Colour - Pulsing 1/4": 9,
-                            "Secondary Colour - Pulsing 1/2": 10,
-                            "Secondary Colour - Blinking 1/24": 11,
-                            "Secondary Colour - Blinking 1/16": 12,
-                            "Secondary Colour - Blinking 1/8": 13,
-                            "Secondary Colour - Blinking 1/4": 14,
-                            "Secondary Colour - Blinking 1/2": 15
-                        }
-                    }
+                    "collapsed": true
                 }
             },
             "Scene Launch": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Reset all pads to default (Off)"
-                },
-                "Reset Mode": {
-                    "type": "Trigger",
-                    "description": "Reset all pads to 'Primary Colour'"
-                },
-                "Pad": {
+                "Press": {
                     "type": "Container",
                     "collapsed": true,
                     "Scene 1": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Scene 2": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Scene 3": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Scene 4": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Scene 5": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     }
                 },
-                "Colour": {
+                "Light": {
                     "type": "Container",
                     "collapsed": true,
                     "Scene 1": {
@@ -1663,42 +527,47 @@
             "Clip Stop": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Set all pads to 'Off'"
-                },
-                "Pad": {
+                "Press": {
                     "type": "Container",
                     "collapsed": true,
                     "Track 1": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 2": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 3": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 4": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 5": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 6": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 7": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Track 8": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     },
                     "Stop All Clips": {
-                        "type": "Boolean"
+                        "type": "Boolean",
+                        "readOnly": true
                     }
                 },
-                "Style": {
+                "Light": {
                     "type": "Container",
                     "collapsed": true,
                     "Track 1": {
@@ -1770,10 +639,6 @@
             "Track Controls": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Sets all pads to 'Off'"
-                },
                 "Track Selectors": {
                     "type": "Container",
                     "collapsed": true,
@@ -1781,102 +646,186 @@
                         "type": "Trigger",
                         "description": "Sets all pads to 'Off'"
                     },
-                    "Track 1": {
-                        "type": "Boolean"
+                    "Press": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 2": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 3": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 4": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 5": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 6": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 7": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 8": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Master": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        }
                     },
-                    "Track 2": {
-                        "type": "Boolean"
-                    },
-                    "Track 3": {
-                        "type": "Boolean"
-                    },
-                    "Track 4": {
-                        "type": "Boolean"
-                    },
-                    "Track 5": {
-                        "type": "Boolean"
-                    },
-                    "Track 6": {
-                        "type": "Boolean"
-                    },
-                    "Track 7": {
-                        "type": "Boolean"
-                    },
-                    "Track 8": {
-                        "type": "Boolean"
-                    },
-                    "Master": {
-                        "type": "Boolean"
+                    "Light": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Boolean"
+                        },
+                        "Track 2": {
+                            "type": "Boolean"
+                        },
+                        "Track 3": {
+                            "type": "Boolean"
+                        },
+                        "Track 4": {
+                            "type": "Boolean"
+                        },
+                        "Track 5": {
+                            "type": "Boolean"
+                        },
+                        "Track 6": {
+                            "type": "Boolean"
+                        },
+                        "Track 7": {
+                            "type": "Boolean"
+                        },
+                        "Track 8": {
+                            "type": "Boolean"
+                        },
+                        "Master": {
+                            "type": "Boolean"
+                        }
                     }
                 },
                 "Mute [1-8]": {
                     "type": "Container",
                     "collapsed": true,
-                    "Clear All": {
-                        "type": "Trigger",
-                        "description": "Sets all pads to 'Off'"
+                    "Press": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 2": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 3": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 4": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 5": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 6": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 7": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 8": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        }
                     },
-                    "Track 1": {
-                        "type": "Boolean"
-                    },
-                    "Track 2": {
-                        "type": "Boolean"
-                    },
-                    "Track 3": {
-                        "type": "Boolean"
-                    },
-                    "Track 4": {
-                        "type": "Boolean"
-                    },
-                    "Track 5": {
-                        "type": "Boolean"
-                    },
-                    "Track 6": {
-                        "type": "Boolean"
-                    },
-                    "Track 7": {
-                        "type": "Boolean"
-                    },
-                    "Track 8": {
-                        "type": "Boolean"
+                    "Light": {
+                        "type": "Container",
+                        "collapsed": true,
+                        "Track 1": {
+                            "type": "Boolean"
+                        },
+                        "Track 2": {
+                            "type": "Boolean"
+                        },
+                        "Track 3": {
+                            "type": "Boolean"
+                        },
+                        "Track 4": {
+                            "type": "Boolean"
+                        },
+                        "Track 5": {
+                            "type": "Boolean"
+                        },
+                        "Track 6": {
+                            "type": "Boolean"
+                        },
+                        "Track 7": {
+                            "type": "Boolean"
+                        },
+                        "Track 8": {
+                            "type": "Boolean"
+                        }
                     }
                 },
                 "Crossfade Assign [A|B]": {
                     "type": "Container",
                     "collapsed": true,
-                    "Clear All": {
-                        "type": "Trigger",
-                        "description": "Sets all pads to 'Off'"
-                    },
-                    "Pad": {
+                    "Press": {
                         "type": "Container",
                         "collapsed": true,
                         "Track 1": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 2": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 3": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 4": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 5": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 6": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 7": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         },
                         "Track 8": {
-                            "type": "Boolean"
+                            "type": "Boolean",
+                            "readOnly": true
                         }
                     },
-                    "Style": {
+                    "Light": {
                         "type": "Container",
                         "collapsed": true,
                         "Track 1": {
@@ -1945,13 +894,48 @@
                         }
                     }
                 },
-                    "Solo [S]": {
+                "Solo [S]": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Press": {
                         "type": "Container",
                         "collapsed": true,
-                        "Clear All": {
-                            "type": "Trigger",
-                            "description": "Sets all pads to 'Off'"
+                        "Track 1": {
+                            "type": "Boolean",
+                            "readOnly": true
                         },
+                        "Track 2": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 3": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 4": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 5": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 6": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 7": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 8": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        }
+                    },
+                    "Light": {
+                        "type": "Container",
+                        "collapsed": true,
                         "Track 1": {
                             "type": "Boolean"
                         },
@@ -1976,14 +960,50 @@
                         "Track 8": {
                             "type": "Boolean"
                         }
-                    },
-                    "Record-Arm [\u2219]": {
+                    }
+                },
+                "Record-Arm [\u2219]": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Press": {
                         "type": "Container",
                         "collapsed": true,
-                        "Clear All": {
-                            "type": "Trigger",
-                            "description": "Sets all pads to 'Off'"
+                        "Track 1": {
+                            "type": "Boolean",
+                            "readOnly": true
                         },
+                        "Track 2": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 3": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 4": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 5": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 6": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 7": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        },
+                        "Track 8": {
+                            "type": "Boolean",
+                            "readOnly": true
+                        }
+                    },
+                    "Light": {
+                        "type": "Container",
+                        "collapsed": true,
                         "Track 1": {
                             "type": "Boolean"
                         },
@@ -2010,112 +1030,189 @@
                         }
                     }
                 }
-            
+            }
         },
         "Buttons": {
             "type": "Container",
             "collapsed": true,
-            "Clear All": {
-                "type": "Trigger",
-                "description": "Sets all pads to 'Off'"
-            },
             "Top Section": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Sets all pads to 'Off'"
+                "Press": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Pan": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Sends": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "User": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Play": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Record": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Session": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Metronome": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Tap Tempo": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Nudge \u2212": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Nudge +": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    }
                 },
-                "Pan": {
-                    "type": "Boolean"
-                },
-                "Sends": {
-                    "type": "Boolean"
-                },
-                "User": {
-                    "type": "Boolean"
-                },
-                "Play": {
-                    "type": "Boolean"
-                },
-                "Record": {
-                    "type": "Boolean"
-                },
-                "Session": {
-                    "type": "Boolean"
-                },
-                "Metronome": {
-                    "type": "Boolean"
-                },
-                "Tap Tempo": {
-                    "type": "Boolean"
-                },
-                "Nudge \u2212": {
-                    "type": "Boolean"
-                },
-                "Nudge +": {
-                    "type": "Boolean"
+                "Light": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "Pan": {
+                        "type": "Boolean"
+                    },
+                    "Sends": {
+                        "type": "Boolean"
+                    },
+                    "User": {
+                        "type": "Boolean"
+                    },
+                    "Play": {
+                        "type": "Boolean"
+                    },
+                    "Record": {
+                        "type": "Boolean"
+                    },
+                    "Session": {
+                        "type": "Boolean"
+                    },
+                    "Metronome": {
+                        "type": "Boolean"
+                    }
                 }
             },
             "Bottom Section": {
                 "type": "Container",
                 "collapsed": true,
-                "Clear All": {
-                    "type": "Trigger",
-                    "description": "Sets all pads to 'Off'"
+                "Press": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "[1] Device Left": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[2] Device Right": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[3] Bank Left": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[4] Bank Right": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[5] Device On/Off": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[6] Device Lock": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[7] Clip/Device View": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "[8] Detail View": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Shift": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    },
+                    "Bank": {
+                        "type": "Boolean",
+                        "readOnly": true
+                    }
                 },
-                "[1] Device Left": {
-                    "type": "Boolean"
-                },
-                "[2] Device Right": {
-                    "type": "Boolean"
-                },
-                "[3] Bank Left": {
-                    "type": "Boolean"
-                },
-                "[4] Bank Right": {
-                    "type": "Boolean"
-                },
-                "[5] Device On/Off": {
-                    "type": "Boolean"
-                },
-                "[6] Device Lock": {
-                    "type": "Boolean"
-                },
-                "[7] Clip/Device View": {
-                    "type": "Boolean"
-                },
-                "[8] Detail View": {
-                    "type": "Boolean"
-                },
-                "Shift": {
-                    "type": "Boolean"
-                },
-                "Bank": {
-                    "type": "Boolean"
+                "Light": {
+                    "type": "Container",
+                    "collapsed": true,
+                    "[1] Device Left": {
+                        "type": "Boolean"
+                    },
+                    "[2] Device Right": {
+                        "type": "Boolean"
+                    },
+                    "[3] Bank Left": {
+                        "type": "Boolean"
+                    },
+                    "[4] Bank Right": {
+                        "type": "Boolean"
+                    },
+                    "[5] Device On/Off": {
+                        "type": "Boolean"
+                    },
+                    "[6] Device Lock": {
+                        "type": "Boolean"
+                    },
+                    "[7] Clip/Device View": {
+                        "type": "Boolean"
+                    },
+                    "[8] Detail View": {
+                        "type": "Boolean"
+                    },
+                    "Bank": {
+                        "type": "Boolean"
+                    }
                 }
             },
             "Bank Select": {
                 "type": "Container",
                 "collapsed": true,
                 "Up": {
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "readOnly": true
                 },
                 "Right": {
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "readOnly": true
                 },
                 "Down": {
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "readOnly": true
                 },
                 "Left": {
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "readOnly": true
                 }
             },
             "Footswitch": {
                 "type": "Container",
                 "collapsed": true,
                 "Footswitch": {
-                    "type": "Boolean"
+                    "type": "Boolean",
+                    "readOnly": true
                 }
             }
         }
