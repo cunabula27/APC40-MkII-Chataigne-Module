@@ -56,8 +56,8 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 |**Tempo Knob**|**1**||**13**||**1 / 127**|*Rotary Encoder ( &#8722;1 / +1)*|
 |**Master Fader**|**1**|*Track*|**14**||**0-127**||
 |**Crossfader**|**1**|*Track*|**15**||**0-127**||
-|**Device Knobs**|**1-8**|*Track*|**16-23**|*Knob*|**0-127**||
-|**Device Knobs (LED Ring Style)**|**1-8**|*Track*|**24-31**|*Knob*|**0 / 1 / 2 / 3 / 4-127**|*Off / Single / Volume / Pan / Single*|
+|**Device Knobs**|**1-9**|*Track*|**16-23**|*Knob*|**0-127**||
+|**Device Knobs (LED Ring Style)**|**1-9**|*Track*|**24-31**|*Knob*|**0 / 1 / 2 / 3 / 4-127**|*Off / Single / Volume / Pan / Single*|
 |**Cue Level**|**1**||**47**||**1 / 127**|*Rotary Encoder ( &#8722;1 / +1)*|
 |**Track Knobs**|**1**|*Track*|**48-55**|*Knob*|**0-127**||
 |**Track Knobs (LED Ring Style)**|**1**|*Track*|**56-63**|*Knob*|**0 / 1 / 2 / 3 / 4-127**|*Off / Single / Volume / Pan / Single*|
