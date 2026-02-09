@@ -17,24 +17,37 @@ Choose between Generic, Ableton Live and Alternate Ableton Live Modes (Modes 0, 
 
 *(See explanation of APC40 modes below)*
 
+### Pad Layout
+Choose between Ableton and Resolume naming and layout or set as Default. 
+
+Ableton : Clip Launch Pads named by Track (left to right) and Clip (top to bottom), Scene Launch Pads numbered 1-5 (top to bottom).
+
+Resolume : Clip Launch Pads named by Layer (bottom to top) and Clip (left to right), Scene Launch Pads renamed to Layer and numbered 1-5 (bottom to top). 
+
+Default : Clip Launch Pads laid out in rows, top to bottom, Scene Launch Pads numbered 1-5 top to bottom.
+
+Yes, it was that much work.
+
 ## **Utilities**
 
 ### Debug
 Toggles logging for all connections and scripts.
 
 ------
-## **Features (in Parameters section)**
+## **Features**
+
+All input and output messages and states should match the ***Akai APC40 MkII Communications Protocol*** document Version 1.2 (which is a fun read).
 
 ### Set LED Ring Mode
 Choose between Off, Single, Volume and Pan styles. 
 
 Options to apply to All, Track Knobs, Device Knobs (All), Device Knobs by Track + Master (only applies to Generic Mode) and by individual knob.
 
-### Clear all Pads and Buttons
-All, by type (Pad/Button) or by control block.
+### Clear Clip and Scene Launch pads
+By type. Sends Note Off to all pads in the block, resets mode to primary colour.
 
-### Reset Mode for all Clip and Scene Launch pads
-All or by control block. This will reset any flashing behaviour without changing the colour.
+### Reset Mode for Clip and Scene Launch pads
+By type. Resets every pad to its primary colour (if it's flashing or blinking or whatever) without changing that it's lit.
 
 All pad and buttons can have any of their visual properties set by hand.
 
@@ -68,10 +81,6 @@ Set Mute, Solo, Crossfade Assign and Record/Arm LEDs On or Off. Selecting Crossf
 ### Set Button LED
 
 Set all the buttons with LEDs to either On or Off
-
----------
-
-All input and output messages and states should match the **Akai APC40 MkII Communications Protocol** document Version 1.2 (which is a fun read).
 
 ---------
 
