@@ -7,7 +7,8 @@
     "url": "https://github.com/cunabula27/APC40-MkII-Chataigne-Module",
     "hideDefaultCommands": false,
     "defaults": {
-        "autoAdd": false
+        "autoAdd": false,
+        "usePitchForNoteNames":true
     },
     "hideDefaultParameters": [
         "autoAdd",
@@ -20,18 +21,18 @@
             "type": "Enum",
             "options": {
                 "Select": [
-                    ""
+               
                 ],
                 "Generic": [
-                    64,
+                    0,
                     "Generic"
                 ],
                 "Ableton Live": [
-                    65,
+                    1,
                     "Ableton Live"
                 ],
                 "Alternate Ableton Live": [
-                    66,
+                    2,
                     "Alternate Ableton Live"
                 ]
             }
@@ -41,11 +42,14 @@
             "type": "Enum",
             "options": {
                 "Select": "",
-                "Ableton Style": 0,
-                "Resolume Style": 1,
-                "Default": 2
+                "Default": 0,
+                "Ableton Style": 1,
+                "Resolume Style": 2
             }
         },
+        "Manual Control":{
+        "description": "Set Pad and Button states by adjusting Values directly below. If you don't want external sources changing these states diconnect Input in Devices above.",
+        "type":"Boolean"},
         "Utilities": {
             "type": "Container",
             "collapsed": false,
@@ -56,7 +60,7 @@
         },
         "Clear and Reset Pads": {
             "type": "Container",
-            "collapsed": false,
+            "collapsed": true,
             "Clear Clip Pads": {
                 "description": "Turn off all Lights and Reset Mode",
                 "type": "Trigger"
@@ -1221,108 +1225,94 @@
         "APC40-MkII.js"
     ],
     "commands": {
-        "Set Knob Ring Mode": {
-            "callback": "setKnobMode",
+        "Set Clip Launch Pad": {
+            "callback": "setClipLaunch",
             "parameters": {
-                "Scope": {
+                "Layout": {
                     "type": "Enum",
                     "options": {
-                        "Single": 0,
-                        "Bank": 1,
-                        "All": 2
+                        "Select": "",
+                        "Default": 0,
+                        "Ableton": 1,
+                        "Resolume": 2
                     }
                 },
-                "Bank": {
-                    "type": "Enum",
-                    "options": {
-                        "Track Control (Top)": 0,
-                        "Device Control (All Tracks, Generic Mode (0) Only)": 1,
-                        "Device Control Track 1 (All Modes)": 2,
-                        "Device Control Track 2 (Generic Mode (0) Only)": 3,
-                        "Device Control Track 3 (Generic Mode (0) Only)": 4,
-                        "Device Control Track 4 (Generic Mode (0) Only)": 5,
-                        "Device Control Track 5 (Generic Mode (0) Only)": 6,
-                        "Device Control Track 6 (Generic Mode (0) Only)": 7,
-                        "Device Control Track 7 (Generic Mode (0) Only)": 8,
-                        "Device Control Track 8 (Generic Mode (0) Only)": 9,
-                        "Master (Generic Mode (0) Only)": 10
-                    },
-                    "dependency": {
-                        "source": "scope",
-                        "value": "2",
-                        "check": "notEquals",
-                        "action": "show"
-                    }
-                },
-                "Knob Number": {
+                "Row": {
                     "type": "Integer",
                     "min": 1,
-                    "max": 8,
+                    "max": 5,
                     "dependency": {
-                        "source": "scope",
+                        "source": "layout",
                         "value": "0",
                         "check": "equals",
                         "action": "show"
                     }
                 },
-                "Style": {
-                    "type": "Enum",
-                    "options": {
-                        "Single": 1,
-                        "Volume": 2,
-                        "Pan": 3,
-                        "Off": 0
-                    }
-                }
-            }
-        },
-        "Set Knob Value": {
-            "callback": "setKnobValue",
-            "parameters": {
-                "Bank": {
-                    "type": "Enum",
-                    "options": {
-                        "Track Control (Top)": 0,
-                        "Device Control Track 1 (All Modes)": 1,
-                        "Device Control Track 2 (Generic Mode (0) Only)": 2,
-                        "Device Control Track 3 (Generic Mode (0) Only)": 3,
-                        "Device Control Track 4 (Generic Mode (0) Only)": 4,
-                        "Device Control Track 5 (Generic Mode (0) Only)": 5,
-                        "Device Control Track 6 (Generic Mode (0) Only)": 6,
-                        "Device Control Track 7 (Generic Mode (0) Only)": 7,
-                        "Device Control Track 8 (Generic Mode (0) Only)": 8,
-                        "Master (Generic Mode (0) Only)": 9
-                    }
-                },
-                "Knob Number": {
+                "Track": {
                     "type": "Integer",
                     "min": 1,
-                    "max": 8
+                    "max": 8,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "1",
+                        "check": "equals",
+                        "action": "show"
+                    }
                 },
-                "Value": {
-                    "type": "Float",
-                    "min": 0.0,
-                    "max": 1.0
-                }
-            }
-        },
-        "Set Clip Launch Pad": {
-            "callback": "setRgb",
-            "parameters": {
                 "Layer": {
                     "type": "Integer",
                     "min": 1,
-                    "max": 5
+                    "max": 5,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "2",
+                        "check": "equals",
+                        "action": "show"
+                    }
                 },
-                "Column": {
+                "Clip": {
                     "type": "Integer",
                     "min": 1,
-                    "max": 8
+                    "max": 8,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "0",
+                        "check": "equals",
+                        "action": "show"
+                    }
+                },
+                "Clip ": {
+                    "type": "Integer",
+                    "min": 1,
+                    "max": 5,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "1",
+                        "check": "equals",
+                        "action": "show"
+                    }
+                },
+                "Clip  ": {
+                    "type": "Integer",
+                    "min": 1,
+                    "max": 8,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "2",
+                        "check": "equals",
+                        "action": "show"
+                    }
                 },
                 "Colour": {
                     "type": "Integer",
                     "min": 0,
-                    "max": 127
+                    "max": 127,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "",
+                        "check": "notEquals",
+                        "action": "show"
+                    }
                 },
                 "Mode": {
                     "type": "Enum",
@@ -1343,22 +1333,86 @@
                         "Secondary Colour - Blinking 1/8": 13,
                         "Secondary Colour - Blinking 1/4": 14,
                         "Secondary Colour - Blinking 1/2": 15
+                    },
+                    "dependency": {
+                        "source": "layout",
+                        "value": "",
+                        "check": "notEquals",
+                        "action": "show"
                     }
                 }
             }
         },
         "Set Scene Launch Pad": {
-            "callback": "setRgb",
+            "callback": "setSceneLaunch",
             "parameters": {
+                "Layout": {
+                    "type": "Enum",
+                    "options": {
+                        "Select": "",
+                        "Default": 0,
+                        "Ableton": 1,
+                        "Resolume": 2
+                    }
+                },
+                "Row": {
+                    "type": "Enum",
+                    "options": {
+                        "1": 82,
+                        "2": 83,
+                        "3": 84,
+                        "4": 85,
+                        "5": 86
+                    },
+                    "dependency": {
+                        "source": "layout",
+                        "value": "0",
+                        "check": "equals",
+                        "action": "show"
+                    }
+                },
+                "Scene": {
+                    "type": "Enum",
+                    "options": {
+                        "1": 82,
+                        "2": 83,
+                        "3": 84,
+                        "4": 85,
+                        "5": 86
+                    },
+                    "dependency": {
+                        "source": "layout",
+                        "value": "1",
+                        "check": "equals",
+                        "action": "show"
+                    }
+                },
                 "Layer": {
-                    "type": "Integer",
-                    "min": 1,
-                    "max": 5
+                    "type": "Enum",
+                    "options": {
+                        "1": 86,
+                        "2": 85,
+                        "3": 84,
+                        "4": 83,
+                        "5": 82
+                    },
+                    "dependency": {
+                        "source": "layout",
+                        "value": "2",
+                        "check": "equals",
+                        "action": "show"
+                    }
                 },
                 "Colour": {
                     "type": "Integer",
                     "min": 0,
-                    "max": 127
+                    "max": 127,
+                    "dependency": {
+                        "source": "layout",
+                        "value": "",
+                        "check": "notEquals",
+                        "action": "show"
+                    }
                 },
                 "Mode": {
                     "type": "Enum",
@@ -1379,6 +1433,12 @@
                         "Secondary Colour - Blinking 1/8": 13,
                         "Secondary Colour - Blinking 1/4": 14,
                         "Secondary Colour - Blinking 1/2": 15
+                    },
+                    "dependency": {
+                        "source": "layout",
+                        "value": "",
+                        "check": "notEquals",
+                        "action": "show"
                     }
                 }
             }
@@ -1398,20 +1458,19 @@
                         "6": 6,
                         "7": 7,
                         "8": 8,
-                        "Stop All Clips": 9
+                        "Stop All Clips": 81
                     }
                 },
                 "State": {
                     "type": "Enum",
                     "options": {
-                        "Off": 0,
                         "On": 1,
                         "Blinking": 2,
-                        "default": 1
+                        "Off": 0
                     },
                     "dependency": {
                         "source": "track_StopAllClips",
-                        "value": "9",
+                        "value": "81",
                         "check": "notEquals",
                         "action": "show"
                     }
@@ -1421,7 +1480,7 @@
                     "default": true,
                     "dependency": {
                         "source": "track_StopAllClips",
-                        "value": "9",
+                        "value": "81",
                         "check": "equals",
                         "action": "show"
                     }
@@ -1472,10 +1531,10 @@
                 "Control": {
                     "type": "Enum",
                     "options": {
-                        "Mute": 1,
-                        "Crossfader A/B": 2,
-                        "Solo": 3,
-                        "Record/Arm": 4
+                        "Mute": 50,
+                        "Crossfader A/B": 66,
+                        "Solo": 49,
+                        "Record/Arm": 48
                     }
                 },
                 "Crossfader": {
@@ -1483,11 +1542,11 @@
                     "options": {
                         "Off": 0,
                         "A (Yellow) Crossfader A/B Only": 1,
-                        "B (Orange) Crossfader A/B Only": 3
+                        "B (Orange) Crossfader A/B Only": 2
                     },
                     "dependency": {
                         "source": "control",
-                        "value": "2",
+                        "value": "66",
                         "check": "equals",
                         "action": "show"
                     }
@@ -1497,7 +1556,7 @@
                     "default": true,
                     "dependency": {
                         "source": "control",
-                        "value": "2",
+                        "value": "66",
                         "check": "notEquals",
                         "action": "show"
                     }
