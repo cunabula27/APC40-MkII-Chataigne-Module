@@ -1,6 +1,15 @@
 // GLOBAL VARIABLES //////////////////////////
 
-var apcMode = 0; // TODO add check to see if Device Knob messages over 1 are rejected or not.
+var apcMode;
+var padStyle;
+var clipPress;
+var clipLight;
+var clipMode;
+var scenePress;
+var sceneLight;
+var sceneMode;
+var knobIndex;
+var deviceRingIndex;
 
 var buttons = [
     "pan", 87,
@@ -34,9 +43,251 @@ var buttons = [
 
 // CHATAIGNE FUNCTIONS ///////////////////////
 
+function init() {
+    noteArr = noteArray();                                  // Create Note Buffer
+    ccArr = ccArray();                                      // Create CC Buffer
+    var refresh = local.parameters.controllerMode.get()[0]; // Check if the Noisette is new
+    if (refresh >= 0) {
+        apcMode = setAPC40mode(refresh);                              // Reset Controller
+        knobIndex = setKnobLayout(refresh);                             // Reload Knob Layout
+        padStyle = setPadStyle(local.parameters.padLayout.get());      // Reload Pad Layout
+    };
+};
+
+// MODULE SPECIFIC FUNCTIONS /////////////////
+
+function moduleParameterChanged(param) {
+    if (param.isParameter()) {
+        if (param.name == "controllerMode") {
+            apcMode = setAPC40mode(param.get()[0]);
+            knobIndex = setKnobLayout(apcMode);
+        } else if (param.name == "padLayout") {
+            padStyle = setPadStyle(param.get());
+        } else if (param.name == "debug") {
+            debug(param);
+        } else if (param.getParent().name == "setByGroup") {
+            ringModeGroup(param);
+        } else {
+            ringModeSingle(param);
+        };
+        script.log("Module parameter changed : " + param.name + " > " + param.get());
+    } else {
+        clearPads(param);
+    };
+};
+
+function moduleValueChanged(value) {
+
+    if (local.parameters.manualControl.get() == true) {
+
+        if 
+        (value.getParent().getParent().name == "clipLaunch") { // RGB
+            if (padStyle == 0) {                //default
+                n = (5 - parseInt(value.name.charAt(3))) * 8 + parseInt(value.name.charAt(9)) - 1;
+            } else if (padStyle == 1) {         //ableton
+                n = 40 - parseInt(value.name.charAt(11)) * 8 + parseInt(value.name.charAt(5)) - 1;
+            } else if (padStyle == 2) {         //resolume
+                n = (parseInt(value.name.charAt(5)) - 1) * 8 + parseInt(value.name.charAt(11)) - 1;
+            };
+            if (value.getParent().name == "light") {
+                c = local.values.pads.clipLaunch.mode[value.name].get();
+            } else {
+                c = local.values.pads.clipLaunch.light[value.name].get();
+            };
+            localNote(c, n, value.get());
+        } else if 
+        (value.getParent().getParent().name == "sceneLaunch") {
+            script.log(padStyle);
+            if (padStyle == 0) {
+                script.log("DEFAULT");
+                n = parseInt(value.name.charAt(3)) + 81;
+                script.log(n);
+            } else if (padStyle == 1) {
+                script.log("ABLETON");
+                n = parseInt(value.name.charAt(5)) + 81;
+            } else if (padStyle == 2) {
+                script.log("RESOLUME");
+                n = 87 - parseInt(value.name.charAt(5));
+            };
+            if (value.getParent().name == "light") {
+                c = local.values.pads.sceneLaunch.mode[value.name].get();
+            } else {
+                c = local.values.pads.sceneLaunch.light[value.name].get();
+            };
+            localNote(c, n, value.get());
+        };
+        if (value.getParent().name.contains("Knobs")) {
+
+            var channel = 1;
+
+            if (apcMode == 0) {
+                if (value.name.contains("Master")) {
+                    channel = 9;
+                    var note = parseInt(value.name.charAt(7)) + 15;
+                } else {
+                    channel = parseInt(value.name.charAt(7));
+                    note = parseInt(value.name.charAt(5)) + 15;
+                };
+            } else if (value.getParent().name == "trackKnobs_Top_") {
+                note = parseInt(value.name.charAt(1)) + 47;
+            } else {
+                note = parseInt(value.name.charAt(1)) + 15;
+            };
+            local.sendCC(channel, note, Math.round(value.get() * 127));
+        };
+    };
+};
+
+// MIDI MODULE SPECIFIC FUNCTIONS ////////////
+
+function noteOnEvent(channel, pitch, velocity) {
+    if (noteArr[pitch][0])                                          // Check Mapping
+    {
+        if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) {        // RGB Buttons
+            
+            script.log("Bang");
+            noteArr[pitch][1].set(velocity);
+            noteArr[pitch][2].setData(channel);
+        } else if (pitch >= 48 && pitch <= 51 && channel <= 8) {    // Track Control Pads
+            noteArr[pitch][channel][1].set(velocity);
+        } else if ((pitch == 52 && channel <= 8) || 
+                   (pitch == 66 && channel <= 8)) {                 // Clip Stop and Crossfader A/B
+            noteArr[pitch][channel][1].setData(velocity);
+        } else if (channel == 1) {                                  // Any other button
+            noteArr[pitch][1].set(velocity);
+        } else { script.log("No mapping for this Midi Note found"); };
+    } else {
+        script.log("No mapping for this Midi Note found");
+    };
+};
+
+function noteOffEvent(channel, pitch, velocity) {
+
+    if (noteArr[pitch][0]) // Check Mapping
+    {
+        if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) { // RGB Pad no change to channel just in case
+            noteArr[pitch][1].set(0);
+            noteArr[pitch][2].setData(channel);
+        } else if ((pitch >= 48 && pitch <= 51 && channel <= 8) || (pitch == 66 && channel <= 8)) {
+            noteArr[pitch][channel][1].set(0);
+        } else if ((pitch == 52 && channel <= 8) || (pitch == 66 && channel <= 8)) {
+            noteArr[pitch][channel][1].setData(0);
+        } else if (channel == 1) {
+            noteArr[pitch][1].set(0);
+        } else { script.log("No mapping for this Midi Note found"); };
+    } else {
+        script.log("No mapping for this Midi Note found");
+    };
+};    
+
+function ccEvent(channel, number, value) {
+    if (ccArr[number][0])                                               // Remove Completely unmapped CCs
+    {
+        if (number >= 24 && number <= 31 && channel <= 9) {             // Device Knobs LED Mode
+            if (value >= 4) { var norm = 1; } else { norm = value; }
+            ccArr[number][channel].setData(norm);
+        } else if (number >= 56 && number <= 63 && channel == 1) {      // Track Knobs LED Mode
+            if (value >= 4) { var norm = 1; } else { norm = value; }
+            ccArr[number][0].setData(norm);
+        } else if (number >= 16 && number <= 23 && channel <= 9) {      // Device Knobs Value
+            ccArr[number][channel].set(value / 127);
+        } else if (number >= 48 && number <= 55 && channel == 1) {      // Track Knobs Value
+            ccArr[number][0].set(value / 127);
+        } else if (number == 7 && channel <= 8) {                       //Track  Faders
+            ccArr[number][channel][0].set(value / 127);
+} else if (number == 14 && channel == 1) {                              //Master Fader
+            ccArr[number][0].set(value / 127);
+        } else if (number == 15 && channel == 1) {                      // Crossfader 
+            ccArr[number][0].set((value / 127) * 2 - 1);
+        } else if ((number == 13 || number == 47) && (channel == 1)) {  // Tempo and Cue Level
+            if (value > 63) { value = value - 128; };
+            ccArr[number][0].set(value);
+        } else if (channel == 1) {                                      // Everything else              
+            ccArr[number][0].set(value);
+        } else { script.log("No mapping for this Midi CC found"); };
+        // script.log("ControlChange received " + channel + ", " + number + ", " + value);
+    }
+    else { script.log("No mapping for this Midi CC found"); };
+};
+
+function sysExEvent(data) {
+    script.log("Sysex Message received, " + data.length + " bytes :");
+    for (var i = 0; i < data.length; i++) {
+        script.log(" > " + data[i]);
+    }
+};
+
+// THIS MODULE SPECIFIC FUNCTIONS ////////////
+
+// TURN THE LIGHTS ON ////////////////////////
+
+function ringModeSingle(param) {
+    c = 1;
+    if (param.getParent().name.contains("track")) {
+        n = parseInt(param.name.charAt(1)) + 55;
+    } else if (apcMode > 0) {
+        n = parseInt(param.name.charAt(1)) + 23;
+    } else {
+        n = parseInt(param.name.charAt(7)) + 23;
+        if (param.name.contains("master")) {
+            c = 9;
+        } else {
+            c = parseInt(param.name.charAt(5));
+        };
+    };
+    local.sendCC(c, n, param.get());
+};
+
+function ringModeGroup(param) {
+    if (param == ccArr[40][0]) {
+        ringModeGroupTrack(param);
+    } else if (param == ccArr[40][10]) {
+        for (i = 0; i < deviceRingIndex.length; i++) {
+            deviceRingIndex[i].setData(param.get());
+        };
+    } else if (param == ccArr[40][11]) {
+        ringModeGroupTrack(param);
+        for (i = 0; i < deviceRingIndex.length; i++) {
+            deviceRingIndex[i].setData(param.get());
+        };
+    } else {
+        var trackIndex = 9;
+        if (parseInt(param.name.charAt(5))) {
+            trackIndex = parseInt(param.name.charAt(5));
+        };
+        for (i = trackIndex * 8 - 8; i < trackIndex * 8; i++) {
+            deviceRingIndex[i].setData(param.get());
+        };
+    };
+};
+
+function ringModeGroupTrack(param) {
+    for (i = 56; i < 64; i++) { 
+        ccArr[i][0].setData(param.get()); 
+    };
+};
+
+// TURN THE LIGHTS OFF ///////////////////////
+
+function clearPads(param) {
+    if (param.name.contains("Clip")) {
+        if (noteArr[40][0]) {
+            for (i = 0; i < 40; i++) {
+                local.sendNoteOff(1, i);
+            };
+        } else { local.sendNoteOn(1, i, noteArr[i][1]); }
+    } else {
+        if (noteArr[40][1]) {
+            for (i = 82; i < 87; i++) {
+                local.sendNoteOff(1, i);
+            };
+        } else { local.sendNoteOn(1, i, noteArr[i][1]); }
+    };
+};
+
 // SETUP /////////////////////////////////////
 
-function noteArray() {                      // Create Note Buffer
+function noteArray() {                      // Note Buffer
 
     /* CONSTRUCT NOTE ARRAY AND POPULATE /////
     
@@ -101,10 +352,15 @@ function noteArray() {                      // Create Note Buffer
     noteArr[80][1] = local.values.pads.trackControls.trackSelectors.light.master;
     noteArr[81][0] = local.values.pads.clipStop.press.stopAllClips;
 
+    noteArr[40][0] = local.parameters.clearAndResetPads.clearClipPads;
+    noteArr[40][1] = local.parameters.clearAndResetPads.clearScenePads;
+    noteArr[40][2] = local.parameters.clearAndResetPads.resetClipPadMode;
+    noteArr[40][3] = local.parameters.clearAndResetPads.resetScenePadMode;
+
     return noteArr;
 };
 
-function ccArray() {                        // Create CC Buffer
+function ccArray() {                        // CC Buffer
 
     /* CONSTRUCT CC ARRAY AND POPULATE ///////
 
@@ -150,6 +406,10 @@ function ccArray() {                        // Create CC Buffer
 
     ccArr[64][0] = local.values.buttons.footswitch.footswitch;
 
+    ccArr[40][0] = local.parameters.ledRingModes.setByGroup.getChild("allTrackKnobs_Top_");
+    ccArr[40][10] = local.parameters.ledRingModes.setByGroup.getChild("allDeviceKnobs_Right_");
+    ccArr[40][11] = local.parameters.ledRingModes.setByGroup.getChild("all");
+
     return ccArr;
 };
 
@@ -164,13 +424,21 @@ function setInterface() {                   // Tidy Interface - Move to JSON?
     local.templates.setCollapsed(true);
 };
 
-function setAPC40mode(mode) {               // Set Mode, populate all necessary knobs, delete those that have been created and aren't needed.
+function setAPC40mode(mode) {               // Set APC40 Mode, Return apcMode
+    var modeSysex = mode + 64;
+    var modeNames = ["Generic", "Ableton Live", "Alternate Ableton Live"];
+    local.sendSysex(71, 127, 41, 96, 0, 4, modeSysex, 8, 2, 1);
+    script.log("APC40 MkII set to " + modeNames[mode] + " Mode with Sysex Message ");
+    return mode;
+};
 
-    local.sendSysex(71, 127, 41, 96, 0, 4, mode[0], 8, 2, 1);
-    script.log("APC40 MkII set to " + mode[1] + " Mode with Sysex Message ");
-    if (mode[0] == 64) {                    // Generic Mode
-        
-        for (var i = 1; i < 9; i++) {       // Remove Device Knobs One Bank Ring and Values
+function setKnobLayout(apcMode) {            // Create and name Knobs depending on APC40 Mode
+    for (var i = 16; i < 24; i++) { ccArr[i][0] = [true]; }
+    for (var i = 24; i < 32; i++) { ccArr[i][0] = [true]; }
+    if (apcMode == 0) {                    // Generic Mode
+
+
+        for (i = 1; i < 9; i++) {       // Remove Device Knobs One Bank Ring and Values
             name = "(" + i + ")";
             local.values.knobs.deviceKnobs_Right_.removeParameter(name);
             local.parameters.ledRingModes.deviceKnobs_Right_.removeParameter(name);
@@ -192,30 +460,28 @@ function setAPC40mode(mode) {               // Set Mode, populate all necessary 
             local.parameters.ledRingModes.deviceKnobs_Right_.addEnumParameter(name, desc, "Single", 1, "Volume", 2, "Pan", 3, "Off", 0);
         };
 
-        for (i=1;i<9;i++){                  // Add Tracks 1-8 Or Group Set
+        for (i = 1; i < 9; i++) {                  // Add Tracks 1-8 Or Group Set
             name = "Track " + i;
             desc = "Set LED Ring Mode";
             local.parameters.ledRingModes.setByGroup.addEnumParameter(name, desc, "Single", 1, "Volume", 2, "Pan", 3, "Off", 0);
+            ccArr[40][i] = local.parameters.ledRingModes.setByGroup.getChild(name);
         };
 
         local.parameters.ledRingModes.setByGroup.addEnumParameter("Master", "Set Master Knob Rings", "Single", 1, "Volume", 2, "Pan", 3, "Off", 0);
-        
-        var knobIndex = local.values.knobs.deviceKnobs_Right_.getControllables(true, false);
+        ccArr[40][9] = local.parameters.ledRingModes.setByGroup.master;
+        knobIndex = local.values.knobs.deviceKnobs_Right_.getControllables(true, false);
+        deviceRingIndex = local.parameters.ledRingModes.deviceKnobs_Right_.getControllables(true, false);
 
-        var ringIndex = local.parameters.ledRingModes.deviceKnobs_Right_.getControllables(true, false);
-        
         var r = -1;
         for (var y = 1; y < 10; y++) {
             for (var x = 16; x < 24; x++) {
                 r++;
                 ccArr[x][y] = knobIndex[r];
-                ccArr[x + 8][y] = ringIndex[r];
+                ccArr[x + 8][y] = deviceRingIndex[r];
             };
         };
 
-       script.log(ccArr);
-
-    } else if (mode[0] > 0) {
+    } else if (apcMode > 0) {
 
         for (j = 1; j < 9; j++) {
             for (i = 1; i < 9; i++) {
@@ -244,19 +510,19 @@ function setAPC40mode(mode) {               // Set Mode, populate all necessary 
             local.values.knobs.deviceKnobs_Right_.addFloatParameter(name, desc, 0, 0, 1);
             local.parameters.ledRingModes.deviceKnobs_Right_.addEnumParameter(name, desc, "Single", 1, "Volume", 2, "Pan", 3, "Off", 0);
         };
-        
+
         knobIndex = local.values.knobs.deviceKnobs_Right_.getControllables(true, false);
-        ringIndex = local.parameters.ledRingModes.deviceKnobs_Right_.getControllables(true, false);
-        
-        for (i = 48; i < 56; i++) {
-             ccArr[i][0] = knobIndex[i - 48];
-            ccArr[i + 8][0] = ringIndex[i - 48];
-         };
+        deviceRingIndex = local.parameters.ledRingModes.deviceKnobs_Right_.getControllables(true, false);
+
+        for (i = 16; i < 24; i++) {
+            ccArr[i][1] = knobIndex[i - 16];
+            ccArr[i + 8][1] = deviceRingIndex[i - 16];
+        };
     };
-    return parseInt(mode[0]) - 64;
+    return knobIndex;
 };
 
-function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
+function setPadStyle(padStyle) {            // Create and name Clip and Scene Launch Pads 
 
     var descPress = "Press the button, you know you want to.";
     var descLight = "Choose the pad colour.";
@@ -270,14 +536,14 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
     local.values.pads.sceneLaunch.light.clear(false, true);
     local.values.pads.sceneLaunch.mode.clear(false, true);
 
-    if (style.get() == "0") {                       // Ableton Style
+    if (padStyle == 1) {                       // Ableton Style
         for (j = 1; j < 9; j++) {
             for (k = 1; k < 6; k++) {               // Create Clip Launch Controls
 
                 var name = "Track " + j + " > Clip " + k;
                 local.values.pads.clipLaunch.press.addBoolParameter(name, descPress, false);
                 local.values.pads.clipLaunch.light.addIntParameter(name, descLight, 0, 0, 127);
-                local.values.pads.clipLaunch.mode.addEnumParameter(name, descMode, 
+                local.values.pads.clipLaunch.mode.addEnumParameter(name, descMode,
                     "Primary Colour", 0,
                     "Secondary Colour - Oneshot 1/24", 1,
                     "Secondary Colour - Oneshot 1/16", 2,
@@ -329,13 +595,13 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
             };
         };
 
-        var clipPress = local.values.pads.clipLaunch.press.getControllables(true, false);
-        var clipLight = local.values.pads.clipLaunch.light.getControllables(true, false);
-        var clipMode = local.values.pads.clipLaunch.mode.getControllables(true, false);
+        clipPress = local.values.pads.clipLaunch.press.getControllables(true, false);
+        clipLight = local.values.pads.clipLaunch.light.getControllables(true, false);
+        clipMode = local.values.pads.clipLaunch.mode.getControllables(true, false);
 
-        var scenePress = local.values.pads.sceneLaunch.press.getControllables(true, false);
-        var sceneLight = local.values.pads.sceneLaunch.light.getControllables(true, false);
-        var sceneMode = local.values.pads.sceneLaunch.mode.getControllables(true, false);
+        scenePress = local.values.pads.sceneLaunch.press.getControllables(true, false);
+        sceneLight = local.values.pads.sceneLaunch.light.getControllables(true, false);
+        sceneMode = local.values.pads.sceneLaunch.mode.getControllables(true, false);
 
         for (i = 0; i < 40; i++) {
             noteArr[i][0] = clipPress[i];
@@ -351,7 +617,7 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
             noteArr[i + 82][2] = sceneMode[i];
         };
 
-    } else if (style.get() == "1") {                // Resolume Style
+    } else if (padStyle == 2) {                // Resolume Style
 
         for (k = 1; k < 6; k++) {
             for (j = 1; j < 9; j++) {
@@ -410,13 +676,13 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
             };
         };
 
-        var clipPress = local.values.pads.clipLaunch.press.getControllables(true, false);
-        var clipLight = local.values.pads.clipLaunch.light.getControllables(true, false);
-        var clipMode = local.values.pads.clipLaunch.mode.getControllables(true, false);
+        clipPress = local.values.pads.clipLaunch.press.getControllables(true, false);
+        clipLight = local.values.pads.clipLaunch.light.getControllables(true, false);
+        clipMode = local.values.pads.clipLaunch.mode.getControllables(true, false);
 
-        var scenePress = local.values.pads.sceneLaunch.press.getControllables(true, false);
-        var sceneLight = local.values.pads.sceneLaunch.light.getControllables(true, false);
-        var sceneMode = local.values.pads.sceneLaunch.mode.getControllables(true, false);
+        scenePress = local.values.pads.sceneLaunch.press.getControllables(true, false);
+        sceneLight = local.values.pads.sceneLaunch.light.getControllables(true, false);
+        sceneMode = local.values.pads.sceneLaunch.mode.getControllables(true, false);
 
         for (i = 0; i < 40; i++) {
             noteArr[i][0] = clipPress[i];
@@ -434,8 +700,8 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
             noteArr[i + 82][1] = sceneLight[j];
             noteArr[i + 82][2] = sceneMode[j];
         };
-    
-    } else if (style.get() == "2") {                // Default
+
+    } else if (padStyle == 0) {                // Default
 
         for (k = 1; k < 6; k++) {
             for (j = 1; j < 9; j++) {
@@ -516,311 +782,71 @@ function setPadStyle(style) {               // Rename Clip and Scene Launch Pads
             noteArr[i + 82][2] = sceneMode[i];
         };
     };
+    return padStyle;
 };
-
-noteArr = noteArray();
-ccArr = ccArray();
 
 setInterface();                             // Tidy Interface - Move to JSON?
 
-// UTILITIES /////////////////////////////////
+// COMMANDS //////////////////////////////////
 
-function debug(param) 
-{
-    if (param.get() == true) {
-        local.logIncoming.set(true);
-        local.logOutgoing.set(true);
-        local.scripts.aPC40_MkII.enableLog.set(true);
-    } else {
-        local.logIncoming.set(false);
-        local.logOutgoing.set(false);
-        local.scripts.aPC40_MkII.enableLog.set(false);
+function setClipLaunch(padStyle, row, track, layer, clipr, clipt, clipl, v, c) {
+    if (padStyle == 0) {//default
+        n = (5 - row) * 8 + clipr - 1;
+    } else if (padStyle == 1) {//ableton
+        n = 40 - clipt * 8 + track - 1;
+    } else if (padStyle == 2) {//resolume
+        n = (layer - 1) * 8 + clipl - 1;
     };
+    localNote(c, n, v);
 };
 
-// MODULE SPECIFIC FUNCTIONS /////////////////
-
-function moduleParameterChanged(param) {
-    if (param.isParameter()) {
-        if (param.name == "controllerMode") {
-            apcMode = setAPC40mode(param.get());
-        } else if (param.name == "padLayout") {
-            setPadStyle(param);
-        } else if (param.name == "debug") {
-            debug(param);
-        } 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        else if (param.getControlAddress().contains("led")) {
-            if (param.name == "all") {
-                ringModeGroup(param, param.get());
-            } else {
-                ringModeSingle(param);
-            };
-        } else if (param.name.charAt(0) == "l") {
-            lightRgb(param);
-        } else if (param.type == "Enum") {
-            lightTri(param); // Three state button
-        } else {
-            lightBin(param); // Binary button
-        };
-        script.log("Module parameter changed : " + param.name + " > " + param.get());
-    } else {
-        if (param == noteArr[40][0]) { // Clear all Pads
-            for (var i = 3; i < 15; i++) {
-                noteArr[40][i].trigger();
-            };
-        } else
-        if (param == noteArr[40][1]) { // Clear all Track Controls
-            for (var i = 6; i < 11; i++) {
-                noteArr[40][i].trigger();
-            };
-        } else
-            if (param == noteArr[40][2]) { // Clear all Buttons
-                noteArr[40][11].trigger();
-                noteArr[40][12].trigger();
-        } else { 
-            clearBank(param); 
-            script.log("Module parameter triggered : " + param.name); 
-        };
+function setSceneLaunch(padStyle, row, scene, layer, v, c) {
+    if (padStyle == 0) {
+        n = row;
+    } else if (padStyle == 1) {
+        n = scene;
+    } else if (padStyle == 2) {
+        n = layer;
     };
-};
- 
-function moduleValueChanged(value) {
-    
-    if (value.getControlAddress().contains("knob")) {
-        var channel = 1;
-        var note;
-        if (value.getParent().name == "trackKnobs_Top_") {
-            note = parseInt(value.name.charAt(1)) + 47;
-        } else {
-            channel = parseInt(value.getParent().name.charAt(5));
-            if (!channel) { channel = 9; };                     // Master
-            note = parseInt(value.name.charAt(1)) + 15;
-        };
-        local.sendCC(channel, note, Math.round(value.get() * 127));
-    };
+    localNote(c, n, v);
 };
 
-// MIDI MODULE SPECIFIC FUNCTIONS ////////////
-
-function noteOnEvent(channel, pitch, velocity) {
-    if (noteArr[pitch][0])                                          // Check Mapping
-    {
-        if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) {        // RGB Buttons
-            noteArr[pitch][0].set(velocity);
-        } else if (pitch >= 48 && pitch <= 51 && channel <= 8) {    // Track Control Pads
-            noteArr[pitch][channel][0].set(velocity);
-        } else if (pitch == 52 && channel <= 8) {                   // Clip Stop Pad
-            noteArr[pitch][channel][0].setData(velocity);
-        } else if (pitch == 66 && channel <= 8) {                   // Crossfader A/B
-            noteArr[pitch][channel][0].set(127);
-        } else if (channel == 1) {                                  // Any other button
-            noteArr[pitch][0].set(velocity);
-        } else { script.log("No mapping for this Midi Note found"); };
-    } else {
-        script.log("No mapping for this Midi Note found");
-    };
+function setClipStop(c, state, onoff) {
+    if (c == 81) { c = 1; n = 81; v = onoff; }
+    else { n = 52; v = state; };
+    localNote(c, n, v);
 };
 
-function noteOffEvent(channel, pitch, velocity) {
-    if (noteArr[pitch][0]) // Check Mapping
-    {
-        if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) { // RGB Pad no change to channel just in case
-            noteArr[pitch][0].set(velocity);
-        } else if ((pitch >= 48 && pitch <= 51 && channel <= 8) || (pitch == 66 && channel <= 8)) {
-            noteArr[pitch][channel][0].set(velocity);
-        } else if ((pitch == 52 && channel <= 8) || (pitch == 66 && channel <= 8)) {
-            noteArr[pitch][channel][0].set(0);
-        } else if (channel == 1) { 
-            noteArr[pitch][0].set(velocity);
-        } else { script.log("No mapping for this Midi Note found"); };
-    } else {
-        script.log("No mapping for this Midi Note found");
-    };
+function setTrackSelect(c, v) {
+    var n = 51;
+    if (c == 9) { c = 1; n = 80; };
+    localNote(c, n, v);
 };
 
-function ccEvent(channel, number, value) {
-    if (ccArr[number][0])                                               // Remove Completely unmapped CCs
-    {
-        if (number >= 24 && number <= 31 && channel <= 9) {             // Device Knobs LED Mode
-            if (value >= 4) { var norm = 1; } else { norm = value; }
-            ccArr[number][channel][1].set(norm);
-        } else if (number >= 56 && number <= 63 && channel == 1) {      // Track Knobs LED Mode
-            if (value >= 4) { var norm = 1; } else { norm = value; }
-            ccArr[number][1].set(norm);
-        } else if (number >= 16 && number <= 23 && channel <= 9) {      // Device Knobs Value
-            ccArr[number][channel][0].set(value/127);
-        } else if (number >= 48 && number <= 55 && channel == 1) {      // Track Knobs Value
-            ccArr[number][0].set(value/127);
-        } else if (number == 7) {                                       // Track Faders
-            ccArr[7][channel][0].set(value/127);
-        } else if (number == 14 && channel == 1) {                      // Master Fader 
-            ccArr[number][0].set(value/127);
-        } else if (number == 15 && channel == 1) {                      // Crossfader 
-            ccArr[number][0].set((value / 127) * 2 - 1);                
-            // For reference: Range calculation is ((value - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) + outputMin)
-        } else if ((number == 13 || number == 47) && (channel == 1)) {  // Tempo and Cue Level
-            if (value > 63) value = value - 128;
-            ccArr[number][0].set(value);
-        } else if (channel == 1) {                                      // Everything else              
-            ccArr[number][0].set(value);
-        } else { script.log("No mapping for this Midi CC found"); };
-        script.log("ControlChange received " + channel + ", " + number + ", " + value);
-    }
-    else { script.log("No mapping for this Midi CC found"); };
+function setTrackControl(c, n, crossf, onoff) {
+    if (n == 66) { v = crossf; } else { v = onoff; };
+    localNote(c, n, v);
 };
 
-function sysExEvent(data) {
-    script.log("Sysex Message received, " + data.length + " bytes :");
-    for (var i = 0; i < data.length; i++) {
-        script.log(" > " + data[i]);
-    }
+function setButtonLed(n, v) {
+    var c = 1;
+    localNote(c, n, v);
 };
 
-// THIS MODULE SPECIFIC FUNCTIONS ////////////
-
-// TURN THE LIGHTS ON ////////////////////////
-
-function ringModeSingle(param) 
-{
-    var chanIndex = param.getParent().name.charAt(5);
-    var noteIndex = parseInt(param.name.charAt(1));
-    if (chanIndex == "K") {// Track Knobs
-        local.sendCC(1, noteIndex + 55, param.get());
-    } else {
-        if (chanIndex == "r") {// Master Track, Mode 0
-            local.sendCC(9, noteIndex + 23, param.get());
-        } else {
-            chanIndex = parseInt(chanIndex);// Device Knobs Track 1-8
-            local.sendCC(chanIndex, noteIndex + 23, param.get());
-        };
-    };
-};
-
-function ringModeGroup(param, value) {
-    if (param == ccArr[40][10]) {
-        for (var i = 1; i < 10; i++) {
-            ringModeGroup(ccArr[40][i], param.get());
-        };
-    } else
-        if (param == ccArr[40][11]) {
-            for (var i = 0; i < 10; i++) {
-                ringModeGroup(ccArr[40][i], param.get());
-            };
-            ccArr[40][10].setData(value);
-        } else {
-            var siblings = param.getParent().getControllables(true, false);
-            script.log(siblings);
-            for (var i = 0; i < 9; i++) {
-        siblings[i].setData(value);
-        };
-    };
-};
-
-function lightRgb(param) {                  // The Clip and Scene Launch Pads
-    var midiNote;
-    if (param.name.charAt(11)) {
-        midiNote = ((parseInt(param.name.charAt(5)) - 1) * 8) + (parseInt(param.name.charAt(11)) - 1);
-    } else {
-        var tired = parseInt(param.name.charAt(5));
-        if (tired == 5) { midiNote = 82; };
-        if (tired == 4) { midiNote = 83; };
-        if (tired == 3) { midiNote = 84; };
-        if (tired == 2) { midiNote = 85; };
-        if (tired == 1) { midiNote = 86; };
-    };
-    if (param.getParent().name.charAt(0) == "m") {      // use Mode get Colour
-        local.sendNoteOn(param.get(), midiNote, noteArr[midiNote][2].get());
-    } else {                                            // Use colour get Mode
-        local.sendNoteOn(noteArr[midiNote][1].get(), midiNote, param.get());
-    };
-};
-
-function lightTri(param) {                  // Clip Stop and Crossfade Assign 
-    var chanIndex = param.name.charAt(5);
-    var note = 66;
-    if (param.getParent().name=="clipStop"){note = 52;}
-    local.sendNoteOn(chanIndex, note, param.get());
-};
-
-function lightBin(param) {                  // Any button with Boolean condition
-    if (param.getParent().getParent().name == "trackControls") {
-        var chanIndex = param.name.charAt(5);
-        var nameCheck = param.getParent().name.charAt(0);
-        if (nameCheck == "m") { var note = 50; } else
-        if (nameCheck == "s") { note = 49; } else
-        if (nameCheck == "r") { note = 48; } else
-        if (chanIndex == "r") { note = 80; } else { note = 51; };
-    } else {
-        chanIndex = 1;
-        var i = buttons.indexOf(param.name);
-        note = buttons[i + 1];
-    };
-    local.sendNoteOn(chanIndex, note, param.get());
-};
-
-function setTrackControl(track, control, options){
-    if (control==1){control = 50; if (options> 0){options = 127;}}else 
-    if (control==2){control = 66;} else 
-    if (control==3){control = 49; if (options> 0){options = 127;}} else 
-        {control = 48; if (options> 0){options = 127;}};
-    local.sendNoteOn(track, control, options);
-};
-function setButtonLed(button, on_Off){
-if (on_Off == true){on_Off = 127;};
-    local.sendNoteOn(1, button, on_Off);
-};
-
-// TURN THE LIGHTS OFF ///////////////////////
-
-function clearBank(param) {
-    if (param.name == "resetMode") {
-        var siblings = param.getParent().getChild("mode").getControllables(true, false);
-    } else 
-    if (param.getParent().name.contains("Launch")) {
-        siblings = param.getParent().getChild("colour").getControllables(true, false);
-    } else 
-    { siblings = param.getParent().getControllables(true, false); };
-    for (var i = 0; i < siblings.length; i++) {
-        siblings[i].resetValue();
-    };
-};
-
-// TESTING ///////////////////////////////////
-
-function test(){
-//ccArr[i][1][0].setAttribute("enabled",false);
-script.log(util.getObjectMethods(ccArr[i][1][0]));
-}
-
-//////////////////////////////////////////////
-
-// Everything should go to these:
+// EVERYTHING SHOULD GO TO THESE /////////////
 
 function localNote(c, n, v) {
-    if (velocity > 0) {
+    
+    if (v > 0) {
         local.sendNoteOn(c, n, v);
     } else {
         local.sendNoteOff(c, n);
     };
 };
 
-function localCC(c, n, v) { // Bit pointless (maybe)
-    local.sendCC(c, n, v);
-};
+// function localCC(c, n, v) { // Bit pointless (maybe)
+//     local.sendCC(c, n, v);
+// };
 
 function setValue(c, n, v) {
     noteArr[n][0].set(v);
@@ -837,4 +863,88 @@ function setParam(c, n, v) {
     ccArr[n][c][1].set(v);
 };
 
+// UTILITIES /////////////////////////////////
 
+function debug(param) 
+{
+    if (param.get() == true) {
+        local.logIncoming.set(true);
+        local.logOutgoing.set(true);
+        local.scripts.aPC40_MkII.enableLog.set(true);
+    } else {
+        local.logIncoming.set(false);
+        local.logOutgoing.set(false);
+        local.scripts.aPC40_MkII.enableLog.set(false);
+    };
+};
+
+// TESTING ///////////////////////////////////
+
+function checkArrays() {
+    script.log("noteArr = ");
+    script.log(noteArr);
+    script.log("ccArr = ");
+    script.log(ccArr);
+};
+
+function checkKnobIndex() {
+    script.log("knobIndex = ");
+    script.log(knobIndex);
+};
+
+// END ///////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function lightRgb(param) {                  // The Clip and Scene Launch Pads
+//     var midiNote;
+//     if (param.name.charAt(11)) {
+//         midiNote = ((parseInt(param.name.charAt(5)) - 1) * 8) + (parseInt(param.name.charAt(11)) - 1);
+//     } else {
+//         var tired = parseInt(param.name.charAt(5));
+//         if (tired == 5) { midiNote = 82; };
+//         if (tired == 4) { midiNote = 83; };
+//         if (tired == 3) { midiNote = 84; };
+//         if (tired == 2) { midiNote = 85; };
+//         if (tired == 1) { midiNote = 86; };
+//     };
+//     if (param.getParent().name.charAt(0) == "m") {      // use Mode get Colour
+//         local.sendNoteOn(param.get(), midiNote, noteArr[midiNote][2].get());
+//     } else {                                            // Use colour get Mode
+//         local.sendNoteOn(noteArr[midiNote][1].get(), midiNote, param.get());
+//     };
+// };
+
+// function lightTri(param) {                  // Clip Stop and Crossfade Assign 
+//     var chanIndex = param.name.charAt(5);
+//     var note = 66;
+//     if (param.getParent().name=="clipStop"){note = 52;}
+//     local.sendNoteOn(chanIndex, note, param.get());
+// };
+
+// function lightBin(param) {                  // Any button with Boolean condition
+//     if (param.getParent().getParent().name == "trackControls") {
+//         var chanIndex = param.name.charAt(5);
+//         var nameCheck = param.getParent().name.charAt(0);
+//         if (nameCheck == "m") { var note = 50; } else
+//         if (nameCheck == "s") { note = 49; } else
+//         if (nameCheck == "r") { note = 48; } else
+//         if (chanIndex == "r") { note = 80; } else { note = 51; };
+//     } else {
+//         chanIndex = 1;
+//         var i = buttons.indexOf(param.name);
+//         note = buttons[i + 1];
+//     };
+//     local.sendNoteOn(chanIndex, note, param.get());}
