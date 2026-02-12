@@ -115,7 +115,7 @@ Device knobs only use Channels 2-8 when the APC40 Mk II is in Generic Mode (0).
 |**Track Fader**|**1-8**|*Track*|**7**||**0-127**|
 |**Master Fader**|**1**|*Track*|**14**||**0-127**|
 |**Crossfader**|**1**|*Track*|**15**||**0-127**|
-|**Device Knobs**|**1-8**|*Track*|**16-23**|*Knob*|**0-127**|
+|**Device Knobs**|**1-9**|*Track*|**16-23**|*Knob*|**0-127**|
 |**Track Knobs**|**1**|*Track*|**48-55**|*Knob*|**0-127**|
 |**Footswitch**|**1**||**64**||**1 / 127**|*Released / Depressed*|
 
