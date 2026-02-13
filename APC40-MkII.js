@@ -78,16 +78,17 @@ function moduleParameterChanged(param) {
 
 function moduleValueChanged(value) {
 
-    if (local.parameters.manualControl.get() == true) {
+    var char5 = parseInt(value.name.charAt(5));
 
-        if 
-        (value.getParent().getParent().name == "clipLaunch") { // RGB
-            if (padStyle == 0) {                //default
+    if (local.parameters.manualControl.get() == true) {
+        if (value.getParent().getParent().name == "clipLaunch") {
+            script.log("value change");
+            if (padStyle == 0) {                                    // Default
                 n = (5 - parseInt(value.name.charAt(3))) * 8 + parseInt(value.name.charAt(9)) - 1;
-            } else if (padStyle == 1) {         //ableton
-                n = 40 - parseInt(value.name.charAt(11)) * 8 + parseInt(value.name.charAt(5)) - 1;
-            } else if (padStyle == 2) {         //resolume
-                n = (parseInt(value.name.charAt(5)) - 1) * 8 + parseInt(value.name.charAt(11)) - 1;
+            } else if (padStyle == 1) {                             // Ableton
+                n = 40 - parseInt(value.name.charAt(11)) * 8 + char5 - 1;
+            } else if (padStyle == 2) {                             // Resolume
+                n = (char5 - 1) * 8 + parseInt(value.name.charAt(11)) - 1;
             };
             if (value.getParent().name == "light") {
                 c = local.values.pads.clipLaunch.mode[value.name].get();
@@ -95,19 +96,14 @@ function moduleValueChanged(value) {
                 c = local.values.pads.clipLaunch.light[value.name].get();
             };
             localNote(c, n, value.get());
-        } else if 
-        (value.getParent().getParent().name == "sceneLaunch") {
-            script.log(padStyle);
+        } else if
+            (value.getParent().getParent().name == "sceneLaunch") {
             if (padStyle == 0) {
-                script.log("DEFAULT");
                 n = parseInt(value.name.charAt(3)) + 81;
-                script.log(n);
             } else if (padStyle == 1) {
-                script.log("ABLETON");
-                n = parseInt(value.name.charAt(5)) + 81;
+                n = char5 + 81;
             } else if (padStyle == 2) {
-                script.log("RESOLUME");
-                n = 87 - parseInt(value.name.charAt(5));
+                n = 87 - char5;
             };
             if (value.getParent().name == "light") {
                 c = local.values.pads.sceneLaunch.mode[value.name].get();
@@ -115,28 +111,31 @@ function moduleValueChanged(value) {
                 c = local.values.pads.sceneLaunch.light[value.name].get();
             };
             localNote(c, n, value.get());
-        };
-        if (value.getParent().name.contains("Knobs")) {
+        } else if (value.type == "Enum") {
+            lightTri(value);
+        } else if (value.type == "Boolean"){ lightBin(value); };
+    };
 
-            var channel = 1;
+    if (value.getParent().name.contains("Knobs")) {
+        c = 1;
 
-            if (apcMode == 0) {
-                if (value.name.contains("Master")) {
-                    channel = 9;
-                    var note = parseInt(value.name.charAt(7)) + 15;
-                } else {
-                    channel = parseInt(value.name.charAt(7));
-                    note = parseInt(value.name.charAt(5)) + 15;
-                };
-            } else if (value.getParent().name == "trackKnobs_Top_") {
-                note = parseInt(value.name.charAt(1)) + 47;
+        if (apcMode == 0 && value.getParent().name.contains("device")) {
+            if (value.name.contains("master")) {
+                c = 9;
+                n = parseInt(value.name.charAt(7)) + 15;
             } else {
-                note = parseInt(value.name.charAt(1)) + 15;
+                c = parseInt(value.name.charAt(7));
+                n = char5 + 15;
             };
-            local.sendCC(channel, note, Math.round(value.get() * 127));
+        } else if (value.getParent().name == "trackKnobs_Top_") {
+            n = parseInt(value.name.charAt(1)) + 47;
+        } else {
+            n = parseInt(value.name.charAt(1)) + 15;
         };
+        local.sendCC(c, n, Math.round(value.get() * 127));
     };
 };
+
 
 // MIDI MODULE SPECIFIC FUNCTIONS ////////////
 
@@ -144,8 +143,6 @@ function noteOnEvent(channel, pitch, velocity) {
     if (noteArr[pitch][0])                                          // Check Mapping
     {
         if ((pitch <= 39) || (pitch >= 82 && pitch <= 86)) {        // RGB Buttons
-            
-            script.log("Bang");
             noteArr[pitch][1].set(velocity);
             noteArr[pitch][2].setData(channel);
         } else if (pitch >= 48 && pitch <= 51 && channel <= 8) {    // Track Control Pads
@@ -265,6 +262,29 @@ function ringModeGroupTrack(param) {
     for (i = 56; i < 64; i++) { 
         ccArr[i][0].setData(param.get()); 
     };
+};
+
+function lightTri(value) {                  // Clip Stop and Crossfade Assign 
+    var c = char5;
+    var n = 66;
+    if (value.getParent().getParent().name == "clipStop") { n = 52; }
+    localNote(c, n, value.get());
+};
+
+function lightBin(value) {                  // Any button with Boolean condition
+    if (value.getParent().getParent().getParent().name == "trackControls") {
+        var c = char5;
+        var nameCheck = value.getParent().getParent().name.charAt(0);
+        if (nameCheck == "m") { n = 50; } else
+            if (nameCheck == "s") { n = 49; } else
+                if (nameCheck == "r") { n = 48; } else
+                    if (c == "r") { n = 80; } else { n = 51; };
+    } else {
+        c = 1;
+        var i = buttons.indexOf(value.name);
+        n = buttons[i + 1];
+    };
+    localNote(c, n, value.get());
 };
 
 // TURN THE LIGHTS OFF ///////////////////////
@@ -908,43 +928,3 @@ function checkKnobIndex() {
 
 
 
-// function lightRgb(param) {                  // The Clip and Scene Launch Pads
-//     var midiNote;
-//     if (param.name.charAt(11)) {
-//         midiNote = ((parseInt(param.name.charAt(5)) - 1) * 8) + (parseInt(param.name.charAt(11)) - 1);
-//     } else {
-//         var tired = parseInt(param.name.charAt(5));
-//         if (tired == 5) { midiNote = 82; };
-//         if (tired == 4) { midiNote = 83; };
-//         if (tired == 3) { midiNote = 84; };
-//         if (tired == 2) { midiNote = 85; };
-//         if (tired == 1) { midiNote = 86; };
-//     };
-//     if (param.getParent().name.charAt(0) == "m") {      // use Mode get Colour
-//         local.sendNoteOn(param.get(), midiNote, noteArr[midiNote][2].get());
-//     } else {                                            // Use colour get Mode
-//         local.sendNoteOn(noteArr[midiNote][1].get(), midiNote, param.get());
-//     };
-// };
-
-// function lightTri(param) {                  // Clip Stop and Crossfade Assign 
-//     var chanIndex = param.name.charAt(5);
-//     var note = 66;
-//     if (param.getParent().name=="clipStop"){note = 52;}
-//     local.sendNoteOn(chanIndex, note, param.get());
-// };
-
-// function lightBin(param) {                  // Any button with Boolean condition
-//     if (param.getParent().getParent().name == "trackControls") {
-//         var chanIndex = param.name.charAt(5);
-//         var nameCheck = param.getParent().name.charAt(0);
-//         if (nameCheck == "m") { var note = 50; } else
-//         if (nameCheck == "s") { note = 49; } else
-//         if (nameCheck == "r") { note = 48; } else
-//         if (chanIndex == "r") { note = 80; } else { note = 51; };
-//     } else {
-//         chanIndex = 1;
-//         var i = buttons.indexOf(param.name);
-//         note = buttons[i + 1];
-//     };
-//     local.sendNoteOn(chanIndex, note, param.get());}

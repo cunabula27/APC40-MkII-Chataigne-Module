@@ -8,7 +8,7 @@
     "hideDefaultCommands": false,
     "defaults": {
         "autoAdd": false,
-        "usePitchForNoteNames":true
+        "usePitchForNoteNames": true
     },
     "hideDefaultParameters": [
         "autoAdd",
@@ -20,9 +20,7 @@
             "description": "Choose how the controller responds to input. The APC40 MkII defaults to Generic Mode on start up. If you're using Resolume it's recommended to choose Alternate Ableton Live Mode.",
             "type": "Enum",
             "options": {
-                "Select": [
-               
-                ],
+                "Select": [],
                 "Generic": [
                     0,
                     "Generic"
@@ -47,9 +45,10 @@
                 "Resolume Style": 2
             }
         },
-        "Manual Control":{
-        "description": "Set Pad and Button states by adjusting Values directly below. If you don't want external sources changing these states diconnect Input in Devices above.",
-        "type":"Boolean"},
+        "Manual Control": {
+            "description": "Set Pad and Button states by adjusting Values directly below. If you don't want external sources changing these states diconnect Input in Devices above.",
+            "type": "Boolean"
+        },
         "Utilities": {
             "type": "Container",
             "collapsed": false,
@@ -646,10 +645,6 @@
                 "Track Selectors": {
                     "type": "Container",
                     "collapsed": true,
-                    "Clear All": {
-                        "type": "Trigger",
-                        "description": "Sets all pads to 'Off'"
-                    },
                     "Press": {
                         "type": "Container",
                         "collapsed": true,
@@ -1210,14 +1205,14 @@
                     "type": "Boolean",
                     "readOnly": true
                 }
-            },
+            }
+        },
+        "Footswitch": {
+            "type": "Container",
+            "collapsed": true,
             "Footswitch": {
-                "type": "Container",
-                "collapsed": true,
-                "Footswitch": {
-                    "type": "Boolean",
-                    "readOnly": true
-                }
+                "type": "Boolean",
+                "readOnly": true
             }
         }
     },
