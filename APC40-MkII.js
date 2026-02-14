@@ -228,7 +228,8 @@ function ccArray() {                        // CC Buffer
 
     ccArr[MIDI Note][Track Number][0] value
                                   [1] param
-    */
+                                  
+    ////////////////////////////////////////*/
 
     var ccArr = [];
 
