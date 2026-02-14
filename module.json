@@ -2,9 +2,10 @@
     "name": "Akai APC40 MkII",
     "type": "MIDI",
     "path": "Hardware",
-    "version": "0.0.1",
-    "description": "Chatiagne MIDI Module for the Akai APC40 MkII",
+    "version": "1.0.0",
+    "description": "Chataigne Module for the Akai APC40 MkII MIDI Controller",
     "url": "https://github.com/cunabula27/APC40-MkII-Chataigne-Module",
+    "downloadURL": "https://github.com/cunabula27/APC40-MkII-Chataigne-Module/archive/master.zip",
     "hideDefaultCommands": false,
     "defaults": {
         "autoAdd": false,
@@ -45,13 +46,13 @@
                 "Resolume Style": 2
             }
         },
-        "Manual Control": {
-            "description": "Set Pad and Button states by adjusting Values directly below. If you don't want external sources changing these states diconnect Input in Devices above.",
-            "type": "Boolean"
-        },
         "Utilities": {
             "type": "Container",
             "collapsed": false,
+            "Manual Control": {
+                "description": "Set Pad and Button states by adjusting Values directly below. If you don't want external sources changing these states disconnect Input in Devices above.",
+                "type": "Boolean"
+            },
             "Debug": {
                 "description": "Set all module logging to TRUE",
                 "type": "Boolean"

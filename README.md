@@ -2,16 +2,13 @@
 
 A Chataigne module for the Akai APC40 MkII MIDI Controller.
 
-Version : <!--0.1.0--> **NOT FOR TESTING OR PRODUCTION USE YET**
+Version : 1.0.0-beta
 
-Requires Chataigne version 1.10.00 or higher.
-
-<!--Chataigne can be downloaded here -->
-
-<!-- *Nb. Start Chataigne before connecting the APC40 for the Reset to work correctly (need to further test before this is definitely correct).* -->
+Chataigne can be downloaded here : https://benjamin.kuperberg.fr/chataigne/
 
 -----
 ## **Settings**
+
 ### Controller Mode 
 Choose between Generic, Ableton Live and Alternate Ableton Live Modes (Modes 0, 1, and 2). The controller always starts in Generic Mode when powered on, I don't make the rules.
 
@@ -30,13 +27,20 @@ Yes, it was that much work.
 
 ## **Utilities**
 
+### Manual Control
+Toggles whether changing any of the pad or button Light or Mode values by hand has any effect on the controller. You probably don't want to do that anyway but the option is there for you. 
+
+*Nb. You **can** change those values at any time but that won't do anything. It was simpler to just turn the feedback off than toggling over 100 button to read only and back every time the setting was used.* 
+
+All knobs can be controlled manually from Chataigne at any time, give visual feedback and do not jump from their position if you go back to controlling them properly.
+
 ### Debug
-Toggles logging for all connections and scripts.
+Toggles logging for all connections and the module script.
 
 ------
 ## **Features**
 
-All input and output messages and states should match the ***Akai APC40 MkII Communications Protocol*** document Version 1.2 (which is a fun read).
+All input and output MIDI messages and states should match the ***Akai APC40 MkII Communications Protocol*** document Version 1.2 (which is a fun read).
 
 ### Set LED Ring Mode
 Choose between Off, Single, Volume and Pan styles. 
@@ -49,7 +53,7 @@ By type. Sends Note Off to all pads in the block, resets mode to primary colour.
 ### Reset Mode for Clip and Scene Launch pads
 By type. Resets every pad to its primary colour (if it's flashing or blinking or whatever) without changing that it's lit.
 
-All pad and buttons can have any of their visual properties set by hand.
+All pad and buttons can have any of their visual properties set by hand if Manual COntrol is toggled on (see above).
 
 ------
 
