@@ -635,7 +635,6 @@ function setButtonLed(n, v) {
 };
 
 function localNote(c, n, v) {
-
     if (v > 0) {
         local.sendNoteOn(c, n, v);
     } else {
