@@ -4,6 +4,9 @@ A Chataigne module for the Akai APC40 MkII MIDI Controller.
 
 Version : 1.0.0-beta
 
+> [!WARNING]
+> Due to the dynamic way pads and knobs are created (including on reloading a Noisette), trying to use the Router in Chataigne will cause a crash.
+
 Chataigne can be downloaded here : https://benjamin.kuperberg.fr/chataigne/
 
 -----
