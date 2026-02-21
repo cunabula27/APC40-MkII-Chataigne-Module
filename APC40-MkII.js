@@ -77,7 +77,8 @@ function moduleParameterChanged(param) {
 };
 
 function moduleValueChanged(value) {
-    if (local.parameters.utilities.manualControl.get() == true
+    if //(local.parameters.utilities.manualControl.get() == true
+    (value.getParent().name != "press"
         && (value.getControlAddress().contains("pads")
             || value.getControlAddress().contains("buttons"))) {
 
@@ -85,14 +86,14 @@ function moduleValueChanged(value) {
         var n = noteControl[0];
         var control = noteControl[1];
 
-        if ((n <= 39) || (n >= 82 && n <= 86)) {
+        if ((n <= 39) || (n >= 82 && n <= 86)) {                    // Clip and Scene Pads
             if (control == 1) {
                 localNote(noteArr[n][2].get(), n, value.get());
             } else
                 localNote(value.get(), n, noteArr[n][1].get());     // Nb. Secondary colour continues to light if Primary 'Off'
-        } else if (n == 56 || n == 62) {
+        } else if (n == 52 || n == 66) {                            // Clip Stop and Crossfade Assign
             localNote(control, n, value.get());
-        } else if (n >= 48 && n <= 51) {
+        } else if (n >= 48 && n <= 51) {                            // Record Arm / Solo / Mute / Track Select
             localNote(control, n, value.get());
         } else {
             localNote(1, n, value.get());
